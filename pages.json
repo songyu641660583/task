@@ -1,0 +1,680 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/login/pwd-login",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"bounce":"vertical",
+					"scrollIndicator" : "none" 
+				}
+			}
+		},{
+			"path": "pages/vip/tasklist",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"bounce":"vertical",
+					"scrollIndicator" : "none" 
+				}
+			}
+		},{
+			"path": "pages/index/release_task",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"bounce":"none",
+					"scrollIndicator" : "none" 
+				}
+			}
+		},
+		{
+			"path": "pages/login/tel-login",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/login/retrieve-password",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/login/change-password",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/login/reset-password",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},
+		{
+			"path": "pages/tabbar/index",
+			"style": {
+				"navigationStyle":"custom",
+				"enablePullDownRefresh": false, //下拉刷新
+				"navigationBarTitleText": "", //导航栏文字类容
+				"navigationBarBackgroundColor": "#1c1a4e",
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"scrollIndicator":"none",
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/tabbar/vip",
+			"style": {
+				"navigationStyle":"custom",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},{
+			"path": "pages/tabbar/ranking",
+			"style": {
+				"navigationStyle":"custom",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},{
+			"path": "pages/tabbar/msg",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/tabbar/profile",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#1b2664",
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator":"none"
+				}
+			}
+		}, {
+			"path": "pages/profile/personal-information",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "none"
+				}
+			}
+		}, {
+			"path": "pages/profile/change-password",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/profile/withdrawal",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator":"none",
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/profile/my-team",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/index/member-hall",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/msg/msg-detail",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/profile/task-record",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/profile/submit-task",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/index/task-detail",
+			"style": {
+				"navigationBarTextStyle": "white",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/index/guide",
+			"style": {
+				"navigationBarTitleText": "新手指南",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/profile/open-member",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator":"none"
+				}
+			}
+		}, {
+			"path": "pages/profile/success-task",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/profile/my-credit",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/profile/credit-list",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/profile/task-detail",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/profile/account",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/profile/modify-name",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator":"none"
+				}
+			}
+		}, {
+			"path": "pages/index/not-open",
+			"style": {
+				"navigationBarTitleText": "暂未开放",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/profile/invitation",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/login/register",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "Register",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},{
+			"path": "pages/index/video_detail",
+			"style": {
+				"navigationBarTitleText": "新手教程",
+				"app-plus": {
+					"titleNView":{
+						"titleText":"新手教程"
+					},
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},
+		{
+			"path": "pages/index/help_detail",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},{
+			"path": "pages/profile/withdraw-record",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/profile/selectmode",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"navigationStyle":"custom",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},{
+			"path": "pages/wallet/scancode-pay",
+			"style": {
+				"navigationBarTitleText": "扫码支付",
+				"navigationBarBackgroundColor": "#ffc000",
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/wallet/voucher",
+			"style": {
+				"navigationBarTitleText": "上传账单",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/profile/upload-image",
+			"style": {
+				"navigationBarTitleText": "上传账单",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/profile/modify-number",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}, {
+			"path": "pages/profile/my-bill",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},
+		{
+			"path": "pages/profile/pay-record",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		}
+	    ,{
+            "path" : "pages/login/privacy-policy",
+            "style" : {
+				"navigationBarTitleText":"隐私政策",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+        }
+        ,{
+            "path" : "pages/login/usage-agreement",
+            "style" : {
+				"navigationBarTitleText":"协议",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+        },{
+            "path" : "pages/profile/help-center",
+            "style" : {
+				"navigationStyle":"custom",
+				"navigationBarTitleText":"",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+        },{
+		    "path" : "pages/index/profit_vip",
+		    "style" : {
+				"navigationStyle":"custom",
+				"navigationBarTitleText":"",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},{
+            "path" : "pages/index/searchList",
+            "style" : {
+				"navigationBarTitleText":"搜索结果",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+        },{
+            "path" : "pages/profile/bank-pay",
+            "style" : {
+				"navigationStyle":"custom",
+				"navigationBarTitleText":"",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+        },{
+            "path" : "pages/profile/onlinepay",
+            "style" : {
+				"navigationStyle":"custom",
+				"navigationBarTitleText":"",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+        },{
+            "path" : "pages/index/vip",
+            "style" : {
+				"navigationStyle":"custom",
+				"navigationBarTitleText":"VIP",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+        },
+		{
+			"path": "pages/financial/yuebao",
+			"style": {
+				"navigationStyle":"custom",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},
+		{
+			"path": "pages/financial/order",
+			"style": {
+				"navigationStyle":"custom",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},{
+			"path": "pages/financial/order_detail",
+			"style": {
+				"navigationStyle":"custom",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},
+		{
+			"path": "pages/imitate/index",
+			"style": {
+				"navigationStyle":"custom",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},
+		{
+			"path": "pages/imitate/mould_am",
+			"style": {
+				"navigationStyle":"custom",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},
+		{
+			"path" : "pages/profile/real-auth",
+			"style": {
+				"navigationStyle":"custom",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
+		},
+		{
+			"path" : "pages/profile/ceshi",
+			"style" : 
+			{
+				"navigationBarTitleText" : "测试22"
+			}
+		},
+		{
+			"path" : "pages/profile/lucky",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/profile/wallet",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		}
+    ],
+	"globalStyle": {
+		"navigationStyle":"custom",
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	},
+	"tabBar": {
+		"color": "#757575",
+		"selectedColor": "#1b2664",
+		"backgroundColor": "#ffffff",
+		"borderStyle": "",
+		"list": [{
+				"pagePath": "pages/tabbar/index",
+				"text": "Home",
+				"iconPath": "static/images/tabbar/index.png",
+				"selectedIconPath": "static/images/tabbar/index_active.png"
+			},
+			{
+				"pagePath": "pages/tabbar/vip",
+				"text": "VIP",
+				"iconPath": "static/images/tabbar/vip.png",
+				"selectedIconPath": "static/images/tabbar/vip_active.png"
+			},
+			{
+				"pagePath": "pages/financial/yuebao",
+				"text": "Financing",
+				"iconPath": "static/images/tabbar/yue.png",
+				"selectedIconPath": "static/images/tabbar/yue_active.png"
+			},
+			{
+				"pagePath": "pages/tabbar/ranking",
+				"text": "Ranking",
+				"iconPath": "static/images/tabbar/list.png",
+				"selectedIconPath": "static/images/tabbar/list_active.png"
+			},
+			{
+				"pagePath": "pages/tabbar/profile",
+				"text": "Me",
+				"iconPath": "static/images/tabbar/profile.png",
+				"selectedIconPath": "static/images/tabbar/profile_active.png"
+			}
+		]
+	}
+}

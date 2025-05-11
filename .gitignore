@@ -1,0 +1,17 @@
+.buildpath
+.hbuilderx
+.settings/
+.project
+*.patch
+.idea/
+.git/
+#unpackage/*
+#!unpackage/res/
+
+__MACOSX/
+.DS_Store
+node_modules
+uni_modules
+
+package-lock.json
+yarn.lock
