@@ -664,7 +664,8 @@
 				"selectedIconPath": "static/images/tabbar/yue_active.png"
 			},
 			{
-				"pagePath": "pages/tabbar/ranking",
+				// "pagePath": "pages/tabbar/ranking",
+				"pagePath": "pages/vip/tasklist",
 				"text": "Ranking",
 				"iconPath": "static/images/tabbar/list.png",
 				"selectedIconPath": "static/images/tabbar/list_active.png"

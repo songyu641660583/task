@@ -213,7 +213,8 @@ const lang_country = {
 				modetitle1:'当前会员等级不符合，是否开通',
 				nameinfo:['每日可领取','次任务机会'],
 				nametext:'解锁更多会员享受更多次任务机会',
-				info:'荐'
+				info:'荐',
+				doWork: '做任务'
 			},
 			pagesmsg:{
 				title:'消息中心',
@@ -499,7 +500,7 @@ const lang_country = {
 			},
 			btncomfirm:['取消','确认'],
 			toastinfo:['请输入手机号','验证码已发送至手机','登录成功！','注册成功！','密码修改成功'],
-			tabbarfin:['首页','VIP','理财','排行榜','我的']
+			tabbarfin:['首页','VIP','理财','任务栏','我的']
 			// tabbartxt:['首页','订单','排行榜','我的']
 		},
 		en:{//英文

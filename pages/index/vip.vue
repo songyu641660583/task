@@ -3,19 +3,24 @@
 		<loading-plus v-if="beforeReady"></loading-plus>
 		<uni-status-bar />
 		<public-head title="VIP"></public-head>
-		<view class="nav" style="width: 100%;height: 88rpx;"></view>
+		<!-- <view class="nav" style="width: 100%;height: 88rpx;"></view>
 		<view class="logo">
 			<image src="/static/images/vip/vip.png" mode=""></image>
-		</view>
-		<view class="card" @click="navTo('/pages/index/member-hall?level='+item.level+'&levelindex='+levelindex)" hover-class="heartBeat" v-for="(item,index) in memberInfo" :key="index">
-			<image src="/static/images/vip/huangguan.png" mode=""></image>
+		</view> -->
+		<view class="card" hover-class="heartBeat" v-for="(item,index) in memberInfo" :key="index">
+		 <view class="head">
+         <view class="head-left">
+				  	<image :src="item.img" mode=""></image>
+					  <text class="text1">{{item.name}}</text>
+				 </view>	
+				 <view class="head-right" @click="navTo('/pages/index/member-hall?level='+item.level+'&levelindex='+levelindex)">
+					  <view class="do-work">{{i18n.doWork}}</view>
+						<!-- <view class="do-work">升级</view> -->
+				 </view>
+		 </view>
 			<view class="center">
-				<text class="text1">{{item.name}}</text>
-				<view class="text2">{{item.name}} {{i18n.nameinfo[0]}}<text>{{item.task_num}}</text>{{i18n.nameinfo[1]}}</view>
+				<view class="text2"><text class="name">{{item.name}}</text> {{i18n.nameinfo[0]}}<text class="num">{{item.task_num}}</text>{{i18n.nameinfo[1]}}</view>
 				<text class="text3">{{i18n.nametext}}</text>
-			</view>
-			<view class="right">
-				<view class="r-btn">GO</view>
 			</view>
 			<view class="tip" v-if="item.is_recommended === 1">{{i18n.info}}</view>
 		</view>
@@ -42,7 +47,11 @@ export default {
 		this.levelindex = e.level;
 		this.$http.requestajx('user_level','get',{}).then((res) => {
 			// console.log(res);
-			this.memberInfo = res.result;
+			this.memberInfo = res.result.map((item, index) => ({
+				...item,
+				img: `/static/images/index/vip-icon${index}.png`
+			}))
+			console.log('this.memberInfo', this.memberInfo)
 		}).catch((error) => {
 			console.log('错误重启');
 		});
@@ -79,16 +88,47 @@ export default {
 	justify-content: space-between;
 	margin-bottom: 120rpx;
 	.card {
-		display: flex;
+		padding: 20rpx 20rpx 30rpx;
 		position: relative;
 		width: 690rpx;
-		height: 232rpx;
-		background: url(/static/images/vip/bgd.png) no-repeat;
-		background-size: 100% 100%;
-		box-shadow: 0px 0px 30rpx 0px rgba(253, 183, 34, 0.48);
+		background-color: #fff;
+		// background: url(/static/images/vip/bgd.png) no-repeat;
+		// background-size: 100% 100%;
+		box-shadow: 0 2px 5px 1px rgba(0,0,0,.12);
 		border-radius: 20rpx;
 		margin-bottom: 68rpx;
-		margin: 0 auto 30rpx;
+		margin: 30rpx auto 0;
+		.head {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			&-left {
+				padding: 8rpx 16rpx;
+				display: flex;
+			  align-items: center;
+				background: #3d5cff;
+				border-radius: 50px;
+				font-family: DIN;
+				font-weight: 600;
+				font-size: 26rpx;
+				color: #fff;
+				image {
+					width:38rpx;
+					height: 38rpx;
+
+				}
+			}
+
+			&-right {
+				padding: 15rpx 30rpx;
+    background: #3d5cff;
+    border-radius: 50px 0 0 50px;
+    font-family: PingFangSC, PingFang SC;
+    font-weight: 500;
+    font-size: 28rpx;
+    color: #fff;
+			}
+		}
 		.tip {
 			position: absolute;
 			right: -10rpx;
@@ -101,11 +141,7 @@ export default {
 			border-radius: 50%;
 			background-color: #161927;border: 2px solid rgba(253, 183, 34, 0.48);color: #fff;font-size: 10px;
 		}
-		image {
-			width: 86rpx;
-			height: 60rpx;
-			margin: 38rpx 24rpx 0 40rpx;
-		}
+	
 		.center {
 			flex: 1;
 			display: flex;
@@ -119,13 +155,17 @@ export default {
 				color: #858585;
 				font-size: 24rpx;
 				margin-top: 26rpx;
-				text {
-					color: #ededed;
+				.name {
+						color: #e20e0e;
+				}
+				.num {
+			  	font-size: 28rpx;
+					color: #e20e0e;
 				}
 			}
 			.text3 {
 				color: #86662a;
-				font-size: 20rpx;
+				font-size: 24rpx;
 				margin-top: 10px;
 			}
 		}

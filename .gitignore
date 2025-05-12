@@ -11,7 +11,7 @@
 __MACOSX/
 .DS_Store
 node_modules
-uni_modules
+#uni_modules
 
 package-lock.json
 yarn.lock

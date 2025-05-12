@@ -30,9 +30,11 @@
 			<view class="module-tips">
 				注：年龄要求：18周岁以上，注册成功后请绑定邮箱并进行实名验证，如发现通过作弊手段获取奖励的用户，将取消奖励，如：假号、批量假账号等行为。
 			</view>
+			<view class="module-tips" style="margin-top:20rpx">
+				如有疑问请联系 <text @click="kefu_btn">平台客服</text>
+			</view>
 			<view class="load-btn" @click="onCopyResult">{{ i18n.codebtn }}</view>
 		</view>
-
 	</view>
 </template>
 
@@ -60,6 +62,18 @@ export default {
 		}
 	},
 	methods: {
+		async kefu_btn(){
+			// #ifdef H5
+				let winhref = window.open('','_blank');
+			// #endif
+				let res = await this.$http.customerUrl();
+			// #ifdef APP-PLUS
+				plus.runtime.openURL(encodeURI(res.result))
+			// #endif
+			// #ifdef H5
+				winhref.location = res.result;
+			// #endif
+		},
 		onCopyResult() {
 			uni.setClipboardData({
 				data: this.val
@@ -169,6 +183,9 @@ export default {
 	&-tips {
 		line-height: 36rpx;
 		color: #666;
+		text {
+			color: #3C5BFF;
+		}
 
 	}
 	.link-value {

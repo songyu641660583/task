@@ -201,7 +201,7 @@ export default {
 						 {imgsrc:'/static/images/index/index_hy.png',navrouter:'/pages/index/profit_vip'},
 						 {imgsrc:'/static/images/index/icon_zunxiang.png',navrouter:'/pages/index/video_detail'},
 						 {imgsrc:'/static/images/index/icon_daili.png',navrouter:'/pages/profile/lucky?id='},
-						 {imgsrc:'/static/images/index/icon_team.png',navrouter:'/pages/profile/invitation?id='}],
+						 {imgsrc:'/static/images/profile/enjoy.png',navrouter:'/pages/profile/invitation?id='}],
 			bannerlist:[],
 			broadmune:[],
 			tasklist:[],
