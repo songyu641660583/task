@@ -631,6 +631,17 @@
 			{
 				"navigationBarTitleText" : ""
 			}
+		},
+		{
+			"path" : "pages/tabbar/taskList",
+			"style": {
+				"navigationStyle":"custom",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
 		}
     ],
 	"globalStyle": {
@@ -665,10 +676,10 @@
 			},
 			{
 				// "pagePath": "pages/tabbar/ranking",
-				"pagePath": "pages/vip/tasklist",
+				"pagePath": "pages/tabbar/taskList",
 				"text": "Ranking",
-				"iconPath": "static/images/tabbar/list.png",
-				"selectedIconPath": "static/images/tabbar/list_active.png"
+				"iconPath": "static/images/tabbar/task.png",
+				"selectedIconPath": "static/images/tabbar/task_active.png"
 			},
 			{
 				"pagePath": "pages/tabbar/profile",

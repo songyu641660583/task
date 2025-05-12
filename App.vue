@@ -71,6 +71,9 @@ export default {
 .uni-tabbar__label {
 	font-size: 12px !important;
 }
+uni-page-body {
+	height: 100% !important;
+}
 /* tabbar边框 */
 /* uni-tabbar .uni-tabbar-border {
 		background-color: red !important;

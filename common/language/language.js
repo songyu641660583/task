@@ -337,6 +337,10 @@ const lang_country = {
 				totatinfo:'修改成功！',
 				toaterr:'输入有误'
 			},
+			tasklist: {
+				title: '任务列表',
+				statusList: ['进行中', '审核中', '已完成', '已失败', '已放弃'],
+			},
 			auth: {
         title: '实名认证',
 				formbtn: '提交',
