@@ -9,19 +9,25 @@
 		</view>
 		<view class="task-content">
 			<view class="task-item" v-for="(item, index) in taskList" :key="index">
-         <view class="task-item-icon"> 
-					 <image :src="item.icon" mode=""></image>
-				 </view>
-				 <view class="task-level">
-				  	<view>
+				<view class="task-item-icon">
+					<image :src="item.icon" mode=""></image>
+				</view>
+				<view class="task-flex">
+					<view class="task-level">
+						<view>
 							<image :src="`/static/images/index/vip-icon${item.task_type}.png`" mode=""></image>
-					  <text class="text1">{{item.level_info.name}}</text>
+							<text class="text1">{{ item.level_info.name }}</text>
 						</view>
-				 </view>	
-				 <view class="task-bottom">
+					</view>
+					<view class="like">
+						要求：<text>喜欢</text>
+					</view>
+				</view>
+
+				<view class="task-bottom">
 					<view class="time">{{ item.created_at }}</view>
 					<view class="amount">${{ item.amount }}</view>
-				 </view>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -31,16 +37,16 @@
 import config from '@/service/config.js'
 
 function formatTimestamp(timestamp) {
-  const date = new Date(timestamp * 1000); // 乘以 1000 转换为毫秒
-  
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0'); // 月份从 0 开始
-  const day = String(date.getDate()).padStart(2, '0');
-  const hours = String(date.getHours()).padStart(2, '0');
-  const minutes = String(date.getMinutes()).padStart(2, '0');
-  const seconds = String(date.getSeconds()).padStart(2, '0');
+	const date = new Date(timestamp * 1000) // 乘以 1000 转换为毫秒
 
-  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+	const year = date.getFullYear()
+	const month = String(date.getMonth() + 1).padStart(2, '0') // 月份从 0 开始
+	const day = String(date.getDate()).padStart(2, '0')
+	const hours = String(date.getHours()).padStart(2, '0')
+	const minutes = String(date.getMinutes()).padStart(2, '0')
+	const seconds = String(date.getSeconds()).padStart(2, '0')
+
+	return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
 }
 
 export default {
@@ -103,7 +109,7 @@ export default {
 					created_at: "1663828503"
 				},
 			]
-			this.taskList = res.map((item)=>{
+			this.taskList = res.map((item) => {
 				return {
 					...item,
 					icon: config.ossBaseUrl + item.category.icon,
@@ -158,54 +164,81 @@ export default {
 		flex: auto;
 		overflow-y: auto;
 		padding: 20rpx 30rpx;
+
+		.task-flex {
+			display: flex;
+			align-items: center;
+			gap: 20rpx;
+		}
+
+		.like {
+			padding: 12rpx 16rpx;
+			border-radius: 120rpx;
+			border: 1px solid #979797;
+			font-family: PingFangSC, PingFang SC;
+			font-weight: 400;
+			font-size: 24rpx;
+			color: #666;
+
+			text {
+				color: #3d5cff;
+			}
+		}
+
 		.task-item {
 			margin-bottom: 20rpx;
 			padding: 20rpx;
 			border-radius: 20rpx;
 			background: #fff;
+
 			&-icon {
-				
-				image{
+
+				image {
 					width: 80rpx;
 					height: 80rpx;
 				}
 			}
-			.task-level{
+
+			.task-level {
 				display: inline-block;
-				& > view{
+
+				&>view {
 					padding: 8rpx 16rpx;
-				display: flex;
-			  align-items: center;
-				background: #3d5cff;
-				border-radius: 50px;
-				font-family: DIN;
-				font-weight: 600;
-				font-size: 26rpx;
-				color: #fff;
-				image {
-					width:38rpx;
-					height: 38rpx;
+					display: flex;
+					align-items: center;
+					background: #3d5cff;
+					border-radius: 50px;
+					font-family: DIN;
+					font-weight: 600;
+					font-size: 26rpx;
+					color: #fff;
+
+					image {
+						width: 38rpx;
+						height: 38rpx;
+					}
 				}
-				}
-				
-				
+
+
 			}
+
 			.task-bottom {
 				margin-top: 12rpx;
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
+
 				.time {
 					font-size: 24rpx;
 					color: #A3A3A3;
 				}
+
 				.amount {
-					font-size: 40rpx;
+					font-size: 44rpx;
 					color: #F30D1C;
-					font-weight: 500;
+					font-weight: bold;
 				}
 			}
-
 		}
 	}
 }

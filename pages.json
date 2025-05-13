@@ -669,13 +669,12 @@
 				"selectedIconPath": "static/images/tabbar/vip_active.png"
 			},
 			{
-				"pagePath": "pages/financial/yuebao",
+				"pagePath": "pages/profile/wallet",
 				"text": "Financing",
 				"iconPath": "static/images/tabbar/yue.png",
 				"selectedIconPath": "static/images/tabbar/yue_active.png"
 			},
 			{
-				// "pagePath": "pages/tabbar/ranking",
 				"pagePath": "pages/tabbar/taskList",
 				"text": "Ranking",
 				"iconPath": "static/images/tabbar/task.png",

@@ -50,7 +50,7 @@
 				<!-- <view class="detailed-item-active" @click="navTo('/pages/profile/withdrawal')" hover-class="hover-btn"><view class="item-btn"></view></view> -->
 			</view>
 			<view class="withdraw_list">
-				<navigator style="text-align: center;" url="/pages/profile/wallet" class="withdraw_item">{{i18n.wallet}}</navigator>
+				<view style="text-align: center;"  class="withdraw_item" @click="handleWallet">{{i18n.wallet}}</view>
 				<!-- <navigator url="/pages/profile/withdrawal" class="withdraw_item">{{i18n.munebtn}}</navigator>
 				<navigator url="/pages/profile/selectmode" class="withdraw_item">{{i18n.munerecharge}}</navigator> -->
 			</view>
@@ -216,6 +216,12 @@ export default {
 					});
 			    }
 			});
+		},
+		handleWallet(){
+			uni.switchTab({
+				url: '/pages/profile/wallet'
+			})
+			
 		},
 		exit() {
 			const that = this;
