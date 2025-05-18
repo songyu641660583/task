@@ -12,6 +12,10 @@
       </view>
     </view>
     <view class="task-content">
+      			<view class="no-data" v-if="taskList.length === 0">
+				<image src="/static/images/index/nodata.png" mode=""></image>
+				<view class="text">{{  i18n.noData }}</view>
+			</view>
       <view class="task-item" v-for="(item, index) in taskList" :key="index">
         <view class="task-item-icon">
           <!-- <image :src="item.icon" mode=""></image> -->
@@ -20,10 +24,10 @@
           <view class="task-level">
             <view>
               <image
-                :src="`/static/images/index/vip-icon${item.task_type}.png`"
+                :src="item.level_icon"
                 mode=""
               ></image>
-              <text class="text1">{{ item.amount }}</text>
+              <text class="text1">{{ item.level_name }}</text>
             </view>
           </view>
           <view class="like"> 要求：<text>喜欢</text> </view>
@@ -65,7 +69,8 @@ export default {
       active: 0,
       page: 1,
       statusList: [],
-      taskList: []
+      taskList: [],
+      levelList: []
     }
   },
   created() {
@@ -76,19 +81,32 @@ export default {
       { name: this.i18n.statusList[3], id: 4 },
       { name: this.i18n.statusList[4], id: 5 }
     ]
-    this.getTaskData()
+    this.getUserLevel() 
+
   },
   methods: {
-    async getTaskData() {
+      getUserLevel() {
+      this.$http
+        .requestajx('user_level', 'get', {})
+        .then((res) => {
+          this.getTaskData()
+          this.levelList = res.result
+        })
+    },
+    async getTaskData(type) {
       let res = await this.$http.userTaskList({
-        type: 0,
+        type,
         page: this.page
       })
 
       const data = res.result.data.map((item) => {
+        const {name: level_name, icon: level_icon} = this.levelList.filter(
+          (level) => level.level === item.task.level
+        )[0]
         return {
           ...item,
-          // icon: config.ossBaseUrl + item.category.icon,
+          level_name,
+          level_icon:  config.ossBaseUrl + level_icon,
           created_at: formatTimestamp(Number(item.created_at))
         }
       })
@@ -100,9 +118,9 @@ export default {
     },
     handleActive(index) {
 			this.page = 1
-			 this.taskList= []
+			this.taskList= []
       this.active = index
-			this.getTaskData()
+			this.getTaskData(this.statusList[index].id)
     }
   }
 }
@@ -114,6 +132,21 @@ export default {
   flex-direction: column;
   height: 100%;
   background: #f3f3f3;
+  .no-data {
+	margin-top: 100rpx;
+		text-align: center;
+
+	image {
+		
+		width: 200rpx;
+		height: 200rpx;
+	}
+	.text {
+		margin-top: 20rpx;
+		font-size: 28rpx;
+		color: #666;
+	}
+}
 
   .status-list {
     flex: none;

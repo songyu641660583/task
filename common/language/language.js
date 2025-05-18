@@ -354,6 +354,7 @@ const lang_country = {
 			tasklist: {
 				title: '任务列表',
 				statusList: ['进行中', '审核中', '已完成', '已失败', '已放弃'],
+				noData: '暂无数据'
 			},
 			auth: {
         title: '实名认证',
@@ -389,7 +390,10 @@ const lang_country = {
 				verifing: '实名认证中，请耐心等待',
 				withdrawMoney: '可提款',
 				recordTitle: '提现记录',
-				noData: '暂无数据'
+				noData: '暂无数据',
+				drawrecord1:'正在处理中',
+				drawrecord2:'提现成功',
+				drawrecord3:'提现失败',
 			},
 			account:{
 				title: '提现账户',
@@ -400,7 +404,7 @@ const lang_country = {
 				formbanktxt: '请输入英文大写字母银行名称',
 				formacc: '银行户口账号',
 				formacctxt: '请输入户口号码',
-				kaibank: '支行地址',
+				kaibank: '开户行地址',
 				kaibanktxt: '请输入开户行地址',
 				bankphone: '手机号',
 				bankphonetxt: '请输入银行预留手机号码',
@@ -408,8 +412,8 @@ const lang_country = {
 				bankmail: '邮箱',
 				address: "USDT地址",
 				bankmailtxt: '请输入邮箱',
-				bankcode: '银行代码',
-				bankcodetxt: '请选择银行编码',
+				bankcode: '银行编码',
+				bankcodetxt: '请输入银行编码',
 				bankword: '设置取款密码',
 				bankwordtxt: '请输入6位数密码',
 				bankinfo: '*需要更改银行卡信息请前往联系在线客服修改',

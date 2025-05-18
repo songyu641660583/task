@@ -34,21 +34,27 @@
 						<input type="text" name="account" :value="info.account" :placeholder="i18n.formacctxt" placeholder-class="place" />
 					</view>
 				</view>
+				<view class="form_item">
+					<view class="form_title"><text>*</text>{{i18n.bankcode}}</view>
+					<view class="form_input">
+						<input type="text" name="bank_code" :value="info.bank_code" :placeholder="i18n.bankcodetxt" placeholder-class="place" />
+					</view>
+				</view>
 				
 				
-				<!-- <view class="form_item">
+				<view class="form_item">
 					<view class="form_title"><text>*</text>{{i18n.kaibank}}</view>
 					<view class="form_input">
 						<input type="text" name="bank_address" :value="info.bank_address" :placeholder="i18n.kaibanktxt" placeholder-class="place" />
 					</view>
 				</view>
 				
-				<view class="form_item">
+				<!-- <view class="form_item">
 					<view class="form_title"><text>*</text>{{i18n.bank_number}}</view>
 					<view class="form_input">
 						<input type="text" name="bank_number" :value="info.bank_number" :placeholder="i18n.bank_number" placeholder-class="place" />
 					</view>
-				</view> -->
+				</view>  -->
 				<!-- <view class="form_item active" @click="grad_picker">
 					<view class="form_title"><text>*</text>{{i18n.formbank}}</view>
 					<view class="form_input">
@@ -110,6 +116,7 @@
 					 name: formdata.name,
 					 account: formdata.account,
 					 phone:formdata.phone,
+					 bank_code: formdata.bank_code,
 					 bank_number:formdata.bank_number,
 					 bank_address:formdata.bank_address,
 					 usdt_address:formdata.usdt_address,

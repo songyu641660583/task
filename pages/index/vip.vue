@@ -35,7 +35,7 @@
           <view class="level-item">
             <view class="level-item-title">{{ i18n.nametext3 }}</view>
 
-            <view class="level-item-value" style="color: red">${{ item.task_val }}</view>
+            <view class="level-item-value" style="color: red">${{ item.low_monthly }}</view>
           </view>
         </view>
 			<!-- <view class="tip" v-if="item.is_recommended === 1">{{i18n.info}}</view> -->

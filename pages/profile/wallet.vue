@@ -18,7 +18,6 @@
       </view>
     </view>
 		<view class="record-list">
-			<view class="record-title">{{ i18n.recordTitle }}</view>
 			<view class="no-data" v-if="recordData.length === 0">
 				<image src="/static/images/index/nodata.png" mode=""></image>
 				<view class="text">{{  i18n.noData }}</view>
@@ -31,10 +30,15 @@
           <view class="record-level">
             <view>
              
-              <text class="text1">{{ item.amount }}</text>
+								<text class="test1" v-if="item.status === 0">{{i18n.drawrecord1}}</text>
+				<text class="test1" v-else-if="item.status === 1">{{i18n.drawrecord2}}</text>
+				<text class="test1" v-else>{{i18n.drawrecord3}}</text>
             </view>
           </view>
         </view>
+				<view>
+					 <text class="text1">提现账户：{{ item.account }}</text>
+				</view>
 
         <view class="record-bottom">
           <view class="time">{{ item.created_at }}</view>
@@ -47,16 +51,24 @@
 
 <script>
 import { mapGetters } from 'vuex'
+function formatTimestamp(timestamp) {
+  const date = new Date(timestamp * 1000) // 乘以 1000 转换为毫秒
+
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0') // 月份从 0 开始
+  const day = String(date.getDate()).padStart(2, '0')
+  const hours = String(date.getHours()).padStart(2, '0')
+  const minutes = String(date.getMinutes()).padStart(2, '0')
+  const seconds = String(date.getSeconds()).padStart(2, '0')
+
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+}
 export default {
   data() {
     return {
       info: {},
 			page: 1,
-			recordData: [{
-				record_type: 1,
-				amount: '500',
-				created_at: '2013-244323'
-			}],
+			recordData: [],
     }
   },
   computed: {
@@ -70,6 +82,7 @@ export default {
   },
   onShow() {
     this.getAccountInfo()
+		this.getRecordData()
   },
   methods: {
     async getAccountInfo() {
@@ -80,10 +93,16 @@ export default {
 			let res = await this.$http.withdrawalList({
 				page: this.page
 			});
+			let data = res.result.data.map(item => {
+				return {
+					...item,
+				   created_at: formatTimestamp(Number(item.created_at))
+				}
+			})
 			if (this.page === 1) {
-				this.recordData = res.result.data;
+				this.recordData = data;
 			} else {
-				this.recordData.data.push(...res.result.data);
+				this.recordData.data.push(...data);
 			}
 		},
     handleLink(type) {
@@ -210,7 +229,7 @@ export default {
   }
 }
   .record-item {
-      margin-bottom: 20rpx;
+		margin-top: 20rpx;
       padding: 20rpx;
       border-radius: 20rpx;
       background: #fff;
@@ -225,6 +244,7 @@ export default {
       }
 
       .record-level {
+				margin-bottom: 20rpx;
         display: inline-block;
 
         & > view {
