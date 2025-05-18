@@ -35,13 +35,13 @@
 					{{task_detail.amount | formatPrice}}
 				</view>
 			</view>
-			<view class="c-tip" @click="navTo('/pages/index/video_detail')">
+			<!-- <view class="c-tip" @click="navTo('/pages/index/video_detail')">
 				<view class="tip-l">{{i18n.detailinfo}}</view>
 				<view class="tip-r">
 					<view class="r-text uni-ellipsis-2">{{i18n.detailbtn}}</view>
 					<image src="/static/images/index/icon_fanhui.png" mode=""></image>
 				</view>
-			</view>
+			</view> -->
 			<view class="c-select">
 				<view class="select-item uni-ellipsis" v-for="(item,index) in i18n.detaillist" :key="index">
 					<image src="/static/images/index/icon_gouxuan.png" mode=""></image>

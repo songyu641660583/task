@@ -8,12 +8,16 @@
 					@start="startCallback" @end="endCallback"></LuckyWheel>
 			</div>
 			<button class="btn" @click="startCallback">{{ i18n.start }}</button>
-			<view class="lucky-total">{{ i18n.luckyBalance }}：0</view>
+			<view class="lucky-total">{{ i18n.luckyBalance }}：{{ userInfo.draw_num }}</view>
 		</view>
 		<view class="module">
 			<view class="module-title">{{ i18n.linkText }}</view>
 			<view class="link-value">{{ linkValue }}</view>
 			<view class="load-btn" @click="onCopyResult">{{ i18n.codebtn }}</view>
+		</view>
+		<view class="module">
+			<view class="module-title">{{ i18n.ruleText }}</view>
+			<view class="module-value">{{ i18n.ruleValue }}</view>
 		</view>
 	</view>
 </template>
@@ -27,8 +31,7 @@ import LuckyWheel from '@/components/@lucky-canvas/uni/lucky-wheel.vue'
 const prizes = [
 	{
 		background: '#FCDB89',
-		index: 0,
-		range: 35,
+		index: 1,
 		fonts: [
 			{
 				fontColor: 'red',
@@ -42,8 +45,7 @@ const prizes = [
 	},
 	{
 		background: '#FDF4C2',
-		index: 1,
-		range: 35,
+		index: 2,
 		fonts: [
 			{
 				fontColor: 'red',
@@ -57,8 +59,7 @@ const prizes = [
 	},
 	{
 		background: '#FCDB89',
-		index: 2,
-		range: 15,
+		index: 3,
 		fonts: [
 			{
 				fontColor: 'red',
@@ -72,8 +73,7 @@ const prizes = [
 	},
 	{
 		background: '#FDF4C2',
-		index: 3,
-		range: 8,
+		index: 4,
 		fonts: [
 			{
 				fontColor: 'red',
@@ -87,8 +87,7 @@ const prizes = [
 	},
 	{
 		background: '#FCDB89',
-		index: 4,
-		range: 2,
+		index: 5,
 		fonts: [
 			{
 				fontColor: 'red',
@@ -102,8 +101,7 @@ const prizes = [
 	},
 	{
 		background: '#FDF4C2',
-		index: 5,
-		range: 0,
+		index: 6,
 		fonts: [
 			{
 				fontColor: 'red',
@@ -117,8 +115,7 @@ const prizes = [
 	},
 	{
 		background: '#FCDB89',
-		index: 6,
-		range: 0,
+		index: 7,
 		fonts: [
 			{
 				fontColor: 'red',
@@ -133,8 +130,7 @@ const prizes = [
 	},
 	{
 		background: '#FDF4C2',
-		index: 7,
-		range: 0,
+		index: 8,
 		fonts: [
 			{
 				fontColor: 'red',
@@ -149,8 +145,7 @@ const prizes = [
 	},
 	{
 		background: '#FCDB89',
-		index: 8,
-		range: 0,
+		index: 9,
 		fonts: [
 			{
 				fontColor: 'red',
@@ -165,8 +160,7 @@ const prizes = [
 	},
 	{
 		background: '#FDF4C2',
-		index: 9,
-		range: 0,
+		index: 10,
 		fonts: [
 			{
 				fontColor: 'red',
@@ -182,61 +176,61 @@ const prizes = [
 ]
 const prizeList = [
 	{
-		index: 0,
+		index: 1,
 		name: '十等奖',
 		jp: '$10',
 		value: 10,
 	},
 	{
-		index: 1,
+		index: 2,
 		name: '九等奖',
 		jp: '$15',
 		value: 15,
 	},
 	{
-		index: 2,
+		index: 3,
 		name: '八等奖',
 		jp: '$20',
 		value: 20,
 	},
 	{
-		index: 3,
+		index: 4,
 		name: '七等奖',
 		jp: '$30',
 		value: 30,
 	},
 	{
-		index: 4,
+		index: 5,
 		name: '六等奖',
 		jp: '$50',
 		value: 50,
 	},
 	{
-		index: 5,
+		index: 6,
 		name: '五等奖',
 		jp: '$100',
 		value: 100,
 	},
 	{
-		index: 6,
+		index: 7,
 		name: '四等奖',
 		jp: '$500',
 		value: 500,
 	},
 	{
-		index: 7,
+		index: 8,
 		name: '三等奖',
 		jp: '$1000',
 		value: 1000,
 	},
 	{
-		index: 8,
+		index: 9,
 		name: '二等奖',
 		jp: '$2000',
 		value: 2000,
 	},
 	{
-		index: 9,
+		index: 10,
 		name: '一等奖',
 		jp: 'vip',
 		value: 0,
@@ -249,7 +243,7 @@ export default {
 	data() {
 		return {
 			info: '',
-			linkValue: 'https;:1111',
+			linkValue: '',
 			blocks: [
 				{
 					padding: '42px',
@@ -264,7 +258,8 @@ export default {
 					imgs: [{ src: prizeArrow, top: '-85px', width: '90px', height: '130px' }],
 				},
 			],
-			prizes
+			prizes,
+			userInfo: {}
 		}
 	},
 	computed: {
@@ -272,7 +267,15 @@ export default {
 			return this.$t('lucky')
 		}
 	},
+	created() {
+		this.getInfo()
+	},
+
 	methods: {
+		async getInfo() {
+			let res = await this.$http.accountInfo()
+			this.userInfo = res.result
+		},
 		startCallback() {
 			if (!isEnd) {
 				return
@@ -280,22 +283,42 @@ export default {
 			isEnd = false
 			const myLucky = this.$refs.myLucky
 
-			// if (prizeTotal.value === 0) {
-			//   showToast('您没有抽奖次数了，快去邀请好友吧');
-			//   return;
-			// }
+			if (this.userInfo.draw_num === 0) {
+				isEnd = true
+				uni.showModal({
+				content: this.i18n.noNum,
+				confirmText:this.i18n.formbtn,
+				success(res) {
+					if(res.confirm) {
+						uni.hideToast()
+					}
+				}
+			})
+			  return;
+			}
 
 			myLucky.play()
+			this.userInfo.draw_num--
+			this.$http.getLucky().then(res => {
+				setTimeout(() => {
+					myLucky.stop((res.result.award_id && res.result.award_id - 1) || 0)
+					isEnd = true
+				}, 3000)
+			})
 
-			setTimeout(() => {
-				myLucky.stop()
-				isEnd = true
-			}, 3000)
 		},
 
 		async endCallback(result) {
-			const priceDetail = prizeList[result.index]
-			console.log('priceDetail', priceDetail)
+			const priceDetail = prizeList[result.index - 1]
+			uni.showModal({
+				content: this.i18n.windmodal[0] + priceDetail.jp,
+				confirmText: this.i18n.windmodal[1],
+				success(res) {
+					if (res.confirm) {
+						uni.hideToast()
+					}
+				}
+			})
 		},
 		onCopyResult() {
 			uni.setClipboardData({
@@ -308,13 +331,17 @@ export default {
 		this.info = options
 		this.linkValue += options.id
 	},
-	onShow() {
-	}
+	async onShow() {
+		let res = await this.$http.promotionCopy()
+		console.log('res', res)
+		this.linkValue = res.result.tg_url
+	},
 }
 </script>
 
 <style lang="less">
 .lucky {
+	padding-bottom: 40rpx;
 	background-color: #f7f9fc;
 	min-height: 100vh;
 
@@ -334,6 +361,17 @@ export default {
 		border-radius: 20rpx;
 		box-shadow: 0 1px 2px rgba(150, 150, 150, 0.3);
 		background-color: #fff;
+
+		&-title {
+			font-weight: 600;
+			font-size: 32rpx;
+		}
+
+		&-value {
+			font-size: 28rpx;
+			color: #333;
+			margin-top: 30rpx;
+		}
 	}
 
 	.zhuanpan {

@@ -642,6 +642,13 @@
 					"bounce": "vertical"
 				}
 			}
+		},
+		{
+			"path" : "pages/tabbar/notice",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
 		}
     ],
 	"globalStyle": {
@@ -669,7 +676,7 @@
 				"selectedIconPath": "static/images/tabbar/vip_active.png"
 			},
 			{
-				"pagePath": "pages/profile/wallet",
+				"pagePath": "pages/financial/yuebao",
 				"text": "Financing",
 				"iconPath": "static/images/tabbar/yue.png",
 				"selectedIconPath": "static/images/tabbar/yue_active.png"

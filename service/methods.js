@@ -425,7 +425,28 @@ const onlineRecharge = (data) => {
 		data
 	})
 }
+
+// 个人信息
+const getLucky = (data) => {
+	return http.request({
+		url: 'account/draw',
+		dataType: 'json',
+		method: 'PUT',
+		data
+	})
+}
+
+const getOtherSettings = (data) => {
+	return http.request({
+		url: 'index/otherSetting',
+		dataType: 'json',
+		method: 'GET',
+		data
+	})
+}
 export default {
+	getOtherSettings,
+	getLucky,
 	uploadFile,
 	uploadajax,
 	requestajx,

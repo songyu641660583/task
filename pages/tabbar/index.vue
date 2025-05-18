@@ -95,7 +95,6 @@
 				</swiper-item>
 			</swiper>
 		</view>
-		<view @click="handleCeshi">测试</view>
 		<view class="task_content" style="margin-top: 15px;">
 			<view class="task_title">{{i18n.listtitle}}</view>
 			<view class="index_task">
@@ -198,8 +197,8 @@ export default {
 			invitationid:'',
 			currennum:0,
 			memberInfo:[{imgsrc:'/static/images/index/icon_gaoji.png',navrouter:'/pages/profile/help-center'},
-						 {imgsrc:'/static/images/index/index_hy.png',navrouter:'/pages/index/profit_vip'},
-						 {imgsrc:'/static/images/index/icon_zunxiang.png',navrouter:'/pages/index/video_detail'},
+						 {imgsrc:'/static/images/index/wallet.png',navrouter:'/pages/profile/wallet'},
+						 {imgsrc:'/static/images/index/notice.png',navrouter:'/pages/tabbar/notice'},
 						 {imgsrc:'/static/images/index/icon_daili.png',navrouter:'/pages/profile/lucky?id='},
 						 {imgsrc:'/static/images/profile/enjoy.png',navrouter:'/pages/profile/invitation?id='}],
 			bannerlist:[],

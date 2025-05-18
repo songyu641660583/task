@@ -55,7 +55,8 @@ export default {
 	data() {
 		return {
 			muneindex:0,
-			munelist:[{title:"银行卡",name:"bankpay",type: 1},{title:"USDT",name:"usdtpay",type: 2}],
+			munelist:[{title:"USDT",name:"usdtpay",type: 2}],
+			// munelist:[{title:"银行卡",name:"bankpay",type: 1},{title:"USDT",name:"usdtpay",type: 2}],
 			 // munelist:[{title:"USDT",name:"account",type:2},{title:"Pix",name:"account",type: 3}],
 			isclick:true,
 			tasklist:[],
@@ -306,7 +307,7 @@ export default {
 	.mune_item{ flex: 1;text-align: center;position: relative;z-index: 2;transition-duration:0.2s;color: #a3a3a3;
 	  &.active{ color: #fff;}
 	}
-	&::before{ content: '';transition-duration:0.3s;position: absolute;left: 0;top: 0;width: 50%;height: 100%;border-radius: 5px;z-index: 1;
+	&::before{ content: '';transition-duration:0.3s;position: absolute;left: 0;top: 0;width: 100%;height: 100%;border-radius: 5px;z-index: 1;
 	background-color: #D8D8D8;}
 	&.active{
 	  &::before{ left: 0;}

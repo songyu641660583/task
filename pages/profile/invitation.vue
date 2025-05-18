@@ -28,10 +28,10 @@
 			<view class="module-title">{{ i18n.linkText }}</view>
 			<view class="link-value">{{ val }}</view>
 			<view class="module-tips">
-				注：年龄要求：18周岁以上，注册成功后请绑定邮箱并进行实名验证，如发现通过作弊手段获取奖励的用户，将取消奖励，如：假号、批量假账号等行为。
+				{{ i18n.tips }}
 			</view>
 			<view class="module-tips" style="margin-top:20rpx">
-				如有疑问请联系 <text @click="kefu_btn">平台客服</text>
+				{{ i18n.tips2 }} <text @click="kefu_btn">{{ i18n.tips3 }}</text>
 			</view>
 			<view class="load-btn" @click="onCopyResult">{{ i18n.codebtn }}</view>
 		</view>

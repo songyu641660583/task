@@ -97,7 +97,7 @@ const lang_country = {
 			index: {
 				headplace:'输入关键字',
 				listteam:'我的团队',
-				munelist:['公司介绍','会员收益','新手教学','推广奖励', '分享'],
+				munelist:['公司介绍','我的钱包','公告','推广奖励', '分享'],
 				listteam1:'查看人数',
 				listteam2:'今日收益',
 				broadtitle:'头条',
@@ -209,12 +209,20 @@ const lang_country = {
 				table_info:'任务完成'
 			},
 			pagesvip:{
+				title: '任务',
 				modetitle:'当前余额不足，是否充值！',
 				modetitle1:'当前会员等级不符合，是否开通',
 				nameinfo:['每日可领取','次任务机会'],
+				nametext1: '任务每天',
+				unit: '次',
 				nametext:'解锁更多会员享受更多次任务机会',
+				nametext2: '每项任务佣金',
+				nametext3: '每月至少收入',
 				info:'荐',
-				doWork: '做任务'
+				doWork: '做任务',
+				up: '去升级',
+				balance: '余额',
+				inviteCode: '邀请码'
 			},
 			pagesmsg:{
 				title:'消息中心',
@@ -225,7 +233,7 @@ const lang_country = {
 				title:'个人中心',
 				titlebtn:'公司介绍',
 				balance:'余额',
-				codetitle:'邀请码：',
+				codetitle:'邀请码',
 				timedate:'会员到期',
 				munejson:['团队收益','任务收益','团队人数','剩余次数'],
 				munebtn:'提现',
@@ -243,7 +251,10 @@ const lang_country = {
 				navbtn:'退出登录',
 				navmodal:['您还未绑定提现账户','去添加'],
 				exitmodal:'确定退出?',
-				wallet: '钱包'
+				wallet: '钱包',
+				credit: '信用分',
+				yongjin: '佣金金额',
+				walletBalance: '钱包余额',
 			},
 			protask:{
 				title:'任务列表',
@@ -288,7 +299,10 @@ const lang_country = {
 				linkText: '我的专属邀请链接',
 				modalinfo:'保存图片成功',
 				copysucc:'复制成功',
-				copyerror:'失败'
+				copyerror:'失败',
+				tips: '注：年龄要求：18周岁以上，注册成功后请绑定邮箱并进行实名验证，如发现通过作弊手段获取奖励的用户，将取消奖励，如：假号、批量假账号等行为。',
+				tips2: '如有疑问请联系',
+				tips3: '平台客服'
 			},
 			mycredit:{
 				title:'我的信用',
@@ -359,13 +373,23 @@ const lang_country = {
 					codebtn:'复制链接',
 					modalinfo:'保存图片成功',
 					copysucc:'复制成功',
-					copyerror:'复制失败'
+					copyerror:'复制失败',
+					windmodal: ['恭喜您，抽中', '存入钱包'],
+					ruleText: '抽奖规则',
+					ruleValue: '通过客户邀请链接进来的新人，并且进行实名认证，客户将有一次转盘的机会，100%中奖，系统核实后发往佣金钱包。',
+					noNum: '您没有抽奖次数了，快去邀请好友吧!'
+			},
+			notice: {
+				title: '平台公告',
 			},
 			wallet: {
         title: '我的钱包',
 				navmodal:['请先完成实名认证','去认证'],
 				exitmodal:'取消?',
 				verifing: '实名认证中，请耐心等待',
+				withdrawMoney: '可提款',
+				recordTitle: '提现记录',
+				noData: '暂无数据'
 			},
 			account:{
 				title: '提现账户',
@@ -504,7 +528,7 @@ const lang_country = {
 			},
 			btncomfirm:['取消','确认'],
 			toastinfo:['请输入手机号','验证码已发送至手机','登录成功！','注册成功！','密码修改成功'],
-			tabbarfin:['首页','VIP','钱包','任务栏','我的']
+			tabbarfin:['首页','VIP','理财','任务栏','我的']
 			// tabbartxt:['首页','订单','排行榜','我的']
 		},
 		en:{//英文
