@@ -139,10 +139,7 @@ export default {
       return this.memberInfo.map(item => item.level == this.userInfo.user_member[this.userInfo.user_member.length - 1].level ? config.ossBaseUrl + item.icon : '')[0]
     }
   },
-  onLoad() {
-    this.getInfo()
-    this.getUserLevel()
-  },
+ 
   methods: {
 
     showWork(level) {
@@ -216,7 +213,8 @@ export default {
     }
   },
   onShow() {
-    this.getUserLevel()
+	this.getUserLevel()
+	this.getInfo()
   }
 }
 </script>

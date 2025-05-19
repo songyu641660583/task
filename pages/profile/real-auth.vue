@@ -224,10 +224,10 @@ export default {
 }
 
 .btn {
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 250rpx;
-	margin: auto;
+	// position: absolute;
+	// left: 0;
+	// right: 0;
+	// bottom: 250rpx;
+	margin: 40rpx auto;
 }
 </style>

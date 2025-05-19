@@ -15,8 +15,11 @@
 					<text class="text1">{{item.name}}</text>
 				</view>
 				<view class="head-right">
-					<view class="do-work" v-if="filterDoWork(item.level)" @click="navTo('/pages/index/member-hall?level='+item.level+'&levelindex='+levelindex)">
+					<view class="do-work"    v-if="showWork(item.level)" @click="navTo('/pages/index/member-hall?level='+item.level+'&levelindex='+levelindex)">
 						{{i18n.doWork}}</view>
+						<view class="do-up" v-else-if="showUped(item.level)">
+						 {{  i18n.uped }}
+						</view>
 					<view class="do-up" v-else @click="toUp(item.level)">{{i18n.up}}</view>
 				</view>
 			</view>
@@ -75,9 +78,12 @@
 			});
 		},
 		methods: {
-		   filterDoWork(level) {
-      return this.userInfo.user_member[this.userInfo.user_member.length - 1].user_level.level >= level
-    },
+	showWork(level) {
+	  return this.userInfo.user_member[this.userInfo.user_member.length - 1].user_level.level === level
+	},
+	showUped(level) {
+	  return this.userInfo.user_member[this.userInfo.user_member.length - 1].user_level.level > level
+	},
 			async getInfo() {
 				let res = await this.$http.accountInfo();
 				this.show = true

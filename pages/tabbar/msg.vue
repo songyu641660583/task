@@ -27,7 +27,7 @@
 								<view class="r-list2" v-if="type === 1">
 									<rich-text :nodes="item.content"></rich-text>
 								</view>
-								<text class="r-list3">{{ item.created_at }}</text>
+								<text class="r-list3">{{ item.created_at | timeFilter }}</text>
 							</view>
 						</view>
 						<uni-load-more :status="status" v-if="pageData.data.length > 10"></uni-load-more>
@@ -60,6 +60,20 @@ export default {
 			status: 'more',
 			isShow:false
 		};
+	},
+	filters: {
+		timeFilter(timestamp){
+			  const date = new Date(timestamp * 1000) // 乘以 1000 转换为毫秒
+			
+			  const year = date.getFullYear()
+			  const month = String(date.getMonth() + 1).padStart(2, '0') // 月份从 0 开始
+			  const day = String(date.getDate()).padStart(2, '0')
+			  const hours = String(date.getHours()).padStart(2, '0')
+			  const minutes = String(date.getMinutes()).padStart(2, '0')
+			  const seconds = String(date.getSeconds()).padStart(2, '0')
+			
+			  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+		}
 	},
 	computed:{
 		i18n(){

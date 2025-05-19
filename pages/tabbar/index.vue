@@ -357,6 +357,7 @@ export default {
     }
   },
   methods: {
+	 
 		handleClosePop(){
 			this.$refs.popup.close()
 		},
