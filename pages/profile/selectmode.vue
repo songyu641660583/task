@@ -30,7 +30,7 @@ export default {
 	},
 	methods: {
 		muneclick(index){
-			if(index > 0){
+			// if(index > 0){
 				let that = this;
 				this.$http.requestajx('user_recharge/online_recharge_status','get',{}).then(function(res){
 						let code = res.code;
@@ -44,11 +44,11 @@ export default {
 							}
 						}
 				});
-			}else{
-				uni.navigateTo({
-				    url: '/pages/profile/bank-pay'
-				});
-			}
+			// }else{
+			// 	uni.navigateTo({
+			// 	    url: '/pages/profile/bank-pay'
+			// 	});
+			// }
 		}
 	},
 	onShow() {

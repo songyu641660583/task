@@ -41,7 +41,7 @@
             </view>
           </view>
           <view class="r-title"> {{ i18n.codetitle }}: {{ info.id }} </view>
-          <view class="r-title"> {{ i18n.credit }}: {{ info.credit }} </view>
+          <view class="r-title"> {{ i18n.credit }}: {{ info.credit > 100 ? 100 : info.credit }} </view>
         </view>
       </view>
       <!-- <view class="header_date">{{i18n.timedate}}：{{info.effective_time}}</view> -->

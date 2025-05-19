@@ -110,7 +110,8 @@ const lang_country = {
 				singbill:'单',
 				listinfo:'暂无数据',
 				down_load:'下载',
-				share: '分享'
+				share: '分享',
+				confirm: '确认'
 			},
 			submittask:{
 				title:'提交任务',
@@ -221,8 +222,10 @@ const lang_country = {
 				info:'荐',
 				doWork: '做任务',
 				up: '去升级',
+				uped: '已升级',
 				balance: '余额',
-				inviteCode: '邀请码'
+				inviteCode: '邀请码',
+				price: '价格'
 			},
 			pagesmsg:{
 				title:'消息中心',
@@ -253,7 +256,7 @@ const lang_country = {
 				exitmodal:'确定退出?',
 				wallet: '钱包',
 				credit: '信用分',
-				yongjin: '佣金金额',
+				yongjin: '推广奖励',
 				walletBalance: '钱包余额',
 			},
 			protask:{
@@ -504,7 +507,9 @@ const lang_country = {
 				fromprice: '金额',
 				placeprice: '请输入金额',
 				fromimg: '上传图片',
-				sub: '确认'
+				sub: '确认',
+				title1: '扫描二维码转账',
+				title2: '转账地址'
 			},
 			upvoucher:{
 				title: "提交憑證",

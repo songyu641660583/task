@@ -40,7 +40,7 @@
 				:title="String(item.user.id)"
 				:thumb="'https://douyin-1303316651.cos.accelerate.myqcloud.com/'+item.user.avatar"
 				:isBorder="true"
-				:rightText="item.created_at"
+				:rightText="item.user.nickname"
 				:width="66"
 				:height="66"
 				:showArrow="false"

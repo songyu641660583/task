@@ -78,8 +78,8 @@ export default {
       { name: this.i18n.statusList[0], id: 0 },
       { name: this.i18n.statusList[1], id: 1 },
       { name: this.i18n.statusList[2], id: 2 },
-      { name: this.i18n.statusList[3], id: 4 },
-      { name: this.i18n.statusList[4], id: 5 }
+      // { name: this.i18n.statusList[3], id: 4 },
+      // { name: this.i18n.statusList[4], id: 5 }
     ]
     this.getUserLevel() 
 
@@ -150,8 +150,8 @@ export default {
 
   .status-list {
     flex: none;
-    padding-left: 10rpx;
-    padding-right: 10rpx;
+    padding-left: 50rpx;
+    padding-right: 50rpx;
     padding-bottom: 50rpx;
     display: flex;
     justify-content: space-between;

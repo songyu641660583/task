@@ -13,8 +13,8 @@
           ></image>
 					  <image
             class="circle"
-            src="/static/images/vip/circle.png"
-            mode=""
+            src="/static/images/logo-black.png"
+            mode="widthFix"
           ></image>
           <text class="name">{{ userInfo.nickname }}</text>
           <view class="vipBox">
@@ -34,7 +34,7 @@
         </view>
         <view class="user-info-total">
           <view class="user-item">
-            <view class="user-item-value">{{ userInfo.balance }}</view>
+            <view class="user-item-value">${{ userInfo.balance }}</view>
             <view class="user-item-title">{{ i18n.balance }}</view>
           </view>
           <view class="user-item">
@@ -49,17 +49,21 @@
           <view class="head-left">
             <image :src="$configurl.ossBaseUrl + item.icon" mode=""></image>
             <text class="text1">{{ item.name }}</text>
+            <text class="text1" style="margin-left: 30rpx;">{{ i18n.price }}：${{ item.price}}</text>
           </view>
           <!-- 			<view class="head-right"
 				@click="toUp('/pages/index/member-hall?level='+item.level+'&levelindex='+levelindex)"> -->
           <view class="head-right">
             <view
               class="do-work"
-              v-if="filterDoWork(item.level)"
+              v-if="showWork(item.level)"
               @click="toTask(item.level)"
             >
               {{ i18n.doWork }}</view
             >
+            <view class="do-up" v-else-if="showUped(item.level)">
+             {{  i18n.uped }}
+            </view>
             <view class="do-up" v-else @click="toUp(item.level)">{{
               i18n.up
             }}</view>
@@ -141,8 +145,11 @@ export default {
   },
   methods: {
 
-    filterDoWork(level) {
-      return this.userInfo.user_member[this.userInfo.user_member.length - 1].user_level.level >= level
+    showWork(level) {
+      return this.userInfo.user_member[this.userInfo.user_member.length - 1].user_level.level === level
+    },
+    showUped(level) {
+      return this.userInfo.user_member[this.userInfo.user_member.length - 1].user_level.level > level
     },
     async getInfo() {
       let res = await this.$http.accountInfo()
@@ -280,10 +287,10 @@ export default {
       }
 			.circle {
 				position: absolute;
-				width: 80rpx;
-				height: 80rpx;
+				width: 120rpx;
+        height: 120rpx;
 				right: 40rpx;
-				top: -18rpx;
+				// top: 0rpx;
 				}
       .name {
         font-size: 30rpx;

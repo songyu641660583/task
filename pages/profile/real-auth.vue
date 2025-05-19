@@ -117,7 +117,7 @@ export default {
 			uni.showLoading({
 				title: '提交中...'
 			})
-			this.$http.requestajx('account/verify', 'post', {
+			this.$http.requestajx('account/verify', 'put', {
 				realname: this.realName,
 				id_card: this.idCard,
 				front_id_card: this.frontIdCard,

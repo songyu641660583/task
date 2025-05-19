@@ -1,12 +1,12 @@
 <template>
 	<view class="header_top">
 		<loading-plus v-if="isLoad"></loading-plus>
-		<public-head :title="i18n.title" v-on:initbtn="btnsign" :btntxt="i18n.titlebtn"></public-head>
+		<public-head :title="i18n.title"></public-head>
 		<view class="progress">
 			<view class="progress-status" @click="navTo('/pages/profile/credit-list')">
 				<view class="p-content">
 					<view style="font-size:24rpx;">{{i18n.info}}</view>
-					<view style="font-size:86rpx;font-weight: bold;margin: 10rpx 0 30rpx 0;">{{ info.credit }}</view>
+					<view style="font-size:86rpx;font-weight: bold;margin: 10rpx 0 30rpx 0;">{{ info.credit > 100 ? 100 : info.credit }}</view>
 					<view style="font-size:24rpx;" class="status">{{i18n.infotext}}</view>
 				</view>
 			</view>
@@ -15,15 +15,15 @@
 			</view>
 			<view class="number">
 				<text>0</text>
-				<text>300</text>
-				<text>500</text>
-				<text>700</text>
-				<text>1000</text>
-				<text>1500</text>
+				<text>20</text>
+				<text>40</text>
+				<text>60</text>
+				<text>80</text>
+				<text>100</text>
 			</view>
 		</view>
 		<view class="rule">
-			<rich-text :nodes="content"></rich-text>
+			<rich-text :nodes="content"></rich-text> 
 		</view>
 	</view>
 </template>
@@ -62,15 +62,15 @@ export default {
 	onLoad() {
 		this.getCreditRule()
 		let credit = this.info.credit
-		if(credit<=300){
+		if(credit<=20){
 			this.currentIndex = 0
-		} else if(credit<=500&&credit>300) {
+		} else if(credit<=20&&credit>40) {
 			this.currentIndex = 1
-		} else if(credit>500 && credit<= 700) {
+		} else if(credit>40 && credit<= 60) {
 			this.currentIndex = 2
-		} else if(credit>700 && credit<= 1000) {
+		} else if(credit>60 && credit<= 80) {
 			this.currentIndex = 3
-		} else if(credit>1000 && credit<= 1500) {
+		} else if(credit>=100) {
 			this.currentIndex = 4
 		}
 	},
