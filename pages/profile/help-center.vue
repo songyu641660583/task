@@ -35,9 +35,6 @@
 			setTimeout(() => {
 				this.loading = false
 			}, 3000)
-			// location.href = 'www.myjcrn.com'
-			// // #ifdef H5
-			// window.location.href = 'https://www.myjcrn.com'
 		},
 		methods: {
 			helpjson() {
