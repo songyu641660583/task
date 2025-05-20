@@ -134,7 +134,7 @@
 		</view> -->
     <view class="list">
       <uni-list>
-        <uni-list-item
+       <!-- <uni-list-item
           :title="i18nmsg.title"
           :showArrow="true"
           :showBadge="true"
@@ -144,7 +144,7 @@
           thumb="/static/images/profile/icon_02_@2.png"
           @click="navTo('/pages/tabbar/msg')"
         >
-        </uni-list-item>
+        </uni-list-item> -->
         <block
           v-for="(item, index) in navlistjson"
           :key="index"
@@ -191,25 +191,25 @@ export default {
           router_url: '/pages/profile/my-credit',
           name: 0
         },
-        {
-          imgsrc: '/static/images/profile/icon_01_@2.png',
-          router_url: '/pages/profile/personal-information',
-          name: 1
-        },
-        {
-          imgsrc: '/static/images/profile/news.png',
-          router_url: '/pages/profile/my-bill',
-          name: 3
-        },
+        // {
+        //   imgsrc: '/static/images/profile/icon_01_@2.png',
+        //   router_url: '/pages/profile/personal-information',
+        //   name: 1
+        // },
+        // {
+        //   imgsrc: '/static/images/profile/news.png',
+        //   router_url: '/pages/profile/my-bill',
+        //   name: 3
+        // },
         {
           imgsrc: '/static/images/profile/icon_03_@2.png',
           router_url: '/pages/profile/my-team',
-          name: 4
+          name: 2
         },
         {
           imgsrc: '/static/images/profile/icon_04_@2.png',
           router_url: '/pages/profile/change-password',
-          name: 5
+          name: 3
         }
       ],
       accountIndex: []

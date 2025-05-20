@@ -27,7 +27,7 @@
         </view> -->
         <view class="head">
           <!-- <text>USDT-TRC20</text> -->
-          <text>USDT</text>
+          <text>{{i18n.usdtpay}}</text>
         </view>
         <view class="form_item">
           <view class="form_title">{{ i18n.formtitle2 }}</view>
@@ -48,6 +48,18 @@
               maxlength="13"
               name="amount"
               :placeholder="i18n.formtitle3_txt"
+            />
+          </view>
+        </view>
+        <view class="form_item">
+          <view class="form_title">{{i18n.usdtpay}}</view>
+          <view class="form_input">
+            <input
+              type="text"
+              v-model="usdt"
+              maxlength="40"
+              name="usdt"
+              :placeholder="i18n.formtitle4_txt"
             />
           </view>
         </view>
@@ -103,6 +115,7 @@ export default {
       countrytxt: '',
       limit: {},
       amount: '',
+      usdt: '',
       msginfo: ''
     }
   },
