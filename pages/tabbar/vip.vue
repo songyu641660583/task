@@ -57,7 +57,7 @@
             <view
               class="do-work"
               v-if="showWork(item.level)"
-              @click="toTask(item.level)"
+              @click="toTask(item)"
             >
               {{ i18n.doWork }}</view
             >
@@ -148,16 +148,26 @@ export default {
     showUped(level) {
       return this.userInfo.user_member[this.userInfo.user_member.length - 1].user_level.level > level
     },
-    async getInfo() {
+    async getInfo() { 
       let res = await this.$http.accountInfo()
       this.show = true
       this.userInfo = res.result
       this.userLevel = res.result.level_name
     },
-    toTask(level) {
-      uni.navigateTo({
-        url: '/pages/vip/tasklist?level=' + level
-      })
+    async toTask(item) {
+      let res = await this.$http.getTaskNum()
+      if(res.result.count < item.task_num) {
+        uni.navigateTo({
+          url: '/pages/vip/tasklist?level=' + item.level
+        })
+        return
+      }
+      uni.showToast({
+        title: this.i18n.noTaskNum,
+        icon: 'none',
+        duration: 2000
+      });
+      
     },
     async toUp(level) {
       uni.navigateTo({

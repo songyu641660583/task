@@ -151,7 +151,8 @@ const lang_country = {
 				listinfo:'已邀请有效会员',
 				listinfo1:'个，剩余提现次数',
 				listinfo2:'次',
-				formbtn:'确认'
+				formbtn:'确认',
+				forminfo5:'所有用户每30天可以提现一次，提现金额根据VIP等级设定，级别越高提现越多',
 			},
 			widthdrawal_record:{
 				title:'提现记录',
@@ -226,7 +227,8 @@ const lang_country = {
 				uped: '已升级',
 				balance: '余额',
 				inviteCode: '邀请码',
-				price: '价格'
+				price: '价格',
+				noTaskNum: '当日任务次数已达上限！'
 			},
 			pagesmsg:{
 				title:'消息中心',

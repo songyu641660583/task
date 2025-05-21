@@ -56,9 +56,9 @@
           <view class="form_input">
             <input
               type="text"
-              v-model="usdt"
+              v-model="address"
               maxlength="40"
-              name="usdt"
+              name="address"
               :placeholder="i18n.formtitle4_txt"
             />
           </view>
@@ -71,20 +71,21 @@
           >
           <!-- <view><text @click="buynav">{{i18nyue.hreftxt}}</text></view> -->
         </view>
-        <view class="form_item">
+       <!-- <view class="form_item">
           {{ i18n.priceinfo }}：<text class="color_red">{{
             exchangerate
           }}</text>
-        </view>
+        </view>-->
         <view class="forminfo">{{ msginfo }}</view>
         <view class="tip2">
           <image src="/static/images/profile/icon_tishi.png" mode=""></image>
-          <text class="t-text1"
-            >{{ i18n.forminfo1 }}{{ limit.high_limit }}{{ i18n.company
+          <text class="t-text1">
+            {{i18n.forminfo5}}
+          <!--  {{ i18n.forminfo1 }}{{ limit.high_limit }}{{ i18n.company
             }}{{ i18n.forminfo2 }}{{ limit.low_limit }}{{ i18n.company
             }}{{ i18n.forminfo3 }}{{ limit.day_count
-            }}{{ i18n.frequency }}</text
-          >
+            }}{{ i18n.frequency }}-->
+          </text >
         </view>
       </view>
       <view class="subbtn">
@@ -115,7 +116,7 @@ export default {
       countrytxt: '',
       limit: {},
       amount: '',
-      usdt: '',
+      address: '',
       msginfo: ''
     }
   },
@@ -205,7 +206,8 @@ export default {
           country_id: this.countryjson.id,
           type: this.munelist[this.muneindex].type,
           trade_pass: formdata.trade_pass,
-          amount: Number(formdata.amount)
+          amount: Number(formdata.amount),
+          address: formdata.address
         })
         .then((res) => {
           // console.log(res);
@@ -395,6 +397,7 @@ export default {
   margin-top: 50rpx;
   padding: 0 30rpx 0 58rpx;
   image {
+  margin-top:4rpx;
     width: 20rpx;
     height: 20rpx;
     border-radius: 50%;

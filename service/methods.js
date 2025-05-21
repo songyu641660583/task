@@ -444,7 +444,17 @@ const getOtherSettings = (data) => {
 		data
 	})
 }
+
+const getTaskNum = (data) => {
+	return http.request({
+		url: `task/userTaskCount`,
+		dataType: 'json',
+		method: 'GET',
+		data
+	})
+}
 export default {
+	getTaskNum,
 	getOtherSettings,
 	getLucky,
 	uploadFile,

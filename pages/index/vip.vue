@@ -15,7 +15,7 @@
 					<text class="text1">{{item.name}}</text>
 				</view>
 				<view class="head-right">
-					<view class="do-work"    v-if="showWork(item.level)" @click="navTo('/pages/index/member-hall?level='+item.level+'&levelindex='+levelindex)">
+					<view class="do-work"    v-if="showWork(item.level)" @click="navTo('/pages/index/member-hall?level='+item.level+'&levelindex='+levelindex, item)">
 						{{i18n.doWork}}</view>
 						<view class="do-up" v-else-if="showUped(item.level)">
 						 {{  i18n.uped }}
@@ -90,10 +90,20 @@
 				 this.userInfo = res.result
 				this.userLevel = res.result.level_name
 			},
-			navTo(url) {
-				uni.navigateTo({
-					url
-				})
+			async navTo(url, item) {
+				let res = await this.$http.getTaskNum()
+				if(res.result.count < item.task_num) {
+						uni.navigateTo({
+						url
+					})
+					return
+				}
+				uni.showToast({
+					title: this.i18n.noTaskNum,
+					icon: 'none',
+					duration: 2000
+				});
+			
 			},
 			async toUp(price) {
 				uni.navigateTo({

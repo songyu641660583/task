@@ -70,6 +70,7 @@
 					this.listjson = res.result.data;
 					// console.log(res)
 				});
+				
 				this.$http.requestajx('mf/income','get').then((res) => {
 					let data = res.result;
 					this.munedetail = [data.balance,data.yesterdayIncome,data.totalIncome];
