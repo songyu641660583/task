@@ -53,6 +53,7 @@
 			<view class="list2-name">{{task_detail.url}}</view>
 			<view class="list2-btn">
 				<view class="btn2" @click="toNext">{{i18n.detailhref}}</view>
+				<view class="btn2" style="margin-top: 20rpx" @click="toSubmit" v-if="this.type == '0'">{{i18n.detailhref2}}</view>
 			</view>
 		</view>
 		<view class="shop_list">
@@ -118,7 +119,8 @@ export default {
 					banner:''
 				}
 			},
-			isLoading: true
+			isLoading: true,
+			type: ''
 		};
 	},
 	methods: {
@@ -129,6 +131,13 @@ export default {
 			let res = await this.$http.taskDetail(this.id)
 			// console.log(res);
 			this.task_detail = res.result
+		},
+		toSubmit(){
+			console.log(this.task_detail);
+			uni.navigateTo({
+				url: '/pages/profile/submit-task?name=' + this.task_detail.title + '&amount=' + this.task_detail.amount + '&id=' + this.task_detail.id
+			})
+
 		},
 		toNext() {
 			
@@ -172,6 +181,7 @@ export default {
 	},
 	onLoad(options) {
 		this.id = options.id
+		this.type = options.type
 	}
 };
 </script>

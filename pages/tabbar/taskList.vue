@@ -12,21 +12,18 @@
       </view>
     </view>
     <view class="task-content">
-      			<view class="no-data" v-if="taskList.length === 0">
-				<image src="/static/images/index/nodata.png" mode=""></image>
-				<view class="text">{{  i18n.noData }}</view>
-			</view>
-      <view class="task-item" v-for="(item, index) in taskList" :key="index">
+      <view class="no-data" v-if="taskList.length === 0">
+        <image src="/static/images/index/nodata.png" mode=""></image>
+        <view class="text">{{ i18n.noData }}</view>
+      </view>
+      <view class="task-item" v-for="(item, index) in taskList" :key="index" @click="handleDetail(item)">
         <view class="task-item-icon">
           <!-- <image :src="item.icon" mode=""></image> -->
         </view>
         <view class="task-flex">
           <view class="task-level">
             <view>
-              <image
-                :src="item.level_icon"
-                mode=""
-              ></image>
+              <image v-if="item.level_icon" :src="item.level_icon" mode=""></image>
               <text class="text1">{{ item.level_name }}</text>
             </view>
           </view>
@@ -77,50 +74,65 @@ export default {
     this.statusList = [
       { name: this.i18n.statusList[0], id: 0 },
       { name: this.i18n.statusList[1], id: 1 },
-      { name: this.i18n.statusList[2], id: 2 },
+      { name: this.i18n.statusList[2], id: 2 }
       // { name: this.i18n.statusList[3], id: 4 },
       // { name: this.i18n.statusList[4], id: 5 }
     ]
-    this.getUserLevel() 
-
+    this.getUserLevel()
   },
   methods: {
-      getUserLevel() {
-      this.$http
-        .requestajx('user_level', 'get', {})
-        .then((res) => {
-          this.getTaskData()
-          this.levelList = res.result
+    handleDetail(item){
+       uni.navigateTo({
+          url: `/pages/index/task-detail?type=${this.active}&id=${item.task.id}`
         })
+      
+    },
+    getUserLevel() {
+      this.$http.requestajx('user_level', 'get', {}).then((res) => {
+        this.getTaskData()
+        this.levelList = res.result
+      })
     },
     async getTaskData(type) {
       let res = await this.$http.userTaskList({
         type,
         page: this.page
       })
+      console.log(res)
 
       const data = res.result.data.map((item) => {
-        const {name: level_name, icon: level_icon} = this.levelList.filter(
-          (level) => level.level === item.task.level
-        )[0]
-        return {
-          ...item,
-          level_name,
-          level_icon:  config.ossBaseUrl + level_icon,
-          created_at: formatTimestamp(Number(item.created_at))
+        if (item.task) {
+          const { name: level_name, icon: level_icon } = this.levelList.filter(
+            (level) => level.level === item.task.level
+          )[0]
+          return {
+            ...item,
+            level_name,
+            level_icon: config.ossBaseUrl + level_icon,
+            created_at: formatTimestamp(Number(item.created_at))
+          }
+        }else {
+           return {
+            ...item,
+            level_name: '暂无',
+            level_icon: '',
+            created_at: formatTimestamp(Number(item.created_at))
+          }
         }
       })
+      console.log('232323', data)
       if (this.page === 1) {
         this.taskList = data
       } else {
-        this.taskList.data.push(...data)
+        this.taskList.push(...data)
       }
+      console.log(22, this.taskList)
     },
     handleActive(index) {
-			this.page = 1
-			this.taskList= []
+      this.page = 1
+      this.taskList = []
       this.active = index
-			this.getTaskData(this.statusList[index].id)
+      this.getTaskData(this.statusList[index].id)
     }
   }
 }
@@ -133,20 +145,19 @@ export default {
   height: 100%;
   background: #f3f3f3;
   .no-data {
-	margin-top: 100rpx;
-		text-align: center;
+    margin-top: 100rpx;
+    text-align: center;
 
-	image {
-		
-		width: 200rpx;
-		height: 200rpx;
-	}
-	.text {
-		margin-top: 20rpx;
-		font-size: 28rpx;
-		color: #666;
-	}
-}
+    image {
+      width: 200rpx;
+      height: 200rpx;
+    }
+    .text {
+      margin-top: 20rpx;
+      font-size: 28rpx;
+      color: #666;
+    }
+  }
 
   .status-list {
     flex: none;

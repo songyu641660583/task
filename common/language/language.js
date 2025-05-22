@@ -193,6 +193,7 @@ const lang_country = {
 				detailinfo:'新手指南，全方位了解操作流程',
 				detailbtn:'立即进入',
 				detailhref:'开始任务',
+				detailhref2:'提交任务',
 				detailsub:'领取任务',
 				modeinfo:'请在 任务进行中 查看',
 				modesucc:'领取成功！',

@@ -80,7 +80,7 @@
               <view class="banner_image">
                 <image
                   :src="$configurl.ossBaseUrl + item.image"
-                  mode="widthFix"
+                  mode="aspectFit"
                 ></image>
               </view>
             </view>
@@ -183,7 +183,7 @@
     <!-- <view class="task_content">
 			<view class="task_title">任务大厅</view>
 			<view class="index_task">
-				<view class="c-item" v-for="(item, index) in taskdata" :key="index" @click="toDetail(item.id)">
+				<view class="c-item" v-for="(item, index) in taskdata" :key="index">
 					<view class="item-l">
 						<view class="l-img" v-if="item.category"><image :src="$configurl.ossBaseUrl+item.category.icon" mode=""></image></view>
 					</view>
@@ -378,11 +378,6 @@ export default {
         this.pageData.data.push(...res.result.data)
       }
     },
-    toDetail(id) {
-      uni.navigateTo({
-        url: '/pages/index/task-detail?id=' + id
-      })
-    },
     headsearch(e) {
       uni.navigateTo({
         url: '/pages/index/searchList?keywords=' + e.text
@@ -431,21 +426,6 @@ export default {
         that.value = true
 				this.toggle()
       })
-    },
-    taskmould(item) {
-      if (item.tpl_id == 1) {
-        uni.navigateTo({
-          url: '/pages/imitate/index?data=' + JSON.stringify(item)
-        })
-      } else if (item.tpl_id == 3) {
-        uni.navigateTo({
-          url: '/pages/imitate/mould_am?data=' + JSON.stringify(item)
-        })
-      } else {
-        uni.navigateTo({
-          url: '/pages/index/task-detail?id=' + item.id
-        })
-      }
     },
     munetitle_btn(e) {
       this.indexlist_in = e
@@ -581,9 +561,9 @@ export default {
     // this.loadjson();
     this.munebtn(uni.getStorageSync('locale_key'))
     const that = this
-    this.timeintr = setInterval(function () {
-      that.loadmsg()
-    }, 5000)
+    // this.timeintr = setInterval(function () {
+    //   that.loadmsg()
+    // }, 5000)
   },
   onLoad() {
     this.loadjson()
@@ -897,7 +877,8 @@ export default {
 .index_banner {
   padding: 0 40rpx;
   margin-top: -120rpx;
-  height: 280rpx;
+  height: 380rpx;
+   overflow: hidden;
   .banner_swiper {
     height: 100%;
     border-radius: 10px;
