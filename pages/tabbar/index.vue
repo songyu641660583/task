@@ -228,7 +228,7 @@
           >
             <block v-if="item.user">
               <view class="swiper-item inlist_info">
-                <image :src="$configurl.ossBaseUrl + item.user.avatar"></image>
+                <image :src="item.user.avatar"></image>
                 <view class="inlist_item">
                   <view class="item_title">
                     <label>{{ item.user.nickname }}</label>
@@ -260,18 +260,13 @@
         i18n.listinfo
       }}</view>
     </view>
-			<uni-popup ref="popup">
-				<view class="popup-content">
-					 <image
-            src="/static/images/laba.png"
-            mode="widthFix"
-          ></image>
-					<text
-						class="text">{{defaultData.content}}</text>
-						<button class="btn" @click="handleClosePop">{{ i18n.confirm }}</button>
-					
-					</view>
-			</uni-popup>
+    <uni-popup ref="popup">
+      <view class="popup-content">
+        <image src="/static/images/laba.png" mode="widthFix"></image>
+        <text class="text">{{ defaultData.content }}</text>
+        <button class="btn" @click="handleClosePop">{{ i18n.confirm }}</button>
+      </view>
+    </uni-popup>
 
     <!-- <popu-modal v-model="value" :mData="defaultData.content" :type="type" @cancel="cancel" navMask></popu-modal> -->
     <popu-modal
@@ -289,6 +284,210 @@
 import loading from '@/utils/mixin/loading.js'
 import loadMore from '@/utils/mixin/loadMore.js'
 import redModal from '../index/component/red-modal.vue'
+let publish_member_data = [
+            {
+              user_id: 89261,
+              amount: 380,
+              count: 38,
+              user: {
+                id: 89261,
+                avatar: '/static/images/index/win1.jpg',
+                nickname: '****1496'
+              }
+            },
+            {
+              user_id: 47382,
+              amount: 180,
+              count: 18,
+              user: {
+                id: 47382,
+                avatar: '/static/images/index/win2.jpg',
+                nickname: '****7283'
+              }
+            },
+            {
+              user_id: 61549,
+              amount: 460,
+              count: 46,
+              user: {
+                id: 61549,
+                avatar: '/static/images/index/win3.jpg',
+                nickname: '****5490'
+              }
+            },
+            {
+              user_id: 32875,
+              amount: 4920,
+              count: 82,
+              user: {
+                id: 32875,
+                avatar: '/static/images/index/win4.jpg',
+                nickname: '****8752'
+              }
+            },
+            {
+              user_id: 94026,
+              amount: 80,
+              count: 8,
+              user: {
+                id: 94026,
+                avatar: '/static/images/index/win5.jpg',
+                nickname: '****0264'
+              }
+            },
+            {
+              user_id: 15739,
+              amount: 4950,
+              count: 15,
+              user: {
+                id: 15739,
+                avatar: '/static/images/index/win6.jpg',
+                nickname: '****7391'
+              }
+            },
+            {
+              user_id: 28604,
+              amount: 552,
+              count: 23,
+              user: {
+                id: 28604,
+                avatar: '/static/images/index/win7.jpg',
+                nickname: '****6042'
+              }
+            },
+            {
+              user_id: 50981,
+              amount: 3332,
+              count: 28,
+              user: {
+                id: 50981,
+                avatar: '/static/images/index/win8.jpg',
+                nickname: '****9815'
+              }
+            },
+            {
+              user_id: 74213,
+              amount: 1500,
+              count: 25,
+              user: {
+                id: 74213,
+                avatar: '/static/images/index/win9.jpg',
+                nickname: '****2137'
+              }
+            },
+            {
+              user_id: 36528,
+              amount: 288,
+              count: 12,
+              user: {
+                id: 36528,
+                avatar: '/static/images/index/win10.jpg',
+                nickname: '****5283'
+              }
+            }
+          ]
+let complete_member_data = [
+            {
+              user_id: 89261,
+              amount: 380,
+              count: 38,
+              user: {
+                id: 89261,
+                avatar: '/static/images/index/win1.jpg',
+                nickname: '****1496'
+              }
+            },
+            {
+              user_id: 47382,
+              amount: 180,
+              count: 18,
+              user: {
+                id: 47382,
+                avatar: '/static/images/index/win2.jpg',
+                nickname: '****7283'
+              }
+            },
+            {
+              user_id: 61549,
+              amount: 460,
+              count: 46,
+              user: {
+                id: 61549,
+                avatar: '/static/images/index/win3.jpg',
+                nickname: '****5490'
+              }
+            },
+            {
+              user_id: 32875,
+              amount: 4920,
+              count: 82,
+              user: {
+                id: 32875,
+                avatar: '/static/images/index/win4.jpg',
+                nickname: '****8752'
+              }
+            },
+            {
+              user_id: 94026,
+              amount: 80,
+              count: 8,
+              user: {
+                id: 94026,
+                avatar: '/static/images/index/win5.jpg',
+                nickname: '****0264'
+              }
+            },
+            {
+              user_id: 15739,
+              amount: 4950,
+              count: 15,
+              user: {
+                id: 15739,
+                avatar: '/static/images/index/win6.jpg',
+                nickname: '****7391'
+              }
+            },
+            {
+              user_id: 28604,
+              amount: 552,
+              count: 23,
+              user: {
+                id: 28604,
+                avatar: '/static/images/index/win7.jpg',
+                nickname: '****6042'
+              }
+            },
+            {
+              user_id: 50981,
+              amount: 3332,
+              count: 28,
+              user: {
+                id: 50981,
+                avatar: '/static/images/index/win8.jpg',
+                nickname: '****9815'
+              }
+            },
+            {
+              user_id: 74213,
+              amount: 1500,
+              count: 25,
+              user: {
+                id: 74213,
+                avatar: '/static/images/index/win9.jpg',
+                nickname: '****2137'
+              }
+            },
+            {
+              user_id: 36528,
+              amount: 288,
+              count: 12,
+              user: {
+                id: 36528,
+                avatar: '/static/images/index/win10.jpg',
+                nickname: '****5283'
+              }
+            }
+          ]
 export default {
   mixins: [loading, loadMore],
   components: { redModal },
@@ -357,13 +556,12 @@ export default {
     }
   },
   methods: {
-	 
-		handleClosePop(){
-			this.$refs.popup.close()
-		},
-		toggle() {
-			this.$refs.popup.open('center')
-		},
+    handleClosePop() {
+      this.$refs.popup.close()
+    },
+    toggle() {
+      this.$refs.popup.open('center')
+    },
     navTo(url) {
       uni.navigateTo({ url })
     },
@@ -398,13 +596,21 @@ export default {
           that.invitationid = data.id
           that.TodayProfit = data.today_profit
           // that.memberInfo = data.level.splice(0, 3);
-          that.broadmune = data.user_level_notify
+          that.broadmune = data.user_level_notify.map(item => {
+            if(item.indexOf('VIP0') === -1){
+              return item
+            }else{
+              return item.replace('VIP0', 'VIP3')
+            }
+          })
           that.tasklist = data.task_category
           that.jsondetail = [
-            data.complete_member_data,
-            data.publish_member_data
+            complete_member_data,
+            publish_member_data
           ]
-          that.listdetail = data.complete_member_data || ''
+
+          that.listdetail = complete_member_data
+          // that.listdetail = data.complete_member_data || ''
         })
         .catch((error) => {
           console.log('错误重启')
@@ -424,7 +630,7 @@ export default {
         that.defaultData.content = res.result
         // this.tabMask = new TabMask({opacity:0.6})
         that.value = true
-				this.toggle()
+        this.toggle()
       })
     },
     munetitle_btn(e) {
@@ -479,12 +685,11 @@ export default {
         }
       })
     },
-		logo_btn(){
-			uni.navigateTo({
-				url: '/pages/profile/help-center'
-			})
-			
-		},
+    logo_btn() {
+      uni.navigateTo({
+        url: '/pages/profile/help-center'
+      })
+    },
     async kefu_btn() {
       let res = await this.$http.customerUrl()
       // #ifdef APP-PLUS
@@ -624,18 +829,18 @@ export default {
       margin-right: 5px;
     }
   }
-	.head_item{
-		&.logo {
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 100rpx;
-			z-index: 2;
-		}
-	}
+  .head_item {
+    &.logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100rpx;
+      z-index: 2;
+    }
+  }
   .head_item:nth-of-type(1) {
-     flex: 1;
-   }
+    flex: 1;
+  }
   .head_kefu {
     padding-left: 15px;
     position: relative;
@@ -663,29 +868,29 @@ export default {
   }
 }
 .popup-content {
-	position: relative;
-	min-height: 40vh;
-	background-color: #fff;
-	margin: 0 60rpx;
-	padding: 150rpx 30rpx 30rpx;
-	background: linear-gradient(180deg, #d0d8ff, #fff);
-	border-radius: 20rpx;
-	.btn {
-		margin-top: 80rpx;
-		width: 300rpx;
-	}
-	image {
-		position: absolute;
-		right: 20rpx;
-		top: -80rpx;
-		width: 200rpx;
-	}
-	.text {
+  position: relative;
+  min-height: 40vh;
+  background-color: #fff;
+  margin: 0 60rpx;
+  padding: 150rpx 30rpx 30rpx;
+  background: linear-gradient(180deg, #d0d8ff, #fff);
+  border-radius: 20rpx;
+  .btn {
+    margin-top: 80rpx;
+    width: 300rpx;
+  }
+  image {
+    position: absolute;
+    right: 20rpx;
+    top: -80rpx;
+    width: 200rpx;
+  }
+  .text {
     font-weight: 400;
     font-size: 32rpx;
     color: #666;
     line-height: 50rpx;
-	}
+  }
 }
 .lang_list {
   position: absolute;
@@ -878,7 +1083,7 @@ export default {
   padding: 0 40rpx;
   margin-top: -120rpx;
   height: 380rpx;
-   overflow: hidden;
+  overflow: hidden;
   .banner_swiper {
     height: 100%;
     border-radius: 10px;

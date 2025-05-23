@@ -91,11 +91,12 @@
 			}
 		},
 		onShow() {
-			this.loadjson(this.orderid);
+			// this.loadjson(this.orderid);
 		},
 		onLoad(option) {
-			this.orderid = option.orderid;
-			this.loadjson(option.orderid);
+					this.munedetail = JSON.parse(option.detail);
+			// this.orderid = option.orderid;
+			// this.loadjson(option.orderid);
 		}
 	}
 </script>

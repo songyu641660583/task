@@ -164,7 +164,7 @@ const prizes = [
 		fonts: [
 			{
 				fontColor: 'red',
-				text: 'vip',
+				text: 'vip1',
 				top: '0px',
 				lineHeight: '30px',
 				fontWeight: '600',

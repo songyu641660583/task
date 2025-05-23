@@ -19,7 +19,7 @@
 				<scroll-view style="flex: 1;" scroll-y="true" @scrolltolower="loadmore()">
 					<view class="notice-list" v-if="pageData.data.length !== 0">
 						<block v-for="(item, index) in pageData.data" :key="index">
-							<view class="list_item" @click="navTo('/pages/financial/order_detail?orderid='+item.order_no)">
+							<view class="list_item" @click="navTo(item)">
 								<view class="item_title">
 									<view class="">{{i18n.munetitle}}：{{item.order_no}}</view>
 									<view class=""><image src="/static/images/vip/o1.png" style="width: 15px;height: 15px;"></image> </view>
@@ -90,8 +90,10 @@ export default {
 		}
 	},
 	methods: {
-		navTo(url) {
-			uni.navigateTo({ url });
+		navTo(item) {
+			uni.navigateTo({ 
+				url:'/pages/financial/order_detail?detail=' + JSON.stringify(item),
+			 });
 		},
 		getData() {
 			const that = this;
@@ -99,7 +101,7 @@ export default {
 				// console.log(res.result.data);
 				if (this.page === 1) {
 					this.pageData = res.result;
-					this.pageData.data = res.result.data.filter(function(item,index,arr){
+					this.pageData.data = res.result.filter(function(item,index,arr){
 						return item.is_settle === that.tabIndex;
 					});
 				} else {
