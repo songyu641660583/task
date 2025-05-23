@@ -105,13 +105,16 @@ const lang_country = {
 				broadtxt:'精选',
 				listtitle:'任务大厅',
 				listtitle1:'发布大厅',
-				munetitle:['会员榜单','商家榜单'],
-				singtxt:['今天完成','今天发布'],
+				munetitle:['会员榜单'],
+				singtxt:['一共完成','今天发布'],
 				singbill:'单',
 				listinfo:'暂无数据',
 				down_load:'下载',
 				share: '分享',
-				confirm: '确认'
+				confirm: '确认',
+				evaluateTitle: '客户评价',
+				good: '非常满意'
+
 			},
 			submittask:{
 				title:'提交任务',

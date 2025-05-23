@@ -74,7 +74,9 @@
 				})
 				this.totat(res.message);
 				setTimeout(()=>{
-					uni.navigateBack();
+					uni.switchTab({
+						url: '/pages/tabbar/taskList'
+					})
 				},1500)
 			},
 			uploadImg() {

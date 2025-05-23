@@ -2,7 +2,6 @@
 	<view class="header_top">
 		<loading-plus v-if="isShow"></loading-plus>
 		<public-head :title="i18n.title"></public-head>
-		<view class="bd"></view>
 		<view class="record-list">
 			<block v-for="(item, index) in pageData.data" :key="index">
 				<record-item :index="index">
@@ -10,7 +9,7 @@
 						<view style="display: flex; align-items: center;height: 100%;">
 							<view class="left">
 								<view class="title">{{ item.task.title }}</view>
-								<view class="time">{{i18n.taskdate}} {{ item.created_at }}</view>
+								<view class="time">{{i18n.taskdate}} {{ formatTimestamp(item.created_at) }}</view>
 							</view>
 							<view class="right" style="margin-left: 40rpx;color: #f40;">{{ item.amount | formatPrice }}</view>
 						</view>
@@ -52,6 +51,19 @@ export default {
 		}
 	},
 	methods: {
+		formatTimestamp(timestamp) {
+			const date = new Date(timestamp * 1000) // 乘以 1000 转换为毫秒
+
+			const year = date.getFullYear()
+			const month = String(date.getMonth() + 1).padStart(2, '0') // 月份从 0 开始
+			const day = String(date.getDate()).padStart(2, '0')
+			const hours = String(date.getHours()).padStart(2, '0')
+			const minutes = String(date.getMinutes()).padStart(2, '0')
+			const seconds = String(date.getSeconds()).padStart(2, '0')
+
+			return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+		},
+
 		navTo(url) {
 			uni.navigateTo({ url });
 		},
@@ -60,10 +72,16 @@ export default {
 				type: 0,
 				page: this.page
 			});
+			let data = []
+      res.result.data.forEach((item) => {
+        if (item.task) {
+          data.push( item)
+        }
+      })
 			if (this.page === 1) {
-				this.pageData = res.result;
+				this.pageData.data = data;
 			} else {
-				this.pageData.data.push(...res.result.data);
+				this.pageData.data.push(...data);
 			}
 			// console.log(res);
 		},

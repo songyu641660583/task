@@ -83,7 +83,7 @@ export default {
   methods: {
     handleDetail(item){
        uni.navigateTo({
-          url: `/pages/index/task-detail?type=${this.active}&id=${item.task.id}`
+          url: `/pages/index/task-detail?type=${this.active}&id=${item.task.id}&user_task_id=${item.id}`
         })
       
     },
@@ -98,35 +98,25 @@ export default {
         type,
         page: this.page
       })
-      console.log(res)
-
-      const data = res.result.data.map((item) => {
+      let data = []
+      res.result.data.forEach((item) => {
         if (item.task) {
           const { name: level_name, icon: level_icon } = this.levelList.filter(
             (level) => level.level === item.task.level
           )[0]
-          return {
+          data.push( {
             ...item,
             level_name,
             level_icon: config.ossBaseUrl + level_icon,
             created_at: formatTimestamp(Number(item.created_at))
-          }
-        }else {
-           return {
-            ...item,
-            level_name: '暂无',
-            level_icon: '',
-            created_at: formatTimestamp(Number(item.created_at))
-          }
+          })
         }
       })
-      console.log('232323', data)
       if (this.page === 1) {
         this.taskList = data
       } else {
         this.taskList.push(...data)
       }
-      console.log(22, this.taskList)
     },
     handleActive(index) {
       this.page = 1

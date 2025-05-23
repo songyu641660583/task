@@ -12,27 +12,15 @@
           <!-- <navigator url="/pages/msg/selectlang" class="head_btn"><text class="alicon icon-zy"></text>{{headbtn}} </navigator> -->
           <view class="lang_flag">
             <label @click="langlist">
-              <image
-                :src="$configurl.ossBaseUrl + langflagimg"
-                mode="widthFix"
-              ></image
-              >{{ langflagtxt }}
+              <image :src="$configurl.ossBaseUrl + langflagimg" mode="widthFix"></image>{{ langflagtxt }}
             </label>
             <view class="lang_list" :class="{ active: langshow }">
               <view class="list_after" v-show="langshow">
                 <view class="langul" v-if="munelang.length > 0">
-                  <view
-                    class="lang_flag"
-                    v-for="(item, index) in munelang"
-                    :key="index"
-                    :class="{ active: mune_index === index }"
-                  >
+                  <view class="lang_flag" v-for="(item, index) in munelang" :key="index"
+                    :class="{ active: mune_index === index }">
                     <view @click="munebtn(index)">
-                      <image
-                        :src="$configurl.ossBaseUrl + item.image"
-                        mode="widthFix"
-                        lazy-load
-                      ></image>
+                      <image :src="$configurl.ossBaseUrl + item.image" mode="widthFix" lazy-load></image>
                       {{ item.lang }}
                     </view>
                   </view>
@@ -42,18 +30,10 @@
           </view>
         </view>
         <view class="head_item logo">
-          <image
-            src="/static/images/logo.png"
-            mode="widthFix"
-            @click="logo_btn"
-          ></image>
+          <image src="/static/images/logo.png" mode="widthFix" @click="logo_btn"></image>
         </view>
         <view class="head_item head_kefu">
-          <image
-            src="/static/images/tabbar/kefu.png"
-            mode="widthFix"
-            @click="kefu_btn"
-          ></image>
+          <image src="/static/images/tabbar/kefu.png" mode="widthFix" @click="kefu_btn"></image>
         </view>
         <!-- <view class="head_item">
 					<input type="text" confirm-type="search" :placeholder="i18n.headplace" placeholder-style="font-size:15px;color:#a3a3a3" @confirm="headsearch" />
@@ -65,23 +45,12 @@
     <!-- <view class="swiper swiper_banner" @click="navTo('/pages/profile/help-center')"></view> -->
     <view class="index_banner">
       <view class="banner_content">
-        <swiper
-          class="swiper banner_swiper"
-          circular
-          :indicator-dots="true"
-          :autoplay="true"
-          :interval="3000"
-          :duration="500"
-          :display-multiple-items="1"
-          disable-touch="true"
-        >
+        <swiper class="swiper banner_swiper" circular :indicator-dots="true" :autoplay="true" :interval="3000"
+          :duration="500" :display-multiple-items="1" disable-touch="true">
           <swiper-item v-for="(item, index) in bannerlist" :key="index">
             <view class="swiper-item">
               <view class="banner_image">
-                <image
-                  :src="$configurl.ossBaseUrl + item.image"
-                  mode="aspectFit"
-                ></image>
+                <image :src="$configurl.ossBaseUrl + item.image" mode="aspectFit"></image>
               </view>
             </view>
           </swiper-item>
@@ -89,32 +58,16 @@
       </view>
     </view>
     <view class="vip-classify">
-      <view
-        class="classify-item"
-        v-for="(item, index) in memberInfo"
-        :key="index"
-      >
-        <navigator
-          :url="
-            index === 3 || index === 4
-              ? item.navrouter + invitationid
-              : item.navrouter
-          "
-          hover-class="none"
-          class="item_nav"
-        >
+      <view class="classify-item" v-for="(item, index) in memberInfo" :key="index">
+        <navigator :url="index === 3 || index === 4
+            ? item.navrouter + invitationid
+            : item.navrouter
+          " hover-class="none" class="item_nav">
           <view class="" style="margin-bottom: 5px; text-align: center">
             <!-- <image :src="item.imgsrc || loadimgsrc" mode=""></image> -->
             <view class="lazyimg">
-              <u-image
-                width="50px"
-                height="50px"
-                :src="item.imgsrc"
-                mode="aspectFill"
-                :fade="true"
-                duration="450"
-                error-icon="error-square"
-              ></u-image>
+              <u-image width="50px" height="50px" :src="item.imgsrc" mode="aspectFill" :fade="true" duration="450"
+                error-icon="error-square"></u-image>
             </view>
           </view>
           <view class="item_nav uni-ellipsis">
@@ -138,22 +91,12 @@
       </view>
     </view>
     <view class="index_broad">
-      <swiper
-        class="swiper swiper_broad"
-        circular
-        :autoplay="true"
-        :vertical="true"
-        :interval="3000"
-        :duration="500"
-        :display-multiple-items="1"
-        disable-touch="true"
-      >
+      <swiper class="swiper swiper_broad" circular :autoplay="true" :vertical="true" :interval="3000" :duration="500"
+        :display-multiple-items="1" disable-touch="true">
         <swiper-item v-for="(item, index) in broadmune" :key="index">
           <view class="swiper-item">
             <view class="broad_item">
-              <label
-                >{{ i18n.broadtitle }}<text>{{ i18n.broadtitle1 }}</text></label
-              >
+              <label>{{ i18n.broadtitle }}<text>{{ i18n.broadtitle1 }}</text></label>
               <text class="icon_red">{{ i18n.broadtxt }}</text>
               <text class="uni-ellipsis"> {{ item }}</text>
             </view>
@@ -166,8 +109,7 @@
       <view class="index_task">
         <view class="task_item" v-for="(item, index) in tasklist" :key="index">
           <navigator class="task_li" :url="'/pages/index/vip?level=' + item.id">
-            <image :src="$configurl.ossBaseUrl + item.icon"></image
-            >{{ item.name }}
+            <image :src="$configurl.ossBaseUrl + item.icon"></image>{{ item.name }}
           </navigator>
         </view>
         <!-- <view class="task_item" v-if="bundle_task > 0">
@@ -200,42 +142,22 @@
 		</view> -->
     <view class="indexlist">
       <view class="inlist_title">
-        <text
-          v-for="(item, index) in i18n.munetitle"
-          :key="index"
-          :class="{ active: indexlist_in === index }"
-          @click="munetitle_btn(index)"
-        >
+        <text v-for="(item, index) in i18n.munetitle" :key="index" :class="{ active: indexlist_in === index }">
           {{ item }}
         </text>
       </view>
       <view class="list_details" v-if="listdetail.length > 0">
-        <swiper
-          class="swiper"
-          circular
-          :autoplay="true"
-          :vertical="true"
-          :interval="3000"
-          :duration="500"
-          :current="currennum"
-          :display-multiple-items="3"
-          disable-touch="true"
-        >
-          <swiper-item
-            class="swiper_list"
-            v-for="(item, index) in listdetail"
-            :key="index"
-          >
+        <swiper class="swiper" circular :autoplay="true" :vertical="true" :interval="3000" :duration="500"
+          :current="currennum" :display-multiple-items="3" disable-touch="true">
+          <swiper-item class="swiper_list" v-for="(item, index) in listdetail" :key="index">
             <block v-if="item.user">
               <view class="swiper-item inlist_info">
                 <image :src="item.user.avatar"></image>
                 <view class="inlist_item">
                   <view class="item_title">
-                    <label>{{ item.user.nickname }}</label>
-                    <text
-                      >{{ i18n.singtxt[indexlist_in] }} {{ item.count }}
-                      {{ i18n.singbill }}</text
-                    >
+                    <label>{{ item.user.nickname }} {{ item.user.level }}</label>
+                    <text>{{ i18n.singtxt[indexlist_in] }} {{ item.count }}
+                      {{ i18n.singbill }}</text>
                   </view>
                   <view class="inlist_num">{{
                     item.amount | formatPrice
@@ -248,35 +170,43 @@
       </view>
     </view>
 
-    <view
-      style="text-align: center; margin-bottom: 150rpx"
-      v-if="listdetail.length < 1"
-    >
-      <image
-        src="/static/images/index/pic_zanwu.png"
-        style="width: 450rpx; height: 230rpx; margin-top: 100rpx"
-      ></image>
+
+    <view style="text-align: center; margin-bottom: 150rpx" v-if="listdetail.length < 1">
+      <image src="/static/images/index/pic_zanwu.png" style="width: 450rpx; height: 230rpx; margin-top: 100rpx"></image>
       <view style="color: #615f60; font-size: 28rpx; margin-top: 50rpx">{{
         i18n.listinfo
       }}</view>
     </view>
-    <uni-popup ref="popup">
-      <view class="popup-content">
-        <image src="/static/images/laba.png" mode="widthFix"></image>
-        <text class="text">{{ defaultData.content }}</text>
-        <button class="btn" @click="handleClosePop">{{ i18n.confirm }}</button>
-      </view>
-    </uni-popup>
 
-    <!-- <popu-modal v-model="value" :mData="defaultData.content" :type="type" @cancel="cancel" navMask></popu-modal> -->
-    <popu-modal
-      v-model="redvalue"
-      :mData="defaultData_custom"
-      type="custom"
-      navMask
-    >
-      <red-modal @cancel="cancel" :defaultData="defaultData_custom"></red-modal>
-    </popu-modal>
+    <view class="task_content" >
+      <view class="task_title">{{ i18n.evaluateTitle }}</view>
+      <view class="evaluate-list">
+        <view class="evaluate-item" v-for="(item, index) in evaluate_list" :key="index">
+          <view class="evaluate-item-name">{{ item.name }}</view>
+          <view class="evaluate-item-content">{{ item.content }}</view>
+          <view class="star-list">
+             <text v-for="(a, starIndex) in 5">
+                 <image src="/static/images/index/star.png" mode="widthFix" v-if="item.star >= starIndex + 1"></image>
+                 <image src="/static/images/index/star2.png" mode="widthFix" v-else></image>
+             </text>
+			 <text>{{i18n.good}}</text>
+          </view>
+
+      </view>
+    </view>
+  </view>
+  <uni-popup ref="popup">
+    <view class="popup-content">
+      <image src="/static/images/laba.png" mode="widthFix"></image>
+      <text class="text">{{ defaultData.content }}</text>
+      <button class="btn" @click="handleClosePop">{{ i18n.confirm }}</button>
+    </view>
+  </uni-popup>
+
+  <!-- <popu-modal v-model="value" :mData="defaultData.content" :type="type" @cancel="cancel" navMask></popu-modal> -->
+  <popu-modal v-model="redvalue" :mData="defaultData_custom" type="custom" navMask>
+    <red-modal @cancel="cancel" :defaultData="defaultData_custom"></red-modal>
+  </popu-modal>
   </view>
 </template>
 
@@ -285,209 +215,262 @@ import loading from '@/utils/mixin/loading.js'
 import loadMore from '@/utils/mixin/loadMore.js'
 import redModal from '../index/component/red-modal.vue'
 let publish_member_data = [
-            {
-              user_id: 89261,
-              amount: 380,
-              count: 38,
-              user: {
-                id: 89261,
-                avatar: '/static/images/index/win1.jpg',
-                nickname: '****1496'
-              }
-            },
-            {
-              user_id: 47382,
-              amount: 180,
-              count: 18,
-              user: {
-                id: 47382,
-                avatar: '/static/images/index/win2.jpg',
-                nickname: '****7283'
-              }
-            },
-            {
-              user_id: 61549,
-              amount: 460,
-              count: 46,
-              user: {
-                id: 61549,
-                avatar: '/static/images/index/win3.jpg',
-                nickname: '****5490'
-              }
-            },
-            {
-              user_id: 32875,
-              amount: 4920,
-              count: 82,
-              user: {
-                id: 32875,
-                avatar: '/static/images/index/win4.jpg',
-                nickname: '****8752'
-              }
-            },
-            {
-              user_id: 94026,
-              amount: 80,
-              count: 8,
-              user: {
-                id: 94026,
-                avatar: '/static/images/index/win5.jpg',
-                nickname: '****0264'
-              }
-            },
-            {
-              user_id: 15739,
-              amount: 4950,
-              count: 15,
-              user: {
-                id: 15739,
-                avatar: '/static/images/index/win6.jpg',
-                nickname: '****7391'
-              }
-            },
-            {
-              user_id: 28604,
-              amount: 552,
-              count: 23,
-              user: {
-                id: 28604,
-                avatar: '/static/images/index/win7.jpg',
-                nickname: '****6042'
-              }
-            },
-            {
-              user_id: 50981,
-              amount: 3332,
-              count: 28,
-              user: {
-                id: 50981,
-                avatar: '/static/images/index/win8.jpg',
-                nickname: '****9815'
-              }
-            },
-            {
-              user_id: 74213,
-              amount: 1500,
-              count: 25,
-              user: {
-                id: 74213,
-                avatar: '/static/images/index/win9.jpg',
-                nickname: '****2137'
-              }
-            },
-            {
-              user_id: 36528,
-              amount: 288,
-              count: 12,
-              user: {
-                id: 36528,
-                avatar: '/static/images/index/win10.jpg',
-                nickname: '****5283'
-              }
-            }
-          ]
+  {
+    user_id: 89261,
+    amount: 380,
+    count: 38,
+    user: {
+      id: 89261,
+      avatar: '/static/images/index/win1.jpg',
+      nickname: '****1496'
+    }
+  },
+  {
+    user_id: 47382,
+    amount: 180,
+    count: 18,
+    user: {
+      id: 47382,
+      avatar: '/static/images/index/win2.jpg',
+      nickname: '****7283'
+    }
+  },
+  {
+    user_id: 61549,
+    amount: 460,
+    count: 46,
+    user: {
+      id: 61549,
+      avatar: '/static/images/index/win3.jpg',
+      nickname: '****5490'
+    }
+  },
+  {
+    user_id: 32875,
+    amount: 4920,
+    count: 82,
+    user: {
+      id: 32875,
+      avatar: '/static/images/index/win4.jpg',
+      nickname: '****8752'
+    }
+  },
+  {
+    user_id: 94026,
+    amount: 80,
+    count: 8,
+    user: {
+      id: 94026,
+      avatar: '/static/images/index/win5.jpg',
+      nickname: '****0264'
+    }
+  },
+  {
+    user_id: 15739,
+    amount: 4950,
+    count: 15,
+    user: {
+      id: 15739,
+      avatar: '/static/images/index/win6.jpg',
+      nickname: '****7391'
+    }
+  },
+  {
+    user_id: 28604,
+    amount: 552,
+    count: 23,
+    user: {
+      id: 28604,
+      avatar: '/static/images/index/win7.jpg',
+      nickname: '****6042'
+    }
+  },
+  {
+    user_id: 50981,
+    amount: 3332,
+    count: 28,
+    user: {
+      id: 50981,
+      avatar: '/static/images/index/win8.jpg',
+      nickname: '****9815'
+    }
+  },
+  {
+    user_id: 74213,
+    amount: 1500,
+    count: 25,
+    user: {
+      id: 74213,
+      avatar: '/static/images/index/win9.jpg',
+      nickname: '****2137'
+    }
+  },
+  {
+    user_id: 36528,
+    amount: 288,
+    count: 12,
+    user: {
+      id: 36528,
+      avatar: '/static/images/index/win10.jpg',
+      nickname: '****5283'
+    }
+  }
+]
 let complete_member_data = [
-            {
-              user_id: 89261,
-              amount: 380,
-              count: 38,
-              user: {
-                id: 89261,
-                avatar: '/static/images/index/win1.jpg',
-                nickname: '****1496'
-              }
-            },
-            {
-              user_id: 47382,
-              amount: 180,
-              count: 18,
-              user: {
-                id: 47382,
-                avatar: '/static/images/index/win2.jpg',
-                nickname: '****7283'
-              }
-            },
-            {
-              user_id: 61549,
-              amount: 460,
-              count: 46,
-              user: {
-                id: 61549,
-                avatar: '/static/images/index/win3.jpg',
-                nickname: '****5490'
-              }
-            },
-            {
-              user_id: 32875,
-              amount: 4920,
-              count: 82,
-              user: {
-                id: 32875,
-                avatar: '/static/images/index/win4.jpg',
-                nickname: '****8752'
-              }
-            },
-            {
-              user_id: 94026,
-              amount: 80,
-              count: 8,
-              user: {
-                id: 94026,
-                avatar: '/static/images/index/win5.jpg',
-                nickname: '****0264'
-              }
-            },
-            {
-              user_id: 15739,
-              amount: 4950,
-              count: 15,
-              user: {
-                id: 15739,
-                avatar: '/static/images/index/win6.jpg',
-                nickname: '****7391'
-              }
-            },
-            {
-              user_id: 28604,
-              amount: 552,
-              count: 23,
-              user: {
-                id: 28604,
-                avatar: '/static/images/index/win7.jpg',
-                nickname: '****6042'
-              }
-            },
-            {
-              user_id: 50981,
-              amount: 3332,
-              count: 28,
-              user: {
-                id: 50981,
-                avatar: '/static/images/index/win8.jpg',
-                nickname: '****9815'
-              }
-            },
-            {
-              user_id: 74213,
-              amount: 1500,
-              count: 25,
-              user: {
-                id: 74213,
-                avatar: '/static/images/index/win9.jpg',
-                nickname: '****2137'
-              }
-            },
-            {
-              user_id: 36528,
-              amount: 288,
-              count: 12,
-              user: {
-                id: 36528,
-                avatar: '/static/images/index/win10.jpg',
-                nickname: '****5283'
-              }
-            }
-          ]
+  {
+    user_id: 89261,
+    amount: 380,
+    count: 38,
+    user: {
+      level: 'vip0',
+      id: 89261,
+      avatar: '/static/images/index/win1.jpg',
+      nickname: '****1496'
+    }
+  },
+  {
+    user_id: 47382,
+    amount: 180,
+    count: 18,
+    user: {
+      level: 'vip0',
+      id: 47382,
+      avatar: '/static/images/index/win2.jpg',
+      nickname: '****7283'
+    }
+  },
+  {
+    user_id: 61549,
+    amount: 460,
+    count: 46,
+    user: {
+      level: 'vip0',
+      id: 61549,
+      avatar: '/static/images/index/win3.jpg',
+      nickname: '****5490'
+    }
+  },
+  {
+    user_id: 32875,
+    amount: 4920,
+    count: 82,
+    user: {
+      level: 'vip2',
+      id: 32875,
+      avatar: '/static/images/index/win4.jpg',
+      nickname: '****8752'
+    }
+  },
+  {
+    user_id: 94026,
+    amount: 80,
+    count: 8,
+    user: {
+      level: 'vip0',
+      id: 94026,
+      avatar: '/static/images/index/win5.jpg',
+      nickname: '****0264'
+    }
+  },
+  {
+    user_id: 15739,
+    amount: 4950,
+    count: 15,
+    user: {
+      level: 'vip5',
+      id: 15739,
+      avatar: '/static/images/index/win6.jpg',
+      nickname: '****7391'
+    }
+  },
+  {
+    user_id: 28604,
+    amount: 552,
+    count: 23,
+    user: {
+      level: 'vip1',
+      id: 28604,
+      avatar: '/static/images/index/win7.jpg',
+      nickname: '****6042'
+    }
+  },
+  {
+    user_id: 50981,
+    amount: 3332,
+    count: 28,
+    user: {
+      level: 'vip3',
+      id: 50981,
+      avatar: '/static/images/index/win8.jpg',
+      nickname: '****9815'
+    }
+  },
+  {
+    user_id: 74213,
+    amount: 1500,
+    count: 25,
+    user: {
+      level: 'vip2',
+      id: 74213,
+      avatar: '/static/images/index/win9.jpg',
+      nickname: '****2137'
+    }
+  },
+  {
+    user_id: 36528,
+    amount: 288,
+    count: 12,
+    user: {
+      level: 'vip1',
+      id: 36528,
+      avatar: '/static/images/index/win10.jpg',
+      nickname: '****5283'
+    }
+  }
+]
+
+let evaluate_list = [
+  {
+    name: '*****7647',
+    content: 'Gano dinero todos los días, me siento muy bien. Gracias a JCRN.',
+    star: 5,
+  },
+   {
+    name: '*****1351',
+    content: 'He invitado a muchos amigos y ahora el monto de mis tareas diarias ha aumentado. Jaja.',
+    star: 5,
+  },
+    {
+    name: '*****2687',
+    content: 'Gracias a JCRN, ahora tengo menos estrés en mi vida.',
+    star: 4,
+  },
+    {
+    name: '*****3671',
+    content: '4.Ahora gano dinero sin depender de nadie, y vivo cada día con tranquilidad.',
+    star: 4,
+  },
+    {
+    name: '*****7812',
+    content: '5.Este trabajo es ideal para flojos como yo, porque salgo de fiesta por la noche y no me puedo levantar en la mañana.',
+    star: 4,
+  },
+    {
+    name: '*****2907',
+    content: 'Por fin, con mi esfuerzo, pude comprar el carro que tanto quería.',
+    star: 4,
+  },
+    {
+    name: '*****7019',
+    content: 'I got my girlfriend a gift she really liked for her birthday. I like jcrn',
+    star: 4,
+  },
+    {
+    name: '*****6612',
+    content: "I'm planning to quit my job and work full-time at JCRN.",
+    star: 4,
+  },
+]
 export default {
   mixins: [loading, loadMore],
   components: { redModal },
@@ -509,6 +492,7 @@ export default {
       TodayProfit: 0,
       invitationid: '',
       currennum: 0,
+      evaluate_list,
       memberInfo: [
         {
           imgsrc: '/static/images/index/icon_gaoji.png',
@@ -597,9 +581,9 @@ export default {
           that.TodayProfit = data.today_profit
           // that.memberInfo = data.level.splice(0, 3);
           that.broadmune = data.user_level_notify.map(item => {
-            if(item.indexOf('VIP0') === -1){
+            if (item.indexOf('VIP0') === -1) {
               return item
-            }else{
+            } else {
               return item.replace('VIP0', 'VIP3')
             }
           })
@@ -782,18 +766,22 @@ export default {
   font-family: youshe;
   src: url('~@/static/font/YouSheBiaoTiHei-2.ttf');
 }
+
 @font-face {
   font-family: headicon;
   src: url('~@/static/font/iconfont1.ttf');
 }
+
 .alicon {
   font-family: 'headicon' !important;
   font-size: 27px;
   font-style: normal;
 }
+
 .icon-zy::before {
   content: '\e620';
 }
+
 .head_pos {
   position: fixed;
   top: 0;
@@ -802,6 +790,7 @@ export default {
   z-index: 999;
   background-color: rgb(28, 26, 78);
   color: #fff;
+
   .head_content {
     padding-left: 20px;
     padding-right: 15px;
@@ -811,6 +800,7 @@ export default {
     align-items: center;
     justify-content: space-between;
   }
+
   input {
     height: 30px;
     border-radius: 30px;
@@ -820,15 +810,18 @@ export default {
     color: #333333;
     box-sizing: border-box;
   }
+
   .head_btn {
     height: 45px;
     line-height: 45px;
     padding-left: 15px;
+
     .icon-zy {
       font-size: 16px;
       margin-right: 5px;
     }
   }
+
   .head_item {
     &.logo {
       position: absolute;
@@ -838,15 +831,19 @@ export default {
       z-index: 2;
     }
   }
+
   .head_item:nth-of-type(1) {
     flex: 1;
   }
+
   .head_kefu {
     padding-left: 15px;
     position: relative;
+
     image {
       width: 20px;
     }
+
     text {
       position: absolute;
       right: -10px;
@@ -859,6 +856,7 @@ export default {
 .lang_flag {
   text-align: left;
   position: relative;
+
   image {
     width: 25px;
     height: 16px;
@@ -867,6 +865,7 @@ export default {
     margin-bottom: 3px;
   }
 }
+
 .popup-content {
   position: relative;
   min-height: 40vh;
@@ -875,16 +874,19 @@ export default {
   padding: 150rpx 30rpx 30rpx;
   background: linear-gradient(180deg, #d0d8ff, #fff);
   border-radius: 20rpx;
+
   .btn {
     margin-top: 80rpx;
     width: 300rpx;
   }
+
   image {
     position: absolute;
     right: 20rpx;
     top: -80rpx;
     width: 200rpx;
   }
+
   .text {
     font-weight: 400;
     font-size: 32rpx;
@@ -892,6 +894,7 @@ export default {
     line-height: 50rpx;
   }
 }
+
 .lang_list {
   position: absolute;
   top: 25px;
@@ -899,6 +902,7 @@ export default {
   z-index: 99;
   transition: all 0.3s ease-in;
   opacity: 0;
+
   .list_after::after {
     content: '';
     position: absolute;
@@ -909,6 +913,7 @@ export default {
     border-style: solid;
     border-color: transparent transparent #2e4f79 transparent;
   }
+
   .langul {
     background-color: #2e4f79;
     display: flex;
@@ -916,15 +921,18 @@ export default {
     border-radius: 5px;
     overflow: hidden;
   }
+
   .lang_flag {
     text-align: left;
     color: #ffffff;
     width: 50%;
     padding: 10px;
+
     &.active {
       background-color: #2d486a;
     }
   }
+
   &.active {
     opacity: 1;
   }
@@ -933,14 +941,17 @@ export default {
 .index_broad {
   padding: 0 10px;
   height: 30px;
+
   .swiper_broad {
     border-radius: 10px;
     box-shadow: 0px 3px 16px 0px rgba(0, 35, 68, 0.14);
     height: inherit;
     padding: 0 15px;
+
     .swiper-item {
       height: inherit;
     }
+
     .broad_item {
       height: inherit;
       font-size: 26rpx;
@@ -948,18 +959,22 @@ export default {
       display: flex;
       align-items: center;
       width: 100%;
+
       label {
         font-size: 34rpx;
         margin-right: 5px;
         font-family: 'youshe';
         color: #333333;
+
         text {
           color: #fa5c5b;
         }
       }
+
       .uni-ellipsis {
         font-size: 12px;
       }
+
       .icon_red {
         background-color: #fa5c5b;
         border-radius: 10px;
@@ -971,18 +986,22 @@ export default {
     }
   }
 }
+
 .task_title {
   padding: 8px 0 2px 18px;
   font-size: 36rpx;
   color: #1c2664;
 }
+
 .index_task {
   display: flex;
   flex-wrap: wrap;
   padding: 10px 20px;
+
   .task_item {
     padding: 8px;
     width: 50%;
+
     .task_li {
       box-shadow: 0 3px 17px 0 rgba(0, 35, 68, 0.14);
       border-radius: 5px;
@@ -990,6 +1009,7 @@ export default {
       align-items: center;
       display: flex;
     }
+
     image {
       width: 40px;
       height: 40px;
@@ -997,6 +1017,7 @@ export default {
     }
   }
 }
+
 .indexlist {
   .inlist_title {
     display: flex;
@@ -1004,12 +1025,15 @@ export default {
     flex-direction: row;
     padding: 30px 10px;
     text-align: center;
+
     text {
       font-size: 36rpx;
       color: #7e7e7e;
       position: relative;
+
       &.active {
         color: #1b2664;
+
         &::before {
           content: '';
           position: absolute;
@@ -1023,24 +1047,56 @@ export default {
     }
   }
 }
+.evaluate-list {
+  padding: 0 20rpx 80rpx;
+  .evaluate-item {
+  margin-top: 30rpx;
+  padding: 0 20rpx 30rpx;
+ 
+    border-radius: 20rpx;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.12);
+    &-name {
+      line-height: 80rpx;
+      border-bottom: 1px solid #ccc;
+    }
+    &-content { 
+      padding: 25rpx 0;
+      line-height: 30rpx;
+    }
+    .star-list {
+      display: flex;
+      align-items: center;
+      image {
+        width: 30rpx;
+        margin-right: 8rpx;
+      }
+    }
+  }
+}
+
 .list_details {
   padding: 0 20px;
   height: 213px;
   overflow: hidden;
   margin-bottom: 50px;
+
   .swiper {
     height: inherit;
     margin-top: -1px;
   }
+
   .inlist_info {
     position: relative;
     padding: 10px 0 12px;
     border-top: 1px solid #eeeeee;
+
     image {
       width: 47px;
       height: 47px;
       border-radius: 50%;
     }
+
     .inlist_item {
       position: absolute;
       left: 0;
@@ -1052,16 +1108,19 @@ export default {
       justify-content: space-between;
       align-items: center;
       font-size: 26rpx;
+
       label {
         width: 100%;
         color: #1c2664;
         display: inline-block;
         margin-bottom: 10px;
       }
+
       text {
         color: #7e7e7e;
       }
     }
+
     .inlist_num {
       color: #fa4a80;
     }
@@ -1072,6 +1131,7 @@ export default {
   padding-bottom: 40px;
   background-color: #ffffff;
 }
+
 .top-bgd {
   width: 100%;
   height: calc(var(--status-bar-height) + 115px);
@@ -1079,25 +1139,30 @@ export default {
   background-size: 100% 100%;
   background-position: 0 0;
 }
+
 .index_banner {
   padding: 0 40rpx;
   margin-top: -120rpx;
   height: 380rpx;
   overflow: hidden;
+
   .banner_swiper {
     height: 100%;
     border-radius: 10px;
     overflow: hidden;
   }
+
   .banner_content {
     border-radius: 10px;
     overflow: hidden;
     width: 100%;
     height: inherit;
+
     .banner_image,
     .swiper-item {
       height: 100%;
     }
+
     image,
     img {
       display: block;
@@ -1106,6 +1171,7 @@ export default {
     }
   }
 }
+
 .vip-classify {
   display: flex;
   justify-content: space-between;
@@ -1113,6 +1179,7 @@ export default {
   height: 140rpx;
   margin: 50rpx 0 55rpx 0;
   padding: 0 1px;
+
   .classify-item {
     display: flex;
     flex-direction: column;
@@ -1120,34 +1187,41 @@ export default {
     justify-content: space-between;
     width: 25%;
     height: 140rpx;
+
     .item_nav {
       width: 100%;
       text-align: center;
     }
+
     image {
       width: 90rpx;
       height: 90rpx;
     }
+
     .lazyimg {
       width: 90rpx;
       display: inline-block;
     }
+
     text {
       color: #1b2664;
       font-size: 26rpx;
     }
   }
 }
+
 .share-btn {
   position: fixed;
   right: 0;
   top: 30vh;
   z-index: 9;
+
   image {
     width: 60rpx;
     height: 60rpx;
   }
 }
+
 .team-income {
   width: 100%;
   display: flex;
@@ -1155,6 +1229,7 @@ export default {
   padding: 0 44rpx;
   margin-bottom: 36rpx;
   flex-wrap: wrap;
+
   .item {
     position: relative;
     width: 310rpx;
@@ -1164,15 +1239,18 @@ export default {
     margin-bottom: 10px;
     padding: 44rpx 10px 0 34rpx;
     color: #fff;
+
     .item-text1 {
       font-size: 34rpx;
       font-weight: bold;
     }
+
     .item-text2 {
       margin-top: 26rpx;
       font-size: 20rpx;
       width: 70px;
     }
+
     .l-img {
       position: absolute;
       bottom: 30rpx;
@@ -1180,6 +1258,7 @@ export default {
       width: 98rpx;
       height: 50rpx;
     }
+
     .r-img {
       position: absolute;
       bottom: 30rpx;
@@ -1200,11 +1279,13 @@ export default {
   background-color: #ffffff;
   box-shadow: 0px 6rpx 32rpx 0px rgba(0, 35, 68, 0.14);
   border-radius: 34rpx;
+
   .item-l {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 2;
+
     .l-img {
       display: flex;
       align-items: center;
@@ -1213,14 +1294,17 @@ export default {
       height: 105rpx;
       border-radius: 50%;
       background-color: #ebebf3;
+
       image {
         width: 40rpx;
         height: 50rpx;
       }
     }
   }
+
   .item-c {
     flex: 4;
+
     .c-title {
       color: #1a2564;
       line-height: 36rpx;
@@ -1232,26 +1316,31 @@ export default {
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
     }
+
     .c-tag {
       display: flex;
       align-items: flex-end;
       margin: 10rpx 0;
+
       image {
         width: 19rpx;
         height: 19rpx;
         margin-right: 12rpx;
       }
+
       text {
         color: #ffbd55;
         font-size: 18rpx;
       }
     }
+
     .c-number {
       color: #1a2564;
       font-size: 18rpx;
       margin-top: 20rpx;
     }
   }
+
   .item-r {
     .tasktype {
       padding: 3px 10px 3px 0;
@@ -1260,6 +1349,7 @@ export default {
     }
   }
 }
+
 .empty {
   text-align: center;
   margin-top: 450rpx;

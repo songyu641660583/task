@@ -13,7 +13,10 @@
 				</view>
 			</view>
 			<view class="team_tx">
-				<view class="team_price"><image src="/static/images/login_Img/logo.png" mode="widthFix"></image> <text>{{i18n.teamname}}</text>  </view>
+				<view class="team_price" v-if="info">
+					<image :src="default_avatar()" mode="widthFix"></image> 
+					<text>{{info.nickname}}</text>  
+				</view>
 				<view class="team_title">
 					<view class="team_txt1">{{i18n.recharge}}</view>
 					<view class="team_txt2">
@@ -94,7 +97,8 @@ export default {
 				team:[]
 			},
 			munelist:[],
-			teamlist:[]
+			teamlist:[],
+			info: null
 		};
 	},
 	computed:{
@@ -103,6 +107,15 @@ export default {
 		}
 	},
 	methods: {
+		 async getAccountInfo() {
+      let res = await this.$http.accountInfo()
+      this.info = res.result
+    },
+		default_avatar() {
+      return this.info.avatar.substring(0, 5) == 'https'
+        ? this.info.avatar
+        : this.$configurl.ossBaseUrl + this.info.avatar
+    },
 		datetimebtn(){
 			this.datetimeshow = !this.datetimeshow;
 		},
@@ -193,9 +206,10 @@ export default {
 		itemClick(index) {
 			this.tabIndex = index;
 			this.teamjson(index + 1);
-		}
+		},
 	},
 	onShow() {
+		this.getAccountInfo()
 		this.teamjson(this.tabIndex+1);
 		setTimeout(() => {
 			this.isLoading = false;
