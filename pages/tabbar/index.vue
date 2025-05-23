@@ -455,7 +455,7 @@ let evaluate_list = [
     content: '5.Este trabajo es ideal para flojos como yo, porque salgo de fiesta por la noche y no me puedo levantar en la mañana.',
     star: 4,
   },
-    {
+    { 
     name: '*****2907',
     content: 'Por fin, con mi esfuerzo, pude comprar el carro que tanto quería.',
     star: 4,
