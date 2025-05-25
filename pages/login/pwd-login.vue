@@ -56,11 +56,6 @@
 						<view class="login_btn">
 							<view class="login_submit"><button @click="loginsubmit">{{i18n.btn}}</button></view>
 							<view class="forget"  @click="btn_on">{{i18n.wordinfo}} ？</view>
-							<!-- #ifdef H5 -->
-								<view class="login_download">
-									<button @click="href_download">APP</button>
-								</view>
-							<!-- #endif -->
 						</view>
 					</view>
 			</block>
@@ -119,16 +114,26 @@ export default {
 			    key: 'locale_key',
 			    data: e,
 			    success: function () {
+						console.log('success222');
 					var edition = ['zh','en','ru','ph','kr','my','pt','tr','es','in','idsa','vn','th','sa'];
 					that.$i18n.locale = edition[parseInt(e)];
 					uni.setStorageSync('ajaxmess', that.$t('ajaxmess'));
+					// that.$t('tabbarfin').map(function(item,index){
+					// 	console.log(item);
+					// 	uni.setTabBarItem({ index: index, text: item});
+					// });
 					that.$http.requestajx('country','get',{}).then((res) => {
 						// console.log(res);
 						let data = res.result;
+						uni.setStorageSync('languageCode', res.result[e].code);
+						
+
 						that.munelang = data;
 						that.langflagimg = data[e].image;
 						that.langflagtxt = data[e].lang;
 						that.langshow = false;
+					
+					 uni.setStorageSync('ajaxmess', that.$t('ajaxmess'));
 					}).catch((error) => {
 						console.log('错误重启');
 					});

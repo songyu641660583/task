@@ -319,7 +319,7 @@ export default {
       display: flex;
       align-items: center;
 			justify-content: center;
-      background: #3d5cff;
+      background: #1c2663;
       border-radius: 20rpx;
 			font-size: 22rpx;
     }
@@ -379,7 +379,7 @@ export default {
         padding: 8rpx 16rpx;
         display: flex;
         align-items: center;
-        // background: #3d5cff;
+        // background: #1c2663;
         border-radius: 50px;
         font-family: DIN;
         font-weight: 600;
@@ -399,7 +399,7 @@ export default {
           font-family: PingFangSC, PingFang SC;
           font-weight: 500;
           font-size: 28rpx;
-          color: #3d5cff;
+          color: #1c2663;
           background: #fff;
         }
         .do-up {

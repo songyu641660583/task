@@ -29,6 +29,7 @@ export default {
 					that.$t('tabbarfin').map(function(item,index){
 						uni.setTabBarItem({ index: index, text: item});
 					});
+
 					
 					 uni.setStorageSync('ajaxmess', that.$t('ajaxmess'));
 			    }
@@ -69,6 +70,7 @@ export default {
 }
 /* tabbar文字大小 */
 .uni-tabbar__label {
+	margin-top: 0 !important;
 	font-size: 12px !important;
 }
 uni-page-body {

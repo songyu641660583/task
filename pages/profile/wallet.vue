@@ -13,8 +13,8 @@
         </view>
       </view>
       <view class="btn-wrap">
-        <view class="pay" @click="handleLink('pay')">充值</view>
-        <view class="withdraw" @click="handleLink('withdraw')">提现</view>
+        <view class="pay" @click="handleLink('pay')">{{ i18n2.munerecharge }}</view>
+        <view class="withdraw" @click="handleLink('withdraw')">{{ i18n2.munebtn }}</view>
       </view>
     </view>
 		<view class="record-list">
@@ -37,7 +37,7 @@
           </view>
         </view>
 				<view>
-					 <text class="text1">提现账户：{{ item.account }}</text>
+					 <text class="text1">{{i18n3.account[0]}} : <text>{{ item.account }}</text></text>
 				</view>
 
         <view class="record-bottom">
@@ -78,6 +78,9 @@ export default {
     },
     i18n2() {
       return this.$t('pagesprofile')
+    },
+    i18n3() {
+      return this.$t('personal')
     }
   },
   onShow() {
@@ -192,14 +195,14 @@ export default {
       align-items: center;
       background: #fff;
       border-radius: 8px;
-      border: 1px solid #3d5cff;
+      border: 1px solid #1c2663;
       font-weight: 400;
       font-size: 15px;
-      color: #3d5cff;
+      color: #1c2663;
       box-sizing: border-box;
     }
     .withdraw {
-      background-color: #3d5cff;
+      background-color: #1c2663;
       color: #fff;
     }
   }
@@ -251,7 +254,7 @@ export default {
           padding: 8rpx 16rpx;
           display: flex;
           align-items: center;
-          background: #3d5cff;
+          background: #1c2663;
           border-radius: 50px;
           font-family: DIN;
           font-weight: 600;

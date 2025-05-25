@@ -255,7 +255,7 @@ export default {
 					radius: '35%',
 					background: 'transparent',
 					pointer: true,
-					imgs: [{ src: prizeArrow, top: '-85px', width: '90px', height: '130px' }],
+					imgs: [{ src: prizeArrow, top: '-78px', width: '90px', height: '118px' }],
 				},
 			],
 			prizes,

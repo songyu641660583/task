@@ -663,35 +663,37 @@
 		"selectedColor": "#1b2664",
 		"backgroundColor": "#ffffff",
 		"borderStyle": "",
+		"iconWidth": "30px",
+		"iconHeight": "30px",
 		"list": [{
 				"pagePath": "pages/tabbar/index",
 				"text": "Home",
-				"iconPath": "static/images/tabbar/index.png",
-				"selectedIconPath": "static/images/tabbar/index_active.png"
+				"iconPath": "static/images/tabbar/11.png",
+				"selectedIconPath": "static/images/tabbar/11-active.png"
 			},
 			{
 				"pagePath": "pages/tabbar/vip",
 				"text": "VIP",
-				"iconPath": "static/images/tabbar/vip.png",
-				"selectedIconPath": "static/images/tabbar/vip_active.png"
+				"iconPath": "static/images/tabbar/22.png",
+				"selectedIconPath": "static/images/tabbar/22-active.png"
 			},
 			{
 				"pagePath": "pages/financial/yuebao",
 				"text": "Financing",
-				"iconPath": "static/images/tabbar/yue.png",
-				"selectedIconPath": "static/images/tabbar/yue_active.png"
+				"iconPath": "static/images/tabbar/33.png",
+				"selectedIconPath": "static/images/tabbar/33-active.png"
 			},
 			{
 				"pagePath": "pages/tabbar/taskList",
 				"text": "Ranking",
-				"iconPath": "static/images/tabbar/task.png",
-				"selectedIconPath": "static/images/tabbar/task_active.png"
+				"iconPath": "static/images/tabbar/44.png",
+				"selectedIconPath": "static/images/tabbar/44-active.png"
 			},
 			{
 				"pagePath": "pages/tabbar/profile",
 				"text": "Me",
-				"iconPath": "static/images/tabbar/profile.png",
-				"selectedIconPath": "static/images/tabbar/profile_active.png"
+				"iconPath": "static/images/tabbar/55.png",
+				"selectedIconPath": "static/images/tabbar/55-active.png"
 			}
 		]
 	}

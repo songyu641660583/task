@@ -129,10 +129,10 @@
 			</view> -->
       <!-- <image src="../../static/images/index/bgd.png" mode="widthFix"></image> -->
     </view>
-    <view class="receive-btn" :class="{ active: !isclick }" @click="receive" v-if="!this.type">{{
+    <view class="receive-btn" @click="receive" v-if="!this.type">{{
       i18n.detailsub
     }}</view>
-		<view class="receive-btn" :class="{ active: !isclick }" @click="toSubmit" v-if="this.type == '0'">{{
+		<view class="receive-btn" @click="toSubmit" v-if="this.type == '0'">{{
       i18n.detailhref2
     }}</view>
     <!-- <view class="receive-btn"  @click="toNext" v-if="this.type == '0'">{{
@@ -228,6 +228,7 @@ export default {
         id: this.task_detail.id,
         category_id: this.task_detail.category_id
       })
+      this.type = '0'
       this.totat(this.i18n.modesucc)
     }
   },

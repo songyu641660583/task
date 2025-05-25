@@ -45,12 +45,12 @@
     <!-- <view class="swiper swiper_banner" @click="navTo('/pages/profile/help-center')"></view> -->
     <view class="index_banner">
       <view class="banner_content">
-        <swiper class="swiper banner_swiper" circular :indicator-dots="true" :autoplay="true" :interval="3000"
-          :duration="500" :display-multiple-items="1" disable-touch="true">
+        <swiper class="swiper banner_swiper" circular :indicator-dots="true" :autoplay="true" :interval="5000"
+          :duration="500" :display-multiple-items="1">
           <swiper-item v-for="(item, index) in bannerlist" :key="index">
             <view class="swiper-item">
               <view class="banner_image">
-                <image :src="$configurl.ossBaseUrl + item.image" mode="aspectFit"></image>
+                <image :src="$configurl.ossBaseUrl + item.image" mode="widthFix"></image>
               </view>
             </view>
           </swiper-item>
@@ -471,6 +471,7 @@ let evaluate_list = [
     star: 4,
   },
 ]
+
 export default {
   mixins: [loading, loadMore],
   components: { redModal },
@@ -495,23 +496,23 @@ export default {
       evaluate_list,
       memberInfo: [
         {
-          imgsrc: '/static/images/index/icon_gaoji.png',
+          imgsrc: '/static/images/tabbar/1.png',
           navrouter: '/pages/profile/help-center'
         },
         {
-          imgsrc: '/static/images/index/wallet.png',
+          imgsrc: '/static/images/tabbar/2.png',
           navrouter: '/pages/profile/wallet'
         },
         {
-          imgsrc: '/static/images/index/notice.png',
+          imgsrc: '/static/images/tabbar/3.png',
           navrouter: '/pages/tabbar/notice'
         },
         {
-          imgsrc: '/static/images/index/icon_daili.png',
+          imgsrc: '/static/images/tabbar/4.png',
           navrouter: '/pages/profile/lucky?id='
         },
         {
-          imgsrc: '/static/images/profile/enjoy.png',
+          imgsrc: '/static/images/tabbar/5.png',
           navrouter: '/pages/profile/invitation?id='
         }
       ],
@@ -536,8 +537,8 @@ export default {
       return this.$t('pagesprofile')
     },
     tabbartxt() {
-      return this.$t('tabbartxt')
-    }
+      return this.$t('tabbarfin')
+    },
   },
   methods: {
     handleClosePop() {
@@ -580,13 +581,7 @@ export default {
           that.invitationid = data.id
           that.TodayProfit = data.today_profit
           // that.memberInfo = data.level.splice(0, 3);
-          that.broadmune = data.user_level_notify.map(item => {
-            if (item.indexOf('VIP0') === -1) {
-              return item
-            } else {
-              return item.replace('VIP0', 'VIP3')
-            }
-          })
+          that.broadmune = that.$t('index').user_level_notify
           that.tasklist = data.task_category
           that.jsondetail = [
             complete_member_data,
@@ -610,7 +605,8 @@ export default {
     },
     homepopu() {
       const that = this
-      this.$http.requestajx('index/homePopUp', 'get', {}).then((res) => {
+      const languageCode = uni.getStorageSync('languageCode');
+      this.$http.requestajx('index/homePopUp', 'get', {locale: languageCode}).then((res) => {
         that.defaultData.content = res.result
         // this.tabMask = new TabMask({opacity:0.6})
         that.value = true
@@ -654,12 +650,15 @@ export default {
             .then((res) => {
               // console.log(res);
               let data = res.result
+						  uni.setStorageSync('languageCode', res.result[e].code);
+
               that.loadjson()
               that.munelang = data
               that.langflagimg = data[e].image
               that.langflagtxt = data[e].lang
               that.langshow = false
               that.tabbartxt.map(function (item, index) {
+                console.log(item)
                 uni.setTabBarItem({ index: index, text: item })
               })
             })
@@ -868,6 +867,7 @@ export default {
 
 .popup-content {
   position: relative;
+  width: 80vw;
   min-height: 40vh;
   background-color: #fff;
   margin: 0 60rpx;
@@ -1133,34 +1133,49 @@ export default {
 }
 
 .top-bgd {
+  position: relative;
+  top: -50rpx;
+  // z-index: 1;
   width: 100%;
   height: calc(var(--status-bar-height) + 115px);
-  background: url(/static/images/index/pic_beijing.png) no-repeat;
-  background-size: 100% 100%;
-  background-position: 0 0;
+  // background: url(/static/images/index/pic_beijing.png) no-repeat;
+  // background-size: 100% 100%;
+  // background-position: 0 0;
+  background-color: #1c1a4e;
 }
 
 .index_banner {
-  padding: 0 40rpx;
   margin-top: -120rpx;
-  height: 380rpx;
+  height: 480rpx;
+  width: 100%;
   overflow: hidden;
-
+  position: relative;
+  z-index: 2;
   .banner_swiper {
     height: 100%;
-    border-radius: 10px;
+    width: 100%;
     overflow: hidden;
   }
 
   .banner_content {
-    border-radius: 10px;
     overflow: hidden;
     width: 100%;
     height: inherit;
+    padding-top: 30rpx;
+    background: #1c1a4e;
 
     .banner_image,
     .swiper-item {
       height: 100%;
+      background: #1c1a4e;
+    }
+    .banner_image {
+      image {
+        // width: 120%;
+        // margin-left: -10%;
+      // padding-top: 20%;
+      //  height: 120% !important;
+      }
     }
 
     image,
@@ -1181,11 +1196,11 @@ export default {
   padding: 0 1px;
 
   .classify-item {
+    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 25%;
     height: 140rpx;
 
     .item_nav {

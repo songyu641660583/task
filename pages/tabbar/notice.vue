@@ -48,7 +48,7 @@ import { mapGetters } from 'vuex';
 	.content {
 		    padding: 0 20rpx;
 		    font-weight: 500;
-			line-height: 36rpx;
+			line-height: 52rpx;
 		    font-size: 28rpx;
 		    color: #333;
 	}

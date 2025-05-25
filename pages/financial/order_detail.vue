@@ -14,23 +14,23 @@
 						</view>
 						<view class="item_li">
 							<view class="item_name">{{i18n.munelist[0]}}：</view>
-							<view class="item_txt">{{munedetail.mode}}</view>
+							<view class="item_txt">{{munedetail.mode === 1? i18n2.mode[0] : i18n2.mode[1]}}</view>
 						</view>
 						<view class="item_li">
 							<view class="item_name">{{i18n.munelist[1]}}：</view>
-							<view class="item_txt">{{munedetail.income_mode}}</view>
+							<view class="item_txt">{{munedetail.income_mode === 1?  i18n2.incomeMode[0] : i18n2.incomeMode[1] }}</view>
 						</view>
 						<view class="item_li">
 							<view class="item_name">{{i18n.munelist[2]}}：</view>
-							<view class="item_txt">{{munedetail.daily_interest_rate}}</view>
+							<view class="item_txt">{{munedetail.daily_interest_rate}}%</view>
 						</view>
 						<view class="item_li">
 							<view class="item_name">{{i18n.munelist[3]}}：</view>
-							<view class="item_txt">{{munedetail.amount}}</view>
+							<view class="item_txt">${{munedetail.amount}}</view>
 						</view>
 						<view class="item_li">
 							<view class="item_name">{{i18n.munelist[4]}}：</view>
-							<view class="item_txt">{{munedetail.profit}}</view>
+							<view class="item_txt">${{munedetail.profit}}</view>
 						</view>
 					</view>
 				</view>
@@ -49,7 +49,10 @@
 				</view>
 			</view>
 			<view class="order_btn" v-if="issettle===0">
-				<button @click="sellsubmit">{{i18n.subtn}}</button>
+				<button @click="sellsubmit">{{i18n.subtn}}</button><uni-list>
+					<uni-list-item title="" note=""></uni-list-item>
+					<uni-list-item title="" note=""></uni-list-item>
+				</uni-list>
 			</view>
 		</view>
 	</view>
@@ -66,6 +69,9 @@
 		computed:{
 			i18n(){
 				return this.$t('orderdetail');
+			},
+			i18n2(){
+				return this.$t('orderlist');
 			},
 			issettle(){
 				return this.munedetail.is_settle;

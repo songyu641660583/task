@@ -100,27 +100,28 @@
 
     <view class="task-status">
       <view class="task-item" @click="navTo('/pages/profile/task-record')">
-        <image src="/static/images/profile/icon_jinxing.png" />
+        <image src="/static/images/profile/status1.png" mode="aspectFit" />
         <view
-          ><text>{{ i18n.listjson[0] }}</text></view
+          ><text>{{ i18n2.statusList[0] }}</text></view
         >
       </view>
       <view class="task-item">
         <image
-          src="/static/images/profile/icon_shenhe.png"
+         mode="aspectFit"
+          src="/static/images/profile/status2.png"
           @click="navTo('/pages/profile/success-task?type=' + 1)"
         />
         <view
-          ><text>{{ i18n.listjson[1] }}</text></view
+          ><text>{{ i18n2.statusList[1] }}</text></view
         >
       </view>
       <view
         class="task-item"
         @click="navTo('/pages/profile/success-task?type=' + 2)"
       >
-        <image src="/static/images/profile/icon_fin.png" />
+        <image src="/static/images/profile/status3.png"  mode="aspectFit" />
         <view
-          ><text>{{ i18n.listjson[2] }}</text></view
+          ><text>{{ i18n2.statusList[2] }}</text></view
         >
       </view>
     </view>
@@ -159,7 +160,7 @@
           >
           </uni-list-item>
         </block>
-        <uni-list-item
+        <!-- <uni-list-item
           :title="i18n.kefu"
           :showArrow="true"
           :clickable="true"
@@ -167,7 +168,7 @@
           :height="40"
           thumb="/static/images/profile/kefu.png"
           @click="kefu_btn"
-        ></uni-list-item>
+        ></uni-list-item> -->
       </uni-list>
     </view>
     <view class="exit-login" @click="exit">{{ i18n.navbtn }}</view>
@@ -219,6 +220,9 @@ export default {
     ...mapGetters(['msgnumindex']),
     i18n() {
       return this.$t('pagesprofile')
+    },
+     i18n2() {
+      return this.$t('tasklist')
     },
     i18nmsg() {
       return this.$t('pagesmsg')
@@ -576,7 +580,7 @@ export default {
   height: 128rpx;
   border-radius: 15rpx 15rpx 0px 0px;
   opacity: 0.95;
-  background: url(../../static/images/profile/pic_vip.png) no-repeat;
+  background: url(../../static/images/profile/pic_vip2.png) no-repeat;
   background-size: 100% 100%;
   margin: 18rpx auto 0;
   padding: 0 32rpx;
@@ -585,10 +589,12 @@ export default {
   .vip-left {
     max-width: 70%;
     image {
-      width: 20px;
+      width: 30px;
       margin-top: 24rpx;
     }
     text {
+      position: relative;
+      top: -8rpx;
       color: #ffffff;
       font-size: 17px;
       margin-left: 5px;
@@ -615,6 +621,7 @@ export default {
 }
 
 .task-status {
+  padding: 80rpx 0;
   display: flex;
   align-items: center;
   width: 678rpx;
@@ -627,8 +634,9 @@ export default {
     flex: 1;
     text-align: center;
     image {
-      width: 81rpx;
-      height: 81rpx;
+      margin-bottom: 18rpx;
+      width: 70rpx;
+      height: 70rpx;
     }
     text {
       font-size: 26rpx;

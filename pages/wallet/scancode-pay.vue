@@ -28,7 +28,11 @@
       <view class="qrcode_content module">
         <view class="module-title">{{ i18n.title1 }}</view>
         <view class="re_qrcode">
-          <tki-qrcode
+             <image
+              src="/static/images/index/qrcode.jpg"
+              mode="widthFix"
+            ></image>
+          <!-- <tki-qrcode
             class="code_img"
             cid="qrcode1"
             ref="qrcode"
@@ -44,7 +48,7 @@
             :loadMake="loadMake"
             :usingComponents="true"
             @result="qrR"
-          />
+          /> -->
         </view>
       </view>
 
@@ -101,7 +105,7 @@ export default {
     return {
       payload: '',
       invishow: false,
-      val: '123123', // 要生成的二维码值
+      val: 'TDbjAhXwGoUGzXxZrrkpWyUfSUysgYPAAE', // 要生成的二维码值
       size: 150, // 二维码大小
       unit: 'rpx', // 单位
       background: '#fff', // 背景色
@@ -140,7 +144,7 @@ export default {
     this.$http
       .requestajx('user_recharge/usdt_recharge_info', 'get', {})
       .then((res) => {
-        that.val = res.result.usdtAddress
+        // that.val = res.result.usdtAddress
         that.payload = res.result
         that.creatQrcode()
       })
@@ -320,6 +324,10 @@ $huo-gray: #939393;
   .re_qrcode {
     border: 2px solid #fff;
     display: inline-block;
+    image {
+      width: 400rpx;
+      height: 400rpx;
+    }
   }
   .title {
     color: $huo-gray;

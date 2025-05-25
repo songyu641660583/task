@@ -210,7 +210,7 @@
 					padding: 8rpx 16rpx;
 					display: flex;
 					align-items: center;
-					background: #3d5cff;
+					background: #1c2663;
 					border-radius: 50px;
 					font-family: DIN;
 					font-weight: 600;
@@ -232,7 +232,7 @@
 						font-weight: 500;
 						font-size: 28rpx;
 						color: #fff;
-						background: #3d5cff;
+						background: #1c2663;
 					}
 					.do-up {
 						padding: 15rpx 30rpx;

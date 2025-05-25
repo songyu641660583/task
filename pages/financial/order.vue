@@ -27,19 +27,19 @@
 								<view class="item_ul">
 									<view class="item_li">
 										<view class="item_name">{{i18n.munelist[0]}}：</view>
-										<view class="item_txt">{{item.mode}}</view>
+										<view class="item_txt">{{item.mode === 1? i18n.mode[0] : i18n.mode[1]}}</view>
 									</view>
 									<view class="item_li">
 										<view class="item_name">{{i18n.munelist[1]}}：</view>
-										<view class="item_txt">{{item.income_mode}}</view>
+										<view class="item_txt">{{item.income_mode === 1? i18n.incomeMode[0] : i18n.incomeMode[1] }}</view>
 									</view>
 									<view class="item_li">
 										<view class="item_name">{{i18n.munelist[2]}}：</view>
-										<view class="item_txt">{{item.daily_interest_rate}}</view>
+										<view class="item_txt">{{item.daily_interest_rate}}%</view>
 									</view>
 									<view class="item_li">
 										<view class="item_name">{{i18n.munelist[3]}}：</view>
-										<view class="item_txt">{{item.amount}}</view>
+										<view class="item_txt">${{item.amount}}</view>
 									</view>
 									<view class="item_li">
 										<view class="item_name">{{i18n.munelist[4]}}：</view>
@@ -47,7 +47,7 @@
 									</view>
 									<view class="item_li">
 										<view class="item_name">{{i18n.munelist[5]}}：</view>
-										<view class="item_txt">{{item.profit}}</view>
+										<view class="item_txt">${{item.profit}}</view>
 									</view>
 								</view>
 							</view>

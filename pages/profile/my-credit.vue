@@ -44,7 +44,8 @@ export default {
 			uni.navigateTo({ url });
 		},
 		async getCreditRule() {
-			let res = await this.$http.creditRule()
+			const languageCode = uni.getStorageSync('languageCode');
+			let res = await this.$http.creditRule({locale: languageCode})
 			// console.log(res);
 			this.content = res.result
 		},

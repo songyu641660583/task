@@ -27,7 +27,7 @@
               <text class="text1">{{ item.level_name }}</text>
             </view>
           </view>
-          <view class="like"> 要求：<text>喜欢</text> </view>
+          <!-- <view class="like"> 要求：<text>喜欢</text> </view> -->
         </view>
 
         <view class="task-bottom">
@@ -169,7 +169,7 @@ export default {
         height: 6rpx;
         bottom: -26rpx;
         border-radius: 20px;
-        background-color: #3d5cff;
+        background-color: #1c2663;
       }
     }
   }
@@ -196,7 +196,7 @@ export default {
       color: #666;
 
       text {
-        color: #3d5cff;
+        color: #1c2663;
       }
     }
 
@@ -220,7 +220,7 @@ export default {
           padding: 8rpx 16rpx;
           display: flex;
           align-items: center;
-          background: #3d5cff;
+          background: #1c2663;
           border-radius: 50px;
           font-family: DIN;
           font-weight: 600;
