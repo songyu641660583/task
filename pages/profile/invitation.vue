@@ -63,16 +63,17 @@ export default {
 	},
 	methods: {
 		async kefu_btn(){
-			// #ifdef H5
-				let winhref = window.open('','_blank');
-			// #endif
-				let res = await this.$http.customerUrl();
-			// #ifdef APP-PLUS
-				plus.runtime.openURL(encodeURI(res.result))
-			// #endif
-			// #ifdef H5
-				winhref.location = res.result;
-			// #endif
+      window.open('https://wa.me/34666139238', '_blank')
+			// // #ifdef H5
+			// 	let winhref = window.open('','_blank');
+			// // #endif
+			// 	let res = await this.$http.customerUrl();
+			// // #ifdef APP-PLUS
+			// 	plus.runtime.openURL(encodeURI(res.result))
+			// // #endif
+			// // #ifdef H5
+			// 	winhref.location = res.result;
+			// // #endif
 		},
 		onCopyResult() {
 			uni.setClipboardData({

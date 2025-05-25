@@ -649,6 +649,18 @@
 			{
 				"navigationBarTitleText" : ""
 			}
+		},
+		{
+			"path" : "pages/profile/kefu",
+			"style" : {
+				"navigationStyle":"custom",
+				"navigationBarTitleText":"",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "vertical"
+				}
+			}
 		}
     ],
 	"globalStyle": {

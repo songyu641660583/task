@@ -90,15 +90,18 @@
         <image src="/static/images/index/icon_shouyi.png" class="r-img"></image>
       </view>
     </view>
+     <view style="margin-bottom: 20rpx;">
+        <label class="ttkx">{{ i18n.broadtitle }}<text>{{ i18n.broadtitle1 }}</text></label>
+      </view>
     <view class="index_broad">
+     
       <swiper class="swiper swiper_broad" circular :autoplay="true" :vertical="true" :interval="3000" :duration="500"
         :display-multiple-items="1" disable-touch="true">
         <swiper-item v-for="(item, index) in broadmune" :key="index">
           <view class="swiper-item">
             <view class="broad_item">
-              <label>{{ i18n.broadtitle }}<text>{{ i18n.broadtitle1 }}</text></label>
               <text class="icon_red">{{ i18n.broadtxt }}</text>
-              <text class="uni-ellipsis"> {{ item }}</text>
+              <text class="uni-ellipsis value"> {{ item }}</text>
             </view>
           </view>
         </swiper-item>
@@ -686,14 +689,17 @@ export default {
       })
     },
     async kefu_btn() {
-      let res = await this.$http.customerUrl()
-      // #ifdef APP-PLUS
-      plus.runtime.openURL(encodeURI(res.result))
-      // #endif
-      // #ifdef H5
-      setTimeout(function () {
-        window.open(res.result, '_blank')
-      }, 200)
+      window.open('https://wa.me/34666139238', '_blank')
+      // let res = await this.$http.customerUrl()
+      // // #ifdef APP-PLUS
+      // plus.runtime.openURL(encodeURI(res.result))
+      // // #endif
+      // // #ifdef H5
+      // setTimeout(function () {
+      //   window.open(res.result, '_blank')
+      //   // https://whatsapp.com
+
+      // }, 200)
       // #endif
     },
     locale_edition() {
@@ -961,10 +967,21 @@ export default {
     opacity: 1;
   }
 }
+   .ttkx {
+    padding: 0 30rpx;
+        font-size: 34rpx;
+        margin-right: 5px;
+        font-family: 'youshe';
+        color: #333333;
 
+        text {
+          color: #fa5c5b;
+        }
+      }
 .index_broad {
   padding: 0 10px;
   height: 30px;
+
 
   .swiper_broad {
     border-radius: 10px;
@@ -984,16 +1001,7 @@ export default {
       align-items: center;
       width: 100%;
 
-      label {
-        font-size: 34rpx;
-        margin-right: 5px;
-        font-family: 'youshe';
-        color: #333333;
-
-        text {
-          color: #fa5c5b;
-        }
-      }
+     
 
       .uni-ellipsis {
         font-size: 12px;
