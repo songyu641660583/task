@@ -197,9 +197,12 @@
   </view>
   <uni-popup ref="popup">
     <view class="popup-content">
-      <image src="/static/images/laba.png" mode="widthFix"></image>
+        <image src="/static/images/laba.png" mode="widthFix"></image>
+
+      <view class="popup-content-in">
       <text class="text">{{ defaultData.content }}</text>
       <button class="btn" @click="handleClosePop">{{ i18n.confirm }}</button>
+      </view>
     </view>
   </uni-popup>
 
@@ -537,6 +540,7 @@ export default {
       return this.$t('pagesprofile')
     },
     tabbartxt() {
+      console.log('变化', this.$t('tabbarfin'))
       return this.$t('tabbarfin')
     },
   },
@@ -622,8 +626,10 @@ export default {
       this.langshow = !this.langshow
     },
     munebtn(e) {
-      this.mune_index = e
       var that = this
+
+      this.mune_index = e
+     
       uni.setStorage({
         key: 'locale_key',
         data: e,
@@ -644,23 +650,29 @@ export default {
             'th',
             'sa'
           ]
+          
           that.$i18n.locale = edition[parseInt(e)]
+          console.log('that.$i18n.locale', that.$i18n.locale)
           that.$http
             .requestajx('country', 'get', {})
             .then((res) => {
               // console.log(res);
               let data = res.result
-						  uni.setStorageSync('languageCode', res.result[e].code);
 
               that.loadjson()
               that.munelang = data
               that.langflagimg = data[e].image
               that.langflagtxt = data[e].lang
               that.langshow = false
-              that.tabbartxt.map(function (item, index) {
-                console.log(item)
-                uni.setTabBarItem({ index: index, text: item })
-              })
+              
+						  uni.setStorageSync('languageCode', res.result[e].code);
+              setTimeout(() => {
+                 that.tabbartxt.forEach(function (item, index) {
+                    console.log(item)
+                    uni.setTabBarItem({ index: index, text: item })
+                  })
+              }, 500)
+
             })
             .catch((error) => {
               console.log('错误重启')
@@ -874,10 +886,22 @@ export default {
   padding: 150rpx 30rpx 30rpx;
   background: linear-gradient(180deg, #d0d8ff, #fff);
   border-radius: 20rpx;
+  &-in {
+    display: flex;
+    flex-direction: column;
+    max-height: 60vh;
+
+  }
 
   .btn {
+    flex: none;
     margin-top: 80rpx;
     width: 300rpx;
+  }
+  .text{
+    flex: auto;
+    overflow-y: auto;
+
   }
 
   image {

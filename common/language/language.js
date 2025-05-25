@@ -559,7 +559,6 @@ const lang_country = {
 		btncomfirm: ['取消', '确认'],
 		toastinfo: ['请输入手机号', '验证码已发送至手机', '登录成功！', '注册成功！', '密码修改成功'],
 		tabbarfin: ['首页', 'VIP', '理财', '任务栏', '我的']
-		// tabbartxt:['首页','订单','排行榜','我的']
 	},
 	en: {// 英文
 		langtext: {
@@ -1120,7 +1119,6 @@ const lang_country = {
 		btncomfirm: ['Cancel', 'Confirm'],
 		toastinfo: ['Please enter phone number', 'Verification code sent to phone', 'Login successful!', 'Registration successful!', 'Password changed successfully'],
 		tabbarfin: ['Home', 'VIP', 'Finance', 'Task Bar', 'Mine']
-		// tabbartxt:['Home','Order','Ranking','Mine']
 	},
 	ru: {// 俄语
 		langtext: {
@@ -1681,7 +1679,6 @@ const lang_country = {
 		btncomfirm: ['Отмена', 'Подтвердить'],
 		toastinfo: ['Введите телефон', 'Код отправлен', 'Успешный вход', 'Успешная регистрация', 'Пароль изменен'],
 		tabbarfin: ['Главная', 'VIP', 'Финансы', 'Задания', 'Мой']
-		// tabbartxt:['Главная','Заказы','Рейтинг','Мой']
 	},
 	ph: {// 菲律宾
 		langtext: {
@@ -1800,7 +1797,7 @@ const lang_country = {
 			confirm: 'Confirm',
 			evaluateTitle: 'Customer Reviews',
 			good: 'Very Satisfied',
-				user_level_notify: [
+			user_level_notify: [
 				"****5317 Reload VIP2",
 				"****9240 Reload VIP1",
 				"****2392 Reload VIP3",
@@ -2242,7 +2239,6 @@ const lang_country = {
 		btncomfirm: ['Cancel', 'Confirm'],
 		toastinfo: ['Please enter phone number', 'Verification code sent to phone', 'Login successful!', 'Registration successful!', 'Password changed successfully'],
 		tabbarfin: ['Home', 'VIP', 'Finance', 'Task Bar', 'Mine']
-		// tabbartxt:['Home','Order','Ranking','Mine']
 	},
 	kr: { // 韩语
 		langtext: {
@@ -2413,7 +2409,7 @@ const lang_country = {
 			listinfo1: '개, 남은 현금 인출 횟수',
 			listinfo2: '차',
 			formbtn: '확인',
-			forminfo5:  "모든 사용자는 30일마다 한 번씩 출금할 수 있습니다. 출금 금액은 VIP 등급 규칙에 따릅니다. 출금 금액에서 35% 개인 소득세와 15% 회사 수수료가 공제됩니다. VIP 등급이 높을수록 회사 수수료가 낮아집니다. 자세한 내용은 고객센터로 문의하세요.",
+			forminfo5: "모든 사용자는 30일마다 한 번씩 출금할 수 있습니다. 출금 금액은 VIP 등급 규칙에 따릅니다. 출금 금액에서 35% 개인 소득세와 15% 회사 수수료가 공제됩니다. VIP 등급이 높을수록 회사 수수료가 낮아집니다. 자세한 내용은 고객센터로 문의하세요.",
 		},
 		widthdrawal_record: {
 			title: '현금 인출 기록',
@@ -2688,123 +2684,121 @@ const lang_country = {
 			formbtn: '확인',
 			totatinfo: '추가 성공!',
 			totaterror: '현재 국가 은행 번호 없음',
-			openmember: {
-				title: '회원 개설',
-				titlebtn: '충전 기록',
-				paylist: ['지급방식', '오프라인결제', '온라인결제'],
-				paybtn: '개통하러 갑니다',
-				totatinfo: ['이 유형을 충전할 수 없습니다', '충전 유형을 선택하십시오', '결제 방법을 선택하십시오'],
-				modeinfo: '당신의 현재 계정 잔액이 부족하여 충전 여부',
-				paydata: '유효기간',
-				paytiem: '시',
-				totatsucc: '충전 성공!',
-				tasknum: "일일 작업 수"
-			},
-			payrecord: {
-				title: '충전 기록',
-				munelist: ['모두 충전', '코드 충전'],
-				paydata: ['지불 대기', '처리 중', '충전 성공', '충전 실패', '환불됨'],
-				paytype: ['', '온라인 충전', '백그라운드 충전', '코드 충전'],
-				paypending: ['보류 중', '통과됨', '거부됨'],
-				re_code: '코드 충전',
-				info: '충전 기록 없음'
-			},
-			msgdetail: {
-				title: '메시지 센터',
-				titletxt: '메시지 상세 정보',
-				timeinfo: '최근 업데이트:'
-			},
-			payselect: {
-				selectmode: '지불 방법 선택',
-				selectlist: ['인터넷 실버 결제', '스캔 결제'],
-				modeinfo: '충전 채널이 닫혔습니다',
-				bankpay: "은행카드 충전",
-				onlinepay: '온라인 충전',
-				usdtpay: "USDT"
-			},
-			grabindex: {
-				title: "오늘 남은 강탈 횟수",
-				info: "연말 좋은 물건 미리 빼앗기",
-				info1: "1원 강탈 백원신권",
-				log: "규칙",
-				log1: " 레코드",
-				totalBalance: "현재 잔액",
-				todayOrder: "주문 완료",
-				todayIcome: "오늘의 수익",
-				sub: "단물 강탈",
-				order: "송장 번호",
-				total: '총 주문',
-				commission: "커미션",
-				estimate: "반환 예정",
-				formsub: "주문 강탈 취소",
-				formsub1: "지금 주문하기",
-				popupinfo: "획득을 축하합니다",
-				infoconfirm: "보기",
-				infocancel: "계속",
-				modaltitle1: "잔액이 부족합니다",
-				modaltitle2: ",커밋 실패",
-				cancelText: "취소",
-				confirmText: "충전",
-				titlename: "주문 내역",
-				munelist1: "진행 중",
-				munelist2: "완료됨",
-				munelist3: "취소됨"
-			},
-			adderss: {
-				title: "수취 주소",
-				formname: "이름",
-				phone: "휴대폰 번호",
-				fromaddress: "상세 주소",
-				formbtn: '확인'
-			},
-			payrecharge: {
-				title: '화폐 충전',
-				record: "기록",
-				voucher: '자격 증명 제출',
-				infotitle: '사슬 유형',
-				address: '충전 주소',
-				copy: '복제',
-				succ: '복제 성공',
-				info: '친절한 팁: 위 주소에 USDT-TRC20 이외의 자산을 충전하지 마십시오. 그렇지 않으면 자산은 반환할 수 없습니다.',
-				fromaddress: '충전 주소',
-				placeAddress: '충전 주소를 입력하십시오',
-				fromprice: '금액',
-				placeprice: '금액을 입력하십시오',
-				fromimg: '그림 업로드',
-				sub: '확인',
-				title1: 'QR코드 스캔 계좌이체',
-				title2: '이체주소'
-			},
-			upvoucher: {
-				title: '자격 증명 제출',
-				fromaddress: "유료 주소",
-				placeAddress: '유료 주소를 입력하십시오',
-				fromprice: "금액",
-				placeprice: '금액을 입력하십시오',
-				fromimg: "사진 업로드",
-				sub: "제출"
-			},
-			ajaxmess: {
-				networktxt: '네트워크 오류, 다시 시도하십시오!',
-				networklogin: '로그인 안 함',
-				networkerror: '네트워크 예외',
-				checkout: '다시 누르고 끝내기'
-			},
-			pageloading: {
-				info: '더 이상 데이터가 없습니다',
-				text: "로드 중"
-			},
-			servicio: {
-				title: '시스템 고객센터',
-				titlechild: '고객 관리자',
-				sendbtn: '보내기'
-			},
-			btncomfirm: ['취소', '확인'],
-			toastinfo: ['휴대폰 번호 입력하세요', '휴대폰으로 인증번호 보냈습니다', '로그인 성공!', '등록 성공!', '암호 수정 성공'],
-			tabbarfin: ['첫 페이지', 'VIP', '재테크', '작업 표시줄', '내']
-			// tabbartxt: ['첫 페이지','주문','차트','내']
 		},
-
+		openmember: {
+			title: '회원 개설',
+			titlebtn: '충전 기록',
+			paylist: ['지급방식', '오프라인결제', '온라인결제'],
+			paybtn: '개통하러 갑니다',
+			totatinfo: ['이 유형을 충전할 수 없습니다', '충전 유형을 선택하십시오', '결제 방법을 선택하십시오'],
+			modeinfo: '당신의 현재 계정 잔액이 부족하여 충전 여부',
+			paydata: '유효기간',
+			paytiem: '시',
+			totatsucc: '충전 성공!',
+			tasknum: "일일 작업 수"
+		},
+		payrecord: {
+			title: '충전 기록',
+			munelist: ['모두 충전', '코드 충전'],
+			paydata: ['지불 대기', '처리 중', '충전 성공', '충전 실패', '환불됨'],
+			paytype: ['', '온라인 충전', '백그라운드 충전', '코드 충전'],
+			paypending: ['보류 중', '통과됨', '거부됨'],
+			re_code: '코드 충전',
+			info: '충전 기록 없음'
+		},
+		msgdetail: {
+			title: '메시지 센터',
+			titletxt: '메시지 상세 정보',
+			timeinfo: '최근 업데이트:'
+		},
+		payselect: {
+			selectmode: '지불 방법 선택',
+			selectlist: ['인터넷 실버 결제', '스캔 결제'],
+			modeinfo: '충전 채널이 닫혔습니다',
+			bankpay: "은행카드 충전",
+			onlinepay: '온라인 충전',
+			usdtpay: "USDT"
+		},
+		grabindex: {
+			title: "오늘 남은 강탈 횟수",
+			info: "연말 좋은 물건 미리 빼앗기",
+			info1: "1원 강탈 백원신권",
+			log: "규칙",
+			log1: " 레코드",
+			totalBalance: "현재 잔액",
+			todayOrder: "주문 완료",
+			todayIcome: "오늘의 수익",
+			sub: "단물 강탈",
+			order: "송장 번호",
+			total: '총 주문',
+			commission: "커미션",
+			estimate: "반환 예정",
+			formsub: "주문 강탈 취소",
+			formsub1: "지금 주문하기",
+			popupinfo: "획득을 축하합니다",
+			infoconfirm: "보기",
+			infocancel: "계속",
+			modaltitle1: "잔액이 부족합니다",
+			modaltitle2: ",커밋 실패",
+			cancelText: "취소",
+			confirmText: "충전",
+			titlename: "주문 내역",
+			munelist1: "진행 중",
+			munelist2: "완료됨",
+			munelist3: "취소됨"
+		},
+		adderss: {
+			title: "수취 주소",
+			formname: "이름",
+			phone: "휴대폰 번호",
+			fromaddress: "상세 주소",
+			formbtn: '확인'
+		},
+		payrecharge: {
+			title: '화폐 충전',
+			record: "기록",
+			voucher: '자격 증명 제출',
+			infotitle: '사슬 유형',
+			address: '충전 주소',
+			copy: '복제',
+			succ: '복제 성공',
+			info: '친절한 팁: 위 주소에 USDT-TRC20 이외의 자산을 충전하지 마십시오. 그렇지 않으면 자산은 반환할 수 없습니다.',
+			fromaddress: '충전 주소',
+			placeAddress: '충전 주소를 입력하십시오',
+			fromprice: '금액',
+			placeprice: '금액을 입력하십시오',
+			fromimg: '그림 업로드',
+			sub: '확인',
+			title1: 'QR코드 스캔 계좌이체',
+			title2: '이체주소'
+		},
+		upvoucher: {
+			title: '자격 증명 제출',
+			fromaddress: "유료 주소",
+			placeAddress: '유료 주소를 입력하십시오',
+			fromprice: "금액",
+			placeprice: '금액을 입력하십시오',
+			fromimg: "사진 업로드",
+			sub: "제출"
+		},
+		ajaxmess: {
+			networktxt: '네트워크 오류, 다시 시도하십시오!',
+			networklogin: '로그인 안 함',
+			networkerror: '네트워크 예외',
+			checkout: '다시 누르고 끝내기'
+		},
+		pageloading: {
+			info: '더 이상 데이터가 없습니다',
+			text: "로드 중"
+		},
+		servicio: {
+			title: '시스템 고객센터',
+			titlechild: '고객 관리자',
+			sendbtn: '보내기'
+		},
+		btncomfirm: ['취소', '확인'],
+		toastinfo: ['휴대폰 번호 입력하세요', '휴대폰으로 인증번호 보냈습니다', '로그인 성공!', '등록 성공!', '암호 수정 성공'],
+		tabbarfin: ['첫 페이지', 'VIP', '재테크', '작업 표시줄', '내']
 	},
 	my: {//马来西亚
 		langtext: {
@@ -2923,7 +2917,7 @@ const lang_country = {
 			confirm: 'Sahkan',
 			evaluateTitle: 'Penilaian Pelanggan',
 			good: 'Sangat Berpuas Hati',
-				user_level_notify: [
+			user_level_notify: [
 				"****5317 Peningkatan VIP2",
 				"****9240 Peningkatan VIP1",
 				"****2392 Peningkatan VIP3",
@@ -3365,7 +3359,6 @@ const lang_country = {
 		btncomfirm: ['Batal', 'Sahkan'],
 		toastinfo: ['Sila masukkan nombor telefon', 'Kod pengesahan telah dihantar ke telefon', 'Log masuk berjaya!', 'Pendaftaran berjaya!', 'Ubah kata laluan berjaya'],
 		tabbarfin: ['Laman Utama', 'VIP', 'Kewangan', 'Bar Tugasan', 'Saya']
-		// tabbartxt:['Laman Utama','Pesanan','Kedudukan','Saya']
 	},
 	pt: {//葡萄牙
 		"langtext": {
@@ -3484,7 +3477,7 @@ const lang_country = {
 			"confirm": "Confirmar",
 			"evaluateTitle": "Avaliação do cliente",
 			"good": "Muito satisfeito",
-				user_level_notify: [
+			user_level_notify: [
 				"****5317 Recargar VIP2",
 				"****9240 Recargar VIP1",
 				"****2392 Recargar VIP3",
@@ -3770,162 +3763,162 @@ const lang_country = {
 			"ruleText": "Regras do sorteio",
 			"ruleValue": "Novos usuários convidados terão uma chance no sorteio após verificação de identidade, 100% de chance de ganhar.",
 			"noNum": "Sem tentativas, convide amigos!",
-			"notice": {
-				"title": "Anúncios da plataforma"
-			},
-			"wallet": {
-				"title": "Minha carteira",
-				"navmodal": ["Por favor complete a verificação de identidade primeiro", "Verificar"],
-				"exitmodal": "Cancelar?",
-				"verifing": "Verificação em andamento, aguarde",
-				"withdrawMoney": "Saque disponível",
-				"recordTitle": "Histórico de saques",
-				"noData": "Sem dados",
-				"drawrecord1": "Em processamento",
-				"drawrecord2": "Saque concluído",
-				"drawrecord3": "Falha no saque"
-			},
-			"account": {
-				"title": "Conta de saque",
-				"formtype": "Tipo de saque",
-				"formname": "Nome real",
-				"formnametxt": "Digite o nome real",
-				"formbank": "Nome do banco",
-				"formbanktxt": "Digite o nome do banco em letras maiúsculas",
-				"formacc": "Número da conta",
-				"formacctxt": "Digite o número da conta",
-				"kaibank": "Endereço do banco",
-				"kaibanktxt": "Digite o endereço do banco",
-				"bankphone": "Número do celular",
-				"bankphonetxt": "Digite o número do celular registrado no banco",
-				"idCrad": "Número do documento",
-				"bankmail": "E-mail",
-				"address": "Endereço USDT",
-				"bankmailtxt": "Digite o e-mail",
-				"bankcode": "Código do banco",
-				"bankcodetxt": "Digite o código do banco",
-				"bankword": "Definir senha de saque",
-				"bankwordtxt": "Digite uma senha de 6 dígitos",
-				"bankinfo": "*Para alterar informações bancárias contate o atendimento",
-				"formbtn": "Confirmar",
-				"totatinfo": "Adicionado com sucesso!",
-				"totaterror": "Código do banco não disponível"
-			},
-			"openmember": {
-				"title": "Ativar membro",
-				"titlebtn": "Histórico de recargas",
-				"paylist": ["Método de pagamento", "Pagamento offline", "Pagamento online"],
-				"paybtn": "Ativar",
-				"totatinfo": ["Tipo de recarga não disponível", "Selecione o tipo de recarga", "Selecione o método de pagamento"],
-				"modeinfo": "Saldo insuficiente, deseja recarregar?",
-				"paydata": "Validade",
-				"paytiem": "horas",
-				"totatsucc": "Recarga concluída!",
-				"tasknum": "Número de tarefas diárias"
-			},
-			"payrecord": {
-				"title": "Histórico de recargas",
-				"munelist": ["Todas as recargas", "Recarga por QR code"],
-				"paydata": ["Pendente", "Em processamento", "Recarga concluída", "Falha na recarga", "Reembolsado"],
-				"paytype": ["", "Recarga online", "Recarga administrativa", "Recarga por QR code"],
-				"paypending": ["Pendente", "Aprovado", "Recusado"],
-				"re_code": "Recarga por QR code",
-				"info": "Sem registros de recarga"
-			},
-			"msgdetail": {
-				"title": "Central de mensagens",
-				"titletxt": "Detalhes da mensagem",
-				"timeinfo": "Última atualização: "
-			},
-			"payselect": {
-				"selectmode": "Selecionar método de pagamento",
-				"selectlist": ["Pagamento bancário", "Pagamento por QR code"],
-				"modeinfo": "Canal de recarga fechado",
-				"bankpay": "Recarga por cartão bancário",
-				"onlinepay": "Recarga online",
-				"usdtpay": "USDT"
-			},
-			"grabindex": {
-				"title": "Tentativas de pedido restantes hoje",
-				"info": "Promoção de fim de ano",
-				"info1": "R$1 por cupons de R$100",
-				"log": "Regras",
-				"log1": "Histórico",
-				"totalBalance": "Saldo atual",
-				"todayOrder": "Pedidos concluídos",
-				"todayIcome": "Rendimento de hoje",
-				"sub": "Fazer pedido",
-				"order": "Número do pedido",
-				"total": "Total do pedido",
-				"commission": "Comissão",
-				"estimate": "Retorno estimado",
-				"formsub": "Cancelar pedido",
-				"formsub1": "Fazer pedido agora",
-				"popupinfo": "Parabéns, você ganhou",
-				"infoconfirm": "Verificar",
-				"infocancel": "Continuar",
-				"modaltitle1": "Saldo insuficiente",
-				"modaltitle2": ", envio falhou",
-				"cancelText": "Cancelar",
-				"confirmText": "Recarregar",
-				"titlename": "Histórico de pedidos",
-				"munelist1": "Em andamento",
-				"munelist2": "Concluído",
-				"munelist3": "Cancelado"
-			},
-			"adderss": {
-				"title": "Endereço de entrega",
-				"formname": "Nome",
-				"phone": "Número do celular",
-				"fromaddress": "Endereço detalhado",
-				"formbtn": "Confirmar"
-			},
-			"payrecharge": {
-				"title": "Depósito",
-				"record": "Histórico",
-				"voucher": "Enviar comprovante",
-				"infotitle": "Tipo de rede",
-				"address": "Endereço de depósito",
-				"copy": "Copiar",
-				"succ": "Copiado com sucesso",
-				"info": "Atenção: Não envie outros ativos para este endereço USDT-TRC20.",
-				"fromaddress": "Endereço de depósito",
-				"placeAddress": "Digite o endereço de depósito",
-				"fromprice": "Valor",
-				"placeprice": "Digite o valor",
-				"fromimg": "Enviar imagem",
-				"sub": "Confirmar",
-				"title1": "Escanear QR code para transferir",
-				"title2": "Endereço de transferência"
-			},
-			"upvoucher": {
-				"title": "Enviar comprovante",
-				"fromaddress": "Endereço de cobrança",
-				"placeAddress": "Digite o endereço de cobrança",
-				"fromprice": "Valor",
-				"placeprice": "Digite o valor",
-				"fromimg": "Enviar imagem",
-				"sub": "Enviar"
-			},
-			"ajaxmess": {
-				"networktxt": "Erro de rede, tente novamente!",
-				"networklogin": "Não logado",
-				"networkerror": "Erro de rede",
-				"checkout": "Pressione novamente para sair"
-			},
-			"pageloading": {
-				"info": "Sem mais dados",
-				"text": "Carregando"
-			},
-			"servicio": {
-				"title": "Atendimento",
-				"titlechild": "Gerente",
-				"sendbtn": "Enviar"
-			},
-			"btncomfirm": ["Cancelar", "Confirmar"],
-			"toastinfo": ["Digite o número do celular", "Código enviado para o celular", "Login concluído!", "Registro concluído!", "Senha alterada!"],
-			"tabbarfin": ["Início", "VIP", "Finanças", "Tarefas", "Meu"]
-		}
+		},
+		"notice": {
+			"title": "Anúncios da plataforma"
+		},
+		"wallet": {
+			"title": "Minha carteira",
+			"navmodal": ["Por favor complete a verificação de identidade primeiro", "Verificar"],
+			"exitmodal": "Cancelar?",
+			"verifing": "Verificação em andamento, aguarde",
+			"withdrawMoney": "Saque disponível",
+			"recordTitle": "Histórico de saques",
+			"noData": "Sem dados",
+			"drawrecord1": "Em processamento",
+			"drawrecord2": "Saque concluído",
+			"drawrecord3": "Falha no saque"
+		},
+		"account": {
+			"title": "Conta de saque",
+			"formtype": "Tipo de saque",
+			"formname": "Nome real",
+			"formnametxt": "Digite o nome real",
+			"formbank": "Nome do banco",
+			"formbanktxt": "Digite o nome do banco em letras maiúsculas",
+			"formacc": "Número da conta",
+			"formacctxt": "Digite o número da conta",
+			"kaibank": "Endereço do banco",
+			"kaibanktxt": "Digite o endereço do banco",
+			"bankphone": "Número do celular",
+			"bankphonetxt": "Digite o número do celular registrado no banco",
+			"idCrad": "Número do documento",
+			"bankmail": "E-mail",
+			"address": "Endereço USDT",
+			"bankmailtxt": "Digite o e-mail",
+			"bankcode": "Código do banco",
+			"bankcodetxt": "Digite o código do banco",
+			"bankword": "Definir senha de saque",
+			"bankwordtxt": "Digite uma senha de 6 dígitos",
+			"bankinfo": "*Para alterar informações bancárias contate o atendimento",
+			"formbtn": "Confirmar",
+			"totatinfo": "Adicionado com sucesso!",
+			"totaterror": "Código do banco não disponível"
+		},
+		"openmember": {
+			"title": "Ativar membro",
+			"titlebtn": "Histórico de recargas",
+			"paylist": ["Método de pagamento", "Pagamento offline", "Pagamento online"],
+			"paybtn": "Ativar",
+			"totatinfo": ["Tipo de recarga não disponível", "Selecione o tipo de recarga", "Selecione o método de pagamento"],
+			"modeinfo": "Saldo insuficiente, deseja recarregar?",
+			"paydata": "Validade",
+			"paytiem": "horas",
+			"totatsucc": "Recarga concluída!",
+			"tasknum": "Número de tarefas diárias"
+		},
+		"payrecord": {
+			"title": "Histórico de recargas",
+			"munelist": ["Todas as recargas", "Recarga por QR code"],
+			"paydata": ["Pendente", "Em processamento", "Recarga concluída", "Falha na recarga", "Reembolsado"],
+			"paytype": ["", "Recarga online", "Recarga administrativa", "Recarga por QR code"],
+			"paypending": ["Pendente", "Aprovado", "Recusado"],
+			"re_code": "Recarga por QR code",
+			"info": "Sem registros de recarga"
+		},
+		"msgdetail": {
+			"title": "Central de mensagens",
+			"titletxt": "Detalhes da mensagem",
+			"timeinfo": "Última atualização: "
+		},
+		"payselect": {
+			"selectmode": "Selecionar método de pagamento",
+			"selectlist": ["Pagamento bancário", "Pagamento por QR code"],
+			"modeinfo": "Canal de recarga fechado",
+			"bankpay": "Recarga por cartão bancário",
+			"onlinepay": "Recarga online",
+			"usdtpay": "USDT"
+		},
+		"grabindex": {
+			"title": "Tentativas de pedido restantes hoje",
+			"info": "Promoção de fim de ano",
+			"info1": "R$1 por cupons de R$100",
+			"log": "Regras",
+			"log1": "Histórico",
+			"totalBalance": "Saldo atual",
+			"todayOrder": "Pedidos concluídos",
+			"todayIcome": "Rendimento de hoje",
+			"sub": "Fazer pedido",
+			"order": "Número do pedido",
+			"total": "Total do pedido",
+			"commission": "Comissão",
+			"estimate": "Retorno estimado",
+			"formsub": "Cancelar pedido",
+			"formsub1": "Fazer pedido agora",
+			"popupinfo": "Parabéns, você ganhou",
+			"infoconfirm": "Verificar",
+			"infocancel": "Continuar",
+			"modaltitle1": "Saldo insuficiente",
+			"modaltitle2": ", envio falhou",
+			"cancelText": "Cancelar",
+			"confirmText": "Recarregar",
+			"titlename": "Histórico de pedidos",
+			"munelist1": "Em andamento",
+			"munelist2": "Concluído",
+			"munelist3": "Cancelado"
+		},
+		"adderss": {
+			"title": "Endereço de entrega",
+			"formname": "Nome",
+			"phone": "Número do celular",
+			"fromaddress": "Endereço detalhado",
+			"formbtn": "Confirmar"
+		},
+		"payrecharge": {
+			"title": "Depósito",
+			"record": "Histórico",
+			"voucher": "Enviar comprovante",
+			"infotitle": "Tipo de rede",
+			"address": "Endereço de depósito",
+			"copy": "Copiar",
+			"succ": "Copiado com sucesso",
+			"info": "Atenção: Não envie outros ativos para este endereço USDT-TRC20.",
+			"fromaddress": "Endereço de depósito",
+			"placeAddress": "Digite o endereço de depósito",
+			"fromprice": "Valor",
+			"placeprice": "Digite o valor",
+			"fromimg": "Enviar imagem",
+			"sub": "Confirmar",
+			"title1": "Escanear QR code para transferir",
+			"title2": "Endereço de transferência"
+		},
+		"upvoucher": {
+			"title": "Enviar comprovante",
+			"fromaddress": "Endereço de cobrança",
+			"placeAddress": "Digite o endereço de cobrança",
+			"fromprice": "Valor",
+			"placeprice": "Digite o valor",
+			"fromimg": "Enviar imagem",
+			"sub": "Enviar"
+		},
+		"ajaxmess": {
+			"networktxt": "Erro de rede, tente novamente!",
+			"networklogin": "Não logado",
+			"networkerror": "Erro de rede",
+			"checkout": "Pressione novamente para sair"
+		},
+		"pageloading": {
+			"info": "Sem mais dados",
+			"text": "Carregando"
+		},
+		"servicio": {
+			"title": "Atendimento",
+			"titlechild": "Gerente",
+			"sendbtn": "Enviar"
+		},
+		"btncomfirm": ["Cancelar", "Confirmar"],
+		"toastinfo": ["Digite o número do celular", "Código enviado para o celular", "Login concluído!", "Registro concluído!", "Senha alterada!"],
+		tabbarfin: ["Início", "VIP", "Finanças", "Tarefas", "Meu"]
 	},
 	tr: {//土耳其
 		"langtext": {
@@ -4044,7 +4037,7 @@ const lang_country = {
 			"confirm": "Onayla",
 			"evaluateTitle": "Müşteri Değerlendirmesi",
 			"good": "Çok Memnun",
-				user_level_notify: [
+			user_level_notify: [
 				"****5317 değerlendir VIP2",
 				"****9240 değerlendir VIP1",
 				"****2392 değerlendir VIP3",
@@ -4096,7 +4089,7 @@ const lang_country = {
 			"listinfo1": "kişi, kalan çekim hakkı",
 			"listinfo2": "kez",
 			"formbtn": "Onayla",
-			"forminfo5":  "Tüm kullanıcılar 30 günde bir kez para çekebilir. Çekilecek miktar VIP seviyesi kurallarına göre belirlenir. Miktardan %35 gelir vergisi ve %15 şirket hizmet ücreti kesilir. VIP seviyesi yükseldikçe hizmet ücreti azalır. Detaylar için lütfen müşteri hizmetleriyle iletişime geçin."
+			"forminfo5": "Tüm kullanıcılar 30 günde bir kez para çekebilir. Çekilecek miktar VIP seviyesi kurallarına göre belirlenir. Miktardan %35 gelir vergisi ve %15 şirket hizmet ücreti kesilir. VIP seviyesi yükseldikçe hizmet ücreti azalır. Detaylar için lütfen müşteri hizmetleriyle iletişime geçin."
 		},
 		"widthdrawal_record": {
 			"title": "Para Çekme Geçmişi",
@@ -4330,162 +4323,162 @@ const lang_country = {
 			"ruleText": "Çekiliş Kuralları",
 			"ruleValue": "Müşteri davet bağlantısıyla gelen ve kimlik doğrulaması yapan yeni kullanıcılar çarkı çevirme şansı elde eder, %100 kazanma garantisi, sistem doğrulamasından sonra komisyon cüzdanına gönderilir.",
 			"noNum": "Çekiliş hakkınız kalmadı, hemen arkadaşlarınızı davet edin!",
-			"notice": {
-				"title": "Platform Duyurusu"
-			},
-			"wallet": {
-				"title": "Cüzdanım",
-				"navmodal": ["Lütfen önce kimlik doğrulamasını tamamlayın", "Doğrulamaya git"],
-				"exitmodal": "İptal?",
-				"verifing": "Kimlik doğrulaması sürüyor, lütfen bekleyin",
-				"withdrawMoney": "Çekilebilir",
-				"recordTitle": "Para Çekme Geçmişi",
-				"noData": "Veri yok",
-				"drawrecord1": "İşlemde",
-				"drawrecord2": "Başarılı",
-				"drawrecord3": "Başarısız"
-			},
-			"account": {
-				"title": "Para Çekme Hesabı",
-				"formtype": "Çekim Türü",
-				"formname": "Gerçek Ad",
-				"formnametxt": "Lütfen gerçek adınızı girin",
-				"formbank": "Banka Adı",
-				"formbanktxt": "Lütfen büyük harflerle İngilizce banka adını girin",
-				"formacc": "Banka Hesap No",
-				"formacctxt": "Lütfen hesap numarasını girin",
-				"kaibank": "Banka Şube Adresi",
-				"kaibanktxt": "Lütfen banka şube adresini girin",
-				"bankphone": "Telefon Numarası",
-				"bankphonetxt": "Lütfen bankaya kayıtlı telefon numarasını girin",
-				"idCrad": "Kimlik No",
-				"bankmail": "E-posta",
-				"address": "USDT Adresi",
-				"bankmailtxt": "Lütfen e-posta girin",
-				"bankcode": "Banka Kodu",
-				"bankcodetxt": "Lütfen banka kodunu girin",
-				"bankword": "Para Çekme Şifresi Belirle",
-				"bankwordtxt": "Lütfen 6 haneli şifre girin",
-				"bankinfo": "*Banka bilgilerini değiştirmek için lütfen çevrimiçi müşteri hizmetleriyle iletişime geçin",
-				"formbtn": "Onayla",
-				"totatinfo": "Başarıyla eklendi!",
-				"totaterror": "Mevcut ülke banka kodu yok"
-			},
-			"openmember": {
-				"title": "Üyelik Aç",
-				"titlebtn": "Yükleme Geçmişi",
-				"paylist": ["Ödeme Yöntemi", "Çevrimdışı Ödeme", "Çevrimiçi Ödeme"],
-				"paybtn": "Açmaya Git",
-				"totatinfo": ["Bu tür yükleme yapılamaz", "Lütfen yükleme türünü seçin", "Lütfen ödeme yöntemini seçin"],
-				"modeinfo": "Hesap bakiyeniz yetersiz, yükleme yapmak ister misiniz",
-				"paydata": "Geçerlilik Süresi",
-				"paytiem": "saat",
-				"totatsucc": "Yükleme başarılı!",
-				"tasknum": "Günlük görev sayısı"
-			},
-			"payrecord": {
-				"title": "Yükleme Geçmişi",
-				"munelist": ["Tüm Yüklemeler", "QR Kodla Yükleme"],
-				"paydata": ["Ödeme Bekleniyor", "İşlemde", "Yükleme Başarılı", "Yükleme Başarısız", "İade Edildi"],
-				"paytype": ["", "Çevrimiçi Yükleme", "Arka Uç Yükleme", "QR Kodla Yükleme"],
-				"paypending": ["İnceleme Bekleniyor", "Onaylandı", "Reddedildi"],
-				"re_code": "QR Kodla Yükleme",
-				"info": "Yükleme kaydı yok"
-			},
-			"msgdetail": {
-				"title": "Mesaj Merkezi",
-				"titletxt": "Mesaj Detayı",
-				"timeinfo": "Son güncelleme: "
-			},
-			"payselect": {
-				"selectmode": "Ödeme Yöntemi Seçin",
-				"selectlist": ["Banka Ödemesi", "QR Kodla Ödeme"],
-				"modeinfo": "Yükleme kanalı kapalı",
-				"bankpay": "Banka Kartıyla Yükleme",
-				"onlinepay": "Çevrimiçi Yükleme",
-				"usdtpay": "USDT"
-			},
-			"grabindex": {
-				"title": "Bugün Kalan Sipariş Alma Hakkı",
-				"info": "Yıl Sonu İndirimleri",
-				"info1": "1¥'a 100¥ kupon",
-				"log": "Kurallar",
-				"log1": "Geçmiş",
-				"totalBalance": "Mevcut Bakiye",
-				"todayOrder": "Tamamlanan Sipariş",
-				"todayIcome": "Bugünkü Kazanç",
-				"sub": "Sipariş Al",
-				"order": "Sipariş No",
-				"total": "Sipariş Toplamı",
-				"commission": "Komisyon",
-				"estimate": "Tahmini İade",
-				"formsub": "Siparişi İptal Et",
-				"formsub1": "Hemen Sipariş Al",
-				"popupinfo": "Tebrikler, kazandınız",
-				"infoconfirm": "Görüntüle",
-				"infocancel": "Devam",
-				"modaltitle1": "Bakiyeniz yetersiz",
-				"modaltitle2": ", gönderim başarısız",
-				"cancelText": "İptal",
-				"confirmText": "Yükle",
-				"titlename": "Sipariş Geçmişi",
-				"munelist1": "Devam Ediyor",
-				"munelist2": "Tamamlandı",
-				"munelist3": "İptal Edildi"
-			},
-			"adderss": {
-				"title": "Teslimat Adresi",
-				"formname": "Ad",
-				"phone": "Telefon Numarası",
-				"fromaddress": "Detaylı Adres",
-				"formbtn": "Onayla"
-			},
-			"payrecharge": {
-				"title": "Para Yükle",
-				"record": "Geçmiş",
-				"voucher": "Kanıt Gönder",
-				"infotitle": "Zincir Türü",
-				"address": "Para Yükleme Adresi",
-				"copy": "Kopyala",
-				"succ": "Kopyalandı",
-				"info": "Uyarı: Lütfen yukarıdaki adrese USDT-TRC20 dışında herhangi bir varlık yüklemeyin, aksi takdirde varlıklar geri alınamaz.",
-				"fromaddress": "Para Yükleme Adresi",
-				"placeAddress": "Lütfen para yükleme adresini girin",
-				"fromprice": "Tutar",
-				"placeprice": "Lütfen tutarı girin",
-				"fromimg": "Resim Yükle",
-				"sub": "Onayla",
-				"title1": "QR kodu tarayarak transfer yapın",
-				"title2": "Transfer Adresi"
-			},
-			"upvoucher": {
-				"title": "Kanıt Gönder",
-				"fromaddress": "Ücret Adresi",
-				"placeAddress": "Lütfen ücret adresini girin",
-				"fromprice": "Tutar",
-				"placeprice": "Lütfen tutarı girin",
-				"fromimg": "Resim Yükle",
-				"sub": "Gönder"
-			},
-			"ajaxmess": {
-				"networktxt": "Ağ hatası, lütfen tekrar deneyin!",
-				"networklogin": "Giriş yapılmadı",
-				"networkerror": "Ağ hatası",
-				"checkout": "Çıkmak için tekrar basın"
-			},
-			"pageloading": {
-				"info": "Daha fazla veri yok",
-				"text": "Yükleniyor"
-			},
-			"servicio": {
-				"title": "Sistem Müşteri Hizmetleri",
-				"titlechild": "Müşteri Yöneticisi",
-				"sendbtn": "Gönder"
-			},
-			"btncomfirm": ["İptal", "Onayla"],
-			"toastinfo": ["Lütfen telefon numarasını girin", "Doğrulama kodu telefona gönderildi", "Giriş başarılı!", "Kayıt başarılı!", "Şifre başarıyla değiştirildi"],
-			"tabbarfin": ["Ana Sayfa", "VIP", "Finans", "Görev Panosu", "Benim"]
-		}
+		},
+		"notice": {
+			"title": "Platform Duyurusu"
+		},
+		"wallet": {
+			"title": "Cüzdanım",
+			"navmodal": ["Lütfen önce kimlik doğrulamasını tamamlayın", "Doğrulamaya git"],
+			"exitmodal": "İptal?",
+			"verifing": "Kimlik doğrulaması sürüyor, lütfen bekleyin",
+			"withdrawMoney": "Çekilebilir",
+			"recordTitle": "Para Çekme Geçmişi",
+			"noData": "Veri yok",
+			"drawrecord1": "İşlemde",
+			"drawrecord2": "Başarılı",
+			"drawrecord3": "Başarısız"
+		},
+		"account": {
+			"title": "Para Çekme Hesabı",
+			"formtype": "Çekim Türü",
+			"formname": "Gerçek Ad",
+			"formnametxt": "Lütfen gerçek adınızı girin",
+			"formbank": "Banka Adı",
+			"formbanktxt": "Lütfen büyük harflerle İngilizce banka adını girin",
+			"formacc": "Banka Hesap No",
+			"formacctxt": "Lütfen hesap numarasını girin",
+			"kaibank": "Banka Şube Adresi",
+			"kaibanktxt": "Lütfen banka şube adresini girin",
+			"bankphone": "Telefon Numarası",
+			"bankphonetxt": "Lütfen bankaya kayıtlı telefon numarasını girin",
+			"idCrad": "Kimlik No",
+			"bankmail": "E-posta",
+			"address": "USDT Adresi",
+			"bankmailtxt": "Lütfen e-posta girin",
+			"bankcode": "Banka Kodu",
+			"bankcodetxt": "Lütfen banka kodunu girin",
+			"bankword": "Para Çekme Şifresi Belirle",
+			"bankwordtxt": "Lütfen 6 haneli şifre girin",
+			"bankinfo": "*Banka bilgilerini değiştirmek için lütfen çevrimiçi müşteri hizmetleriyle iletişime geçin",
+			"formbtn": "Onayla",
+			"totatinfo": "Başarıyla eklendi!",
+			"totaterror": "Mevcut ülke banka kodu yok"
+		},
+		"openmember": {
+			"title": "Üyelik Aç",
+			"titlebtn": "Yükleme Geçmişi",
+			"paylist": ["Ödeme Yöntemi", "Çevrimdışı Ödeme", "Çevrimiçi Ödeme"],
+			"paybtn": "Açmaya Git",
+			"totatinfo": ["Bu tür yükleme yapılamaz", "Lütfen yükleme türünü seçin", "Lütfen ödeme yöntemini seçin"],
+			"modeinfo": "Hesap bakiyeniz yetersiz, yükleme yapmak ister misiniz",
+			"paydata": "Geçerlilik Süresi",
+			"paytiem": "saat",
+			"totatsucc": "Yükleme başarılı!",
+			"tasknum": "Günlük görev sayısı"
+		},
+		"payrecord": {
+			"title": "Yükleme Geçmişi",
+			"munelist": ["Tüm Yüklemeler", "QR Kodla Yükleme"],
+			"paydata": ["Ödeme Bekleniyor", "İşlemde", "Yükleme Başarılı", "Yükleme Başarısız", "İade Edildi"],
+			"paytype": ["", "Çevrimiçi Yükleme", "Arka Uç Yükleme", "QR Kodla Yükleme"],
+			"paypending": ["İnceleme Bekleniyor", "Onaylandı", "Reddedildi"],
+			"re_code": "QR Kodla Yükleme",
+			"info": "Yükleme kaydı yok"
+		},
+		"msgdetail": {
+			"title": "Mesaj Merkezi",
+			"titletxt": "Mesaj Detayı",
+			"timeinfo": "Son güncelleme: "
+		},
+		"payselect": {
+			"selectmode": "Ödeme Yöntemi Seçin",
+			"selectlist": ["Banka Ödemesi", "QR Kodla Ödeme"],
+			"modeinfo": "Yükleme kanalı kapalı",
+			"bankpay": "Banka Kartıyla Yükleme",
+			"onlinepay": "Çevrimiçi Yükleme",
+			"usdtpay": "USDT"
+		},
+		"grabindex": {
+			"title": "Bugün Kalan Sipariş Alma Hakkı",
+			"info": "Yıl Sonu İndirimleri",
+			"info1": "1¥'a 100¥ kupon",
+			"log": "Kurallar",
+			"log1": "Geçmiş",
+			"totalBalance": "Mevcut Bakiye",
+			"todayOrder": "Tamamlanan Sipariş",
+			"todayIcome": "Bugünkü Kazanç",
+			"sub": "Sipariş Al",
+			"order": "Sipariş No",
+			"total": "Sipariş Toplamı",
+			"commission": "Komisyon",
+			"estimate": "Tahmini İade",
+			"formsub": "Siparişi İptal Et",
+			"formsub1": "Hemen Sipariş Al",
+			"popupinfo": "Tebrikler, kazandınız",
+			"infoconfirm": "Görüntüle",
+			"infocancel": "Devam",
+			"modaltitle1": "Bakiyeniz yetersiz",
+			"modaltitle2": ", gönderim başarısız",
+			"cancelText": "İptal",
+			"confirmText": "Yükle",
+			"titlename": "Sipariş Geçmişi",
+			"munelist1": "Devam Ediyor",
+			"munelist2": "Tamamlandı",
+			"munelist3": "İptal Edildi"
+		},
+		"adderss": {
+			"title": "Teslimat Adresi",
+			"formname": "Ad",
+			"phone": "Telefon Numarası",
+			"fromaddress": "Detaylı Adres",
+			"formbtn": "Onayla"
+		},
+		"payrecharge": {
+			"title": "Para Yükle",
+			"record": "Geçmiş",
+			"voucher": "Kanıt Gönder",
+			"infotitle": "Zincir Türü",
+			"address": "Para Yükleme Adresi",
+			"copy": "Kopyala",
+			"succ": "Kopyalandı",
+			"info": "Uyarı: Lütfen yukarıdaki adrese USDT-TRC20 dışında herhangi bir varlık yüklemeyin, aksi takdirde varlıklar geri alınamaz.",
+			"fromaddress": "Para Yükleme Adresi",
+			"placeAddress": "Lütfen para yükleme adresini girin",
+			"fromprice": "Tutar",
+			"placeprice": "Lütfen tutarı girin",
+			"fromimg": "Resim Yükle",
+			"sub": "Onayla",
+			"title1": "QR kodu tarayarak transfer yapın",
+			"title2": "Transfer Adresi"
+		},
+		"upvoucher": {
+			"title": "Kanıt Gönder",
+			"fromaddress": "Ücret Adresi",
+			"placeAddress": "Lütfen ücret adresini girin",
+			"fromprice": "Tutar",
+			"placeprice": "Lütfen tutarı girin",
+			"fromimg": "Resim Yükle",
+			"sub": "Gönder"
+		},
+		"ajaxmess": {
+			"networktxt": "Ağ hatası, lütfen tekrar deneyin!",
+			"networklogin": "Giriş yapılmadı",
+			"networkerror": "Ağ hatası",
+			"checkout": "Çıkmak için tekrar basın"
+		},
+		"pageloading": {
+			"info": "Daha fazla veri yok",
+			"text": "Yükleniyor"
+		},
+		"servicio": {
+			"title": "Sistem Müşteri Hizmetleri",
+			"titlechild": "Müşteri Yöneticisi",
+			"sendbtn": "Gönder"
+		},
+		"btncomfirm": ["İptal", "Onayla"],
+		"toastinfo": ["Lütfen telefon numarasını girin", "Doğrulama kodu telefona gönderildi", "Giriş başarılı!", "Kayıt başarılı!", "Şifre başarıyla değiştirildi"],
+		tabbarfin: ["Ana Sayfa", "VIP", "Finans", "Görev Panosu", "Benim"]
 	},
 	es: {//西班牙
 		"langtext": {
@@ -4604,7 +4597,7 @@ const lang_country = {
 			"confirm": "Confirmar",
 			"evaluateTitle": "Evaluación de clientes",
 			"good": "Muy satisfecho",
-					user_level_notify: [
+			user_level_notify: [
 				"****5317 Recargar VIP2",
 				"****9240 Recargar VIP1",
 				"****2392 Recargar VIP3",
@@ -4888,164 +4881,164 @@ const lang_country = {
 			"copyerror": "Error al copiar",
 			"windmodal": ["Felicidades, ganaste", "Depositado en billetera"],
 			"ruleText": "Reglas del sorteo",
-			"ruleValue": "Nuevos usuarios invitados tendrán una oportunidad en la ruleta, 100% de ganar, después de verificación se enviará a billetera de comisiones.",
-			"noNum": "¡No tienes oportunidades, invita amigos ahora!",
-			"notice": {
-				"title": "Anuncio de plataforma"
-			},
-			"wallet": {
-				"title": "Mi billetera",
-				"navmodal": ["Complete verificación de identidad primero", "Verificar"],
-				"exitmodal": "¿Cancelar?",
-				"verifing": "Verificación en progreso, espere",
-				"withdrawMoney": "Retirable",
-				"recordTitle": "Historial de retiros",
-				"noData": "Sin datos",
-				"drawrecord1": "En proceso",
-				"drawrecord2": "Retiro exitoso",
-				"drawrecord3": "Fallo en retiro"
-			},
-			"account": {
-				"title": "Cuenta de retiro",
-				"formtype": "Tipo de retiro",
-				"formname": "Nombre real",
-				"formnametxt": "Ingrese nombre real",
-				"formbank": "Nombre del banco",
-				"formbanktxt": "Ingrese nombre del banco en mayúsculas",
-				"formacc": "Número de cuenta bancaria",
-				"formacctxt": "Ingrese número de cuenta",
-				"kaibank": "Dirección del banco",
-				"kaibanktxt": "Ingrese dirección del banco",
-				"bankphone": "Número de teléfono",
-				"bankphonetxt": "Ingrese número registrado en banco",
-				"idCrad": "Número de identificación",
-				"bankmail": "Correo",
-				"address": "Dirección USDT",
-				"bankmailtxt": "Ingrese correo",
-				"bankcode": "Código bancario",
-				"bankcodetxt": "Ingrese código bancario",
-				"bankword": "Establecer contraseña de retiro",
-				"bankwordtxt": "Ingrese contraseña de 6 dígitos",
-				"bankinfo": "*Para cambiar información bancaria contacte servicio al cliente",
-				"formbtn": "Confirmar",
-				"totatinfo": "¡Agregado exitosamente!",
-				"totaterror": "No hay código bancario para este país"
-			},
-			"openmember": {
-				"title": "Activar membresía",
-				"titlebtn": "Historial de recargas",
-				"paylist": ["Método de pago", "Pago offline", "Pago online"],
-				"paybtn": "Activar",
-				"totatinfo": ["No se puede recargar este tipo", "Seleccione tipo de recarga", "Seleccione método de pago"],
-				"modeinfo": "Saldo insuficiente, ¿desea recargar?",
-				"paydata": "Validez",
-				"paytiem": "horas",
-				"totatsucc": "¡Recarga exitosa!",
-				"tasknum": "Número de tareas diarias"
-			},
-			"payrecord": {
-				"title": "Historial de recargas",
-				"munelist": ["Todas las recargas", "Recarga por QR"],
-				"paydata": ["Pago pendiente", "En proceso", "Recarga exitosa", "Fallo en recarga", "Reembolsado"],
-				"paytype": ["", "Recarga online", "Recarga backend", "Recarga por QR"],
-				"paypending": ["Pendiente", "Aprobado", "Rechazado"],
-				"re_code": "Recarga por QR",
-				"info": "Sin registros de recarga"
-			},
-			"msgdetail": {
-				"title": "Centro de mensajes",
-				"titletxt": "Detalles del mensaje",
-				"timeinfo": "Última actualización: "
-			},
-			"payselect": {
-				"selectmode": "Seleccionar método de pago",
-				"selectlist": ["Pago bancario", "Pago por QR"],
-				"modeinfo": "Canal de recarga cerrado",
-				"bankpay": "Recarga con tarjeta bancaria",
-				"onlinepay": "Recarga online",
-				"usdtpay": "USDT"
-			},
-			"grabindex": {
-				"title": "Oportunidades restantes hoy",
-				"info": "Ofertas de fin de año",
-				"info1": "1¥ por cupones de 100¥",
-				"log": "Reglas",
-				"log1": "Historial",
-				"totalBalance": "Saldo actual",
-				"todayOrder": "Pedido completado",
-				"todayIcome": "Ganancias de hoy",
-				"sub": "Tomar pedido",
-				"order": "Número de pedido",
-				"total": "Total del pedido",
-				"commission": "Comisión",
-				"estimate": "Retorno estimado",
-				"formsub": "Cancelar pedido",
-				"formsub1": "Tomar pedido ahora",
-				"popupinfo": "Felicidades, ganaste",
-				"infoconfirm": "Ver",
-				"infocancel": "Continuar",
-				"modaltitle1": "Saldo insuficiente",
-				"modaltitle2": ", envío fallido",
-				"cancelText": "Cancelar",
-				"confirmText": "Recargar",
-				"titlename": "Historial de pedidos",
-				"munelist1": "En progreso",
-				"munelist2": "Completado",
-				"munelist3": "Cancelado"
-			},
-			"adderss": {
-				"title": "Dirección de entrega",
-				"formname": "Nombre",
-				"phone": "Número de teléfono",
-				"fromaddress": "Dirección detallada",
-				"formbtn": "Confirmar"
-			},
-			"payrecharge": {
-				"title": "Recargar moneda",
-				"record": "Historial",
-				"voucher": "Enviar comprobante",
-				"infotitle": "Tipo de cadena",
-				"address": "Dirección de recarga",
-				"copy": "Copiar",
-				"succ": "Copiado",
-				"info": "Advertencia: No recargue activos que no sean USDT-TRC20 a esta dirección.",
-				"fromaddress": "Dirección de recarga",
-				"placeAddress": "Ingrese dirección de recarga",
-				"fromprice": "Monto",
-				"placeprice": "Ingrese monto",
-				"fromimg": "Subir imagen",
-				"sub": "Confirmar",
-				"title1": "Escanear QR para transferir",
-				"title2": "Dirección de transferencia"
-			},
-			"upvoucher": {
-				"title": "Enviar comprobante",
-				"fromaddress": "Dirección de pago",
-				"placeAddress": "Ingrese dirección de pago",
-				"fromprice": "Monto",
-				"placeprice": "Ingrese monto",
-				"fromimg": "Subir imagen",
-				"sub": "Enviar"
-			},
-			"ajaxmess": {
-				"networktxt": "Error de red, intente nuevamente!",
-				"networklogin": "No inició sesión",
-				"networkerror": "Error de red",
-				"checkout": "Presione nuevamente para salir"
-			},
-			"pageloading": {
-				"info": "No hay más datos",
-				"text": "Cargando"
-			},
-			"servicio": {
-				"title": "Servicio al cliente",
-				"titlechild": "Gerente de cliente",
-				"sendbtn": "Enviar"
-			},
-			"btncomfirm": ["Cancelar", "Confirmar"],
-			"toastinfo": ["Ingrese número de teléfono", "Código enviado al teléfono", "¡Inicio exitoso!", "¡Registro exitoso!", "¡Contraseña cambiada!"],
-			"tabbarfin": ["Inicio", "VIP", "Finanzas", "Panel de tareas", "Mi cuenta"]
-		}
+		},
+		"ruleValue": "Nuevos usuarios invitados tendrán una oportunidad en la ruleta, 100% de ganar, después de verificación se enviará a billetera de comisiones.",
+		"noNum": "¡No tienes oportunidades, invita amigos ahora!",
+		"notice": {
+			"title": "Anuncio de plataforma"
+		},
+		"wallet": {
+			"title": "Mi billetera",
+			"navmodal": ["Complete verificación de identidad primero", "Verificar"],
+			"exitmodal": "¿Cancelar?",
+			"verifing": "Verificación en progreso, espere",
+			"withdrawMoney": "Retirable",
+			"recordTitle": "Historial de retiros",
+			"noData": "Sin datos",
+			"drawrecord1": "En proceso",
+			"drawrecord2": "Retiro exitoso",
+			"drawrecord3": "Fallo en retiro"
+		},
+		"account": {
+			"title": "Cuenta de retiro",
+			"formtype": "Tipo de retiro",
+			"formname": "Nombre real",
+			"formnametxt": "Ingrese nombre real",
+			"formbank": "Nombre del banco",
+			"formbanktxt": "Ingrese nombre del banco en mayúsculas",
+			"formacc": "Número de cuenta bancaria",
+			"formacctxt": "Ingrese número de cuenta",
+			"kaibank": "Dirección del banco",
+			"kaibanktxt": "Ingrese dirección del banco",
+			"bankphone": "Número de teléfono",
+			"bankphonetxt": "Ingrese número registrado en banco",
+			"idCrad": "Número de identificación",
+			"bankmail": "Correo",
+			"address": "Dirección USDT",
+			"bankmailtxt": "Ingrese correo",
+			"bankcode": "Código bancario",
+			"bankcodetxt": "Ingrese código bancario",
+			"bankword": "Establecer contraseña de retiro",
+			"bankwordtxt": "Ingrese contraseña de 6 dígitos",
+			"bankinfo": "*Para cambiar información bancaria contacte servicio al cliente",
+			"formbtn": "Confirmar",
+			"totatinfo": "¡Agregado exitosamente!",
+			"totaterror": "No hay código bancario para este país"
+		},
+		"openmember": {
+			"title": "Activar membresía",
+			"titlebtn": "Historial de recargas",
+			"paylist": ["Método de pago", "Pago offline", "Pago online"],
+			"paybtn": "Activar",
+			"totatinfo": ["No se puede recargar este tipo", "Seleccione tipo de recarga", "Seleccione método de pago"],
+			"modeinfo": "Saldo insuficiente, ¿desea recargar?",
+			"paydata": "Validez",
+			"paytiem": "horas",
+			"totatsucc": "¡Recarga exitosa!",
+			"tasknum": "Número de tareas diarias"
+		},
+		"payrecord": {
+			"title": "Historial de recargas",
+			"munelist": ["Todas las recargas", "Recarga por QR"],
+			"paydata": ["Pago pendiente", "En proceso", "Recarga exitosa", "Fallo en recarga", "Reembolsado"],
+			"paytype": ["", "Recarga online", "Recarga backend", "Recarga por QR"],
+			"paypending": ["Pendiente", "Aprobado", "Rechazado"],
+			"re_code": "Recarga por QR",
+			"info": "Sin registros de recarga"
+		},
+		"msgdetail": {
+			"title": "Centro de mensajes",
+			"titletxt": "Detalles del mensaje",
+			"timeinfo": "Última actualización: "
+		},
+		"payselect": {
+			"selectmode": "Seleccionar método de pago",
+			"selectlist": ["Pago bancario", "Pago por QR"],
+			"modeinfo": "Canal de recarga cerrado",
+			"bankpay": "Recarga con tarjeta bancaria",
+			"onlinepay": "Recarga online",
+			"usdtpay": "USDT"
+		},
+		"grabindex": {
+			"title": "Oportunidades restantes hoy",
+			"info": "Ofertas de fin de año",
+			"info1": "1¥ por cupones de 100¥",
+			"log": "Reglas",
+			"log1": "Historial",
+			"totalBalance": "Saldo actual",
+			"todayOrder": "Pedido completado",
+			"todayIcome": "Ganancias de hoy",
+			"sub": "Tomar pedido",
+			"order": "Número de pedido",
+			"total": "Total del pedido",
+			"commission": "Comisión",
+			"estimate": "Retorno estimado",
+			"formsub": "Cancelar pedido",
+			"formsub1": "Tomar pedido ahora",
+			"popupinfo": "Felicidades, ganaste",
+			"infoconfirm": "Ver",
+			"infocancel": "Continuar",
+			"modaltitle1": "Saldo insuficiente",
+			"modaltitle2": ", envío fallido",
+			"cancelText": "Cancelar",
+			"confirmText": "Recargar",
+			"titlename": "Historial de pedidos",
+			"munelist1": "En progreso",
+			"munelist2": "Completado",
+			"munelist3": "Cancelado"
+		},
+		"adderss": {
+			"title": "Dirección de entrega",
+			"formname": "Nombre",
+			"phone": "Número de teléfono",
+			"fromaddress": "Dirección detallada",
+			"formbtn": "Confirmar"
+		},
+		"payrecharge": {
+			"title": "Recargar moneda",
+			"record": "Historial",
+			"voucher": "Enviar comprobante",
+			"infotitle": "Tipo de cadena",
+			"address": "Dirección de recarga",
+			"copy": "Copiar",
+			"succ": "Copiado",
+			"info": "Advertencia: No recargue activos que no sean USDT-TRC20 a esta dirección.",
+			"fromaddress": "Dirección de recarga",
+			"placeAddress": "Ingrese dirección de recarga",
+			"fromprice": "Monto",
+			"placeprice": "Ingrese monto",
+			"fromimg": "Subir imagen",
+			"sub": "Confirmar",
+			"title1": "Escanear QR para transferir",
+			"title2": "Dirección de transferencia"
+		},
+		"upvoucher": {
+			"title": "Enviar comprobante",
+			"fromaddress": "Dirección de pago",
+			"placeAddress": "Ingrese dirección de pago",
+			"fromprice": "Monto",
+			"placeprice": "Ingrese monto",
+			"fromimg": "Subir imagen",
+			"sub": "Enviar"
+		},
+		"ajaxmess": {
+			"networktxt": "Error de red, intente nuevamente!",
+			"networklogin": "No inició sesión",
+			"networkerror": "Error de red",
+			"checkout": "Presione nuevamente para salir"
+		},
+		"pageloading": {
+			"info": "No hay más datos",
+			"text": "Cargando"
+		},
+		"servicio": {
+			"title": "Servicio al cliente",
+			"titlechild": "Gerente de cliente",
+			"sendbtn": "Enviar"
+		},
+		"btncomfirm": ["Cancelar", "Confirmar"],
+		"toastinfo": ["Ingrese número de teléfono", "Código enviado al teléfono", "¡Inicio exitoso!", "¡Registro exitoso!", "¡Contraseña cambiada!"],
+		tabbarfin: ['página de inicio', 'vip', 'gestión financiera', 'barra de tareas', ' mío ']
 	},
 	in: {// 印度
 		"langtext": {
@@ -5164,7 +5157,7 @@ const lang_country = {
 			"confirm": "पुष्टि करें",
 			"evaluateTitle": "ग्राहक मूल्यांकन",
 			"good": "बहुत संतुष्ट",
-					user_level_notify: [
+			user_level_notify: [
 				"****5317 रिचार्ज करें VIP2",
 				"****9240 रिचार्ज करें VIP1",
 				"****2392 रिचार्ज करें VIP3",
@@ -5605,7 +5598,7 @@ const lang_country = {
 		},
 		"btncomfirm": ["रद्द करें", "पुष्टि करें"],
 		"toastinfo": ["कृपया मोबाइल नंबर दर्ज करें", "वेरिफिकेशन कोड मोबाइल पर भेज दिया गया है", "लॉगिन सफल!", "पंजीकरण सफल!", "पासवर्ड संशोधन सफल"],
-		"tabbarfin": ["होम", "VIP", "वित्त", "कार्य पट्टी", "मेरा"]
+		tabbarfin: ["होम", "VIP", "वित्त", "कार्य पट्टी", "मेरा"]
 	},
 	idsa: {//印度尼西亚
 		langtext: {
@@ -5724,7 +5717,7 @@ const lang_country = {
 			confirm: 'Sahkan',
 			evaluateTitle: 'Penilaian Pelanggan',
 			good: 'Sangat Berpuas Hati',
-					user_level_notify: [
+			user_level_notify: [
 				"****5317 Peningkatan VIP2",
 				"****9240 Peningkatan VIP1",
 				"****2392 Peningkatan VIP3",
@@ -6166,7 +6159,6 @@ const lang_country = {
 		btncomfirm: ['Batal', 'Sahkan'],
 		toastinfo: ['Sila masukkan nombor telefon', 'Kod pengesahan telah dihantar ke telefon', 'Log masuk berjaya!', 'Pendaftaran berjaya!', 'Ubah kata laluan berjaya'],
 		tabbarfin: ['Laman Utama', 'VIP', 'Kewangan', 'Bar Tugasan', 'Saya']
-		// tabbartxt:['Laman Utama','Pesanan','Kedudukan','Saya']
 	},
 	vn: {//越南
 		"langtext": {
@@ -6285,7 +6277,7 @@ const lang_country = {
 			"confirm": "Xác nhận",
 			"evaluateTitle": "Đánh giá khách hàng",
 			"good": "Rất hài lòng",
-				user_level_notify: [
+			user_level_notify: [
 				"****5317 Nạp tiền VIP2",
 				"****9240 Nạp tiền VIP1",
 				"****2392 Nạp tiền VIP3",
@@ -6726,7 +6718,7 @@ const lang_country = {
 		},
 		"btncomfirm": ["Hủy", "Xác nhận"],
 		"toastinfo": ["Vui lòng nhập số điện thoại", "Mã xác minh đã gửi đến điện thoại", "Đăng nhập thành công!", "Đăng ký thành công!", "Đổi mật khẩu thành công"],
-		"tabbarfin": ["Trang chủ", "VIP", "Tài chính", "Thanh nhiệm vụ", "Của tôi"]
+		tabbarfin: ["Trang chủ", "VIP", "Tài chính", "Thanh nhiệm vụ", "Của tôi"]
 	},
 	th: {//泰国
 		"langtext": {
@@ -6845,7 +6837,7 @@ const lang_country = {
 			"confirm": "ยืนยัน",
 			"evaluateTitle": "ความคิดเห็นลูกค้า",
 			"good": "พึงพอใจมาก",
-				user_level_notify: [
+			user_level_notify: [
 				"****5317 เติมเงิน VIP2",
 				"****9240 เติมเงิน VIP1",
 				"****2392 เติมเงิน VIP3",
@@ -6897,7 +6889,7 @@ const lang_country = {
 			"listinfo1": "คน จำนวนครั้งที่ถอนเหลือ",
 			"listinfo2": "ครั้ง",
 			"formbtn": "ยืนยัน",
-			"forminfo5":  "ผู้ใช้ทั้งหมดสามารถถอนเงินได้ 1 ครั้งทุก 30 วัน จำนวนเงินถอนเป็นไปตามกฎของระดับ VIP จำนวนเงินจะถูกหักภาษีเงินได้บุคคลธรรมดา 35% และค่าบริการบริษัท 15% ยิ่งระดับ VIP สูงยิ่งค่าบริการต่ำ รายละเอียดโปรดติดต่อฝ่ายบริการลูกค้า"
+			"forminfo5": "ผู้ใช้ทั้งหมดสามารถถอนเงินได้ 1 ครั้งทุก 30 วัน จำนวนเงินถอนเป็นไปตามกฎของระดับ VIP จำนวนเงินจะถูกหักภาษีเงินได้บุคคลธรรมดา 35% และค่าบริการบริษัท 15% ยิ่งระดับ VIP สูงยิ่งค่าบริการต่ำ รายละเอียดโปรดติดต่อฝ่ายบริการลูกค้า"
 		},
 		"widthdrawal_record": {
 			"title": "ประวัติการถอน",
@@ -7286,7 +7278,7 @@ const lang_country = {
 		},
 		"btncomfirm": ["ยกเลิก", "ยืนยัน"],
 		"toastinfo": ["กรุณากรอกหมายเลขโทรศัพท์", "ส่งรหัสยืนยันไปยังโทรศัพท์แล้ว", "เข้าสู่ระบบสำเร็จ!", "ลงทะเบียนสำเร็จ!", "เปลี่ยนรหัสผ่านสำเร็จ"],
-		"tabbarfin": ["หน้าหลัก", "VIP", "การเงิน", "แถบงาน", "ของฉัน"]
+		tabbarfin: ["หน้าหลัก", "VIP", "การเงิน", "แถบงาน", "ของฉัน"]
 	},
 	sa: { // 沙特阿拉伯
 		"langtext": {
@@ -7846,7 +7838,7 @@ const lang_country = {
 		},
 		"btncomfirm": ["إلغاء", "تأكيد"],
 		"toastinfo": ["الرجاء إدخال رقم الهاتف", "تم إرسال رمز التحقق إلى الهاتف", "تم تسجيل الدخول بنجاح!", "تم التسجيل بنجاح!", "تم تغيير كلمة المرور بنجاح"],
-		"tabbarfin": ["الصفحة الرئيسية", "VIP", "المالية", "شريط المهام", "خاصتي"]
+		tabbarfin: ["الصفحة الرئيسية", "VIP", "المالية", "شريط المهام", "خاصتي"]
 	}
 
 }

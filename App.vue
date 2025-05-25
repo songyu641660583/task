@@ -72,6 +72,10 @@ export default {
 .uni-tabbar__label {
 	margin-top: 0 !important;
 	font-size: 12px !important;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
 }
 uni-page-body {
 	height: 100% !important;
