@@ -1,10 +1,18 @@
 <template>
 	<view class="bgd">
-		<uni-load-more status="loading"></uni-load-more>
+		<uni-load-more status="loading"   :content-text="{contentrefresh: i18n2.text}"></uni-load-more>
 	</view>
 </template>
 
 <script>
+export default {
+  computed: {
+ 
+     i18n2() {
+      return this.$t('pageloading')
+    }
+  }
+}
 </script>
 
 <style lang="less">

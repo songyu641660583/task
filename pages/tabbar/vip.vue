@@ -8,7 +8,7 @@
         <view class="user-info-head">
           <image
             class="logo"
-            src="/static/images/vip/user_avatar.png"
+            :src="userInfo.avatar || '/static/images/vip/user_avatar.png'"
             mode=""
           ></image>
 					  <image
@@ -18,7 +18,7 @@
           ></image>
           <text class="name">{{ userInfo.nickname }}</text>
           <view class="vipBox">
-            <view class="vipBox-in">
+            <view class="vipBox-in" v-if="memberInfo.length > 0">
               <image
                 class="img"
                 :src="currentLevelIcon"
@@ -136,8 +136,14 @@ export default {
       return this.$t('btncomfirm')
     },
     currentLevelIcon(){
-      return this.memberInfo.map(item => item.level == this.userInfo.user_member[this.userInfo.user_member.length - 1].level ? config.ossBaseUrl + item.icon : '')[0]
-    }
+      const currentLevel = this.userInfo.user_member[this.userInfo.user_member.length - 1].level
+      let item = this.memberInfo.filter(item => item.level == currentLevel)[0]
+      if(item && item.icon) {
+        return config.ossBaseUrl + item.icon
+      } else {
+        return '/static/images/index/vip-icon5.png'
+      }
+    } 
   },
  
   methods: {
@@ -256,7 +262,7 @@ export default {
     position: relative;
     padding: 0 26rpx 0;
     &-total {
-      margin-top: 50rpx;
+      margin-top: 40rpx;
       width: 100%;
       height: 150rpx;
       background-color: #fff;
@@ -283,14 +289,14 @@ export default {
       }
     }
     &-head {
-      padding-top: 30rpx;
+      padding-top: 50rpx;
       display: flex;
       align-items: center;
       color: #fff;
-      height: 54rpx;
+      height: 66rpx;
       .logo {
-        width: 54rpx;
-        height: 54rpx;
+        width: 66rpx;
+        height: 66rpx;
         margin: 0;
       }
 			.circle {
@@ -298,7 +304,7 @@ export default {
 				width: 120rpx;
         height: 120rpx;
 				right: 40rpx;
-				// top: 0rpx;
+				top: 20rpx;
 				}
       .name {
         font-size: 30rpx;

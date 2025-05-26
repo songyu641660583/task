@@ -3,8 +3,8 @@
 		<web-view style="width:100vw;height:100vh" src="https://www.myjcrn.com"></web-view>
 		   <view  class="loading-wrap" v-if="loading">
 		      <!-- 自定义加载动画 -->
-		      <uni-load-more status="loading"></uni-load-more>
-		      <text>页面加载中...</text>
+		      <uni-load-more status="loading"  :content-text="{contentrefresh: i18n2.text}"></uni-load-more>
+		      <text>{{i18n2.text}}...</text>
 		    </view>
 		<!-- 	<view class="help-list animated fadeIn faster">
 			<loading-plus v-if="isShow"></loading-plus>
@@ -29,6 +29,9 @@
 		computed: {
 			i18n() {
 				return this.$t('index');
+			},
+			i18n2() {
+				return this.$t('pageloading');
 			}
 		},
 		created() {
