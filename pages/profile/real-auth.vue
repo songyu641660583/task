@@ -64,6 +64,9 @@ export default {
 		i18n2(){
 			return this.$t('submittask');
 		},
+		i18n3(){
+			return this.$t('widthdrawal_record')
+		}
 	},
 	methods: {
 
@@ -74,7 +77,7 @@ export default {
 		},
 		async uploadFile(file, type) {
 			uni.showLoading({
-				title: '上传中...'
+				title: this.i18n3.drawrecord1
 			})
 			const filesize = file.size / 1024 / 1024;
 			if(filesize > 10){
