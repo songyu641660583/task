@@ -172,6 +172,7 @@
         </swiper>
       </view>
     </view>
+    <view @click="handleCes">三十多分是的</view>
 
 
     <view style="text-align: center; margin-bottom: 150rpx" v-if="listdetail.length < 1">
@@ -731,6 +732,11 @@ export default {
           uni.setStorageSync('ajaxmess', that.$t('ajaxmess'))
         }
       })
+    },
+    handleCes(){
+        uni.navigateTo({
+                url: '/pages/profile/real-auth'
+              })
     },
     async loadmsg() {
       if (uni.getStorageSync('userToken') === '') {

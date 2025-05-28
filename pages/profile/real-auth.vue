@@ -5,20 +5,20 @@
 		<view class="acc_form">
 			<form @submit="formSubmit">
 				<view>
-					<uni-section title="姓名" type="line" style="padding-bottom: 15rpx;">
+					<uni-section :title="i18n.name" type="line" style="padding-bottom: 15rpx;">
 						<view class="section-wrap">
 							<input type="text" :placeholder="i18n.realName" placeholder-style="color:#b8b8b8;font-size:30rpx"
 								v-model="realName" />
 						</view>
 					</uni-section>
 
-					<uni-section title="身份证号码" type="line" style="padding-bottom: 15rpx;">
+					<uni-section :title="i18n.idCardText" type="line" style="padding-bottom: 15rpx;">
 						<view class="section-wrap">
 							<input type="text" :placeholder="i18n.idCard" placeholder-style="color:#b8b8b8;font-size:30rpx"
 								v-model="idCard" />
 						</view>
 					</uni-section>
-					<uni-section title="身份证人像面" type="line">
+					<uni-section :title="i18n.frontIdCardText" type="line">
 						<view class="section-wrap">
 							<uni-file-picker :auto-upload="false" @select="(e) => onSelect(e, 'frontIdCard')" limit="1"
 								fileMediatype="image" :image-styles="{
@@ -27,7 +27,7 @@
 								}"></uni-file-picker>
 						</view>
 					</uni-section>
-					<uni-section title="身份证国徽面" type="line" style="padding-bottom: 15rpx;">
+					<uni-section :title="i18n.backIdCardText" type="line" style="padding-bottom: 15rpx;">
 						<view class="section-wrap">
 							<uni-file-picker :auto-upload="false" @select="(e) => onSelect(e, 'backIdCard')" limit="1"
 								fileMediatype="image" :image-styles="{

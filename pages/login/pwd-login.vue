@@ -55,7 +55,6 @@
 						</view>
 						<view class="login_btn">
 							<view class="login_submit"><button @click="loginsubmit">{{i18n.btn}}</button></view>
-							<view class="forget"  @click="btn_on">{{i18n.wordinfo}} ？</view>
 						</view>
 					</view>
 			</block>

@@ -77,7 +77,14 @@ export default {
 		},
 		onCopyResult() {
 			uni.setClipboardData({
-				data: this.val
+				data: this.val,
+				showToast: false,
+				success:() =>{
+					uni.showToast({
+						title: this.i18n.copysucc,
+						icon: 'success'
+					})
+				}
 			})
 		},
 		creatQrcode() {

@@ -129,6 +129,22 @@ export default {
 			this.reg_iden = this.pickerarr[0].result[code_id].phone_code;
 		},
 		grad_picker(e,get_url,itemname){
+			const langMap = {
+				"中国": "China",
+				"美国":  "USA",
+				"俄罗斯": "Russia",
+				"菲律宾": "Philippines",
+				"韩国": "South Korea",
+				"马来西亚": "Malaysia",
+				"葡萄牙": "Portugal",
+				"土耳其": "Turkey",
+				"西班牙": "Spain",
+				"印度": "India",
+				"印度尼西亚": "Indonesia",
+				"越南": "Vietnam",
+				"泰国": "Thailand",
+				"沙特阿拉伯": "Saudi Arabia",
+			}
 			this.selecttask = e;
 			this.$http.requestajx(get_url,'get',{}).then((res) => {
 				let data = res.result;
@@ -136,7 +152,6 @@ export default {
 				this.pickerlist = data.map((item)=>{
 					return item[itemname];
 				});
-				console.log(this.pickerarr)
 			});
 			this.$refs.showpicker.picker_open();
 		},

@@ -113,6 +113,7 @@ export default {
         uni.showModal({
           content: this.i18n.navmodal[0],
           confirmText: this.i18n.navmodal[1],
+          cancelText: this.i18n.exitmodal,
           success(res) {
             if (res.confirm) {
               uni.navigateTo({

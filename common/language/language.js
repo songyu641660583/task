@@ -387,7 +387,11 @@ const lang_country = {
 			realName: '请输入真实姓名',
 			frontIdCard: '请上传身份证正面',
 			backIdCard: '请上传身份证反面',
-			totatinfo: '提交成功'
+			totatinfo: '提交成功',
+			name: '姓名',
+			idCardText: '身份证号码',
+			frontIdCardText: '身份证正面',
+			backIdCardText: '身份证反面',
 		},
 		lucky: {
 			title: '抽奖',
@@ -410,7 +414,7 @@ const lang_country = {
 		wallet: {
 			title: '我的钱包',
 			navmodal: ['请先完成实名认证', '去认证'],
-			exitmodal: '取消?',
+			exitmodal: '取消',
 			verifing: '实名认证中，请耐心等待',
 			withdrawMoney: '可提款',
 			recordTitle: '提现记录',
@@ -947,7 +951,11 @@ const lang_country = {
 			realName: 'Enter real name',
 			frontIdCard: 'Upload ID card front',
 			backIdCard: 'Upload ID card back',
-			totatinfo: 'Submitted successfully'
+			totatinfo: 'Submitted successfully',
+			name: 'Name',
+			idCardText: 'ID number',
+			frontIdCardText: 'Front of ID card',
+			backIdCardText: 'Back of ID card',
 		},
 		lucky: {
 			title: 'Lucky Draw',
@@ -1507,7 +1515,11 @@ const lang_country = {
 			realName: 'Введите настоящее имя',
 			frontIdCard: 'Загрузите лицевую сторону',
 			backIdCard: 'Загрузите обратную сторону',
-			totatinfo: 'Успешно отправлено'
+			totatinfo: 'Успешно отправлено',
+			name: "Имя",
+			idCardText: "Номер удостоверения ",
+			frontIdCardText: "Лицевая сторона удостоверения",
+			backIdCardText: "Обратная сторона удостоверения",
 		},
 		lucky: {
 			title: 'Розыгрыш',
@@ -2067,7 +2079,11 @@ const lang_country = {
 			realName: 'Enter real name',
 			frontIdCard: 'Upload ID card front',
 			backIdCard: 'Upload ID card back',
-			totatinfo: 'Submitted successfully'
+			totatinfo: 'Submitted successfully',
+			name: 'Pangalan',
+			idCardText: 'ID number',
+			frontIdCardText: 'Front of ID card',
+			backIdCardText: 'Back of ID card',
 		},
 		lucky: {
 			title: 'Lucky Draw',
@@ -2627,7 +2643,11 @@ const lang_country = {
 			realName: '진짜 이름을 입력하십시오',
 			frontIdCard: '신분증 앞면을 올려주세요',
 			backIdCard: '신분증 뒷면을 올려주세요',
-			totatinfo: '제출 성공'
+			totatinfo: '제출 성공',
+			name: '이름',
+			idCardText: '주민등록번호',
+			frontIdCardText: '신분증 앞면',
+			backIdCardText: '신분증 뒷면',
 		},
 		lucky: {
 			title: '추첨',
@@ -3187,7 +3207,11 @@ const lang_country = {
 			realName: 'Sila masukkan nama sebenar',
 			frontIdCard: 'Sila muat naik hadapan kad pengenalan',
 			backIdCard: 'Sila muat naik belakang kad pengenalan',
-			totatinfo: 'Hantar Berjaya'
+			totatinfo: 'Hantar Berjaya',
+			nama: "Nama",
+			idCardText: 'Nombor kad pengenalan',
+			frontIdCardText: 'Bahagian hadapan kad pengenalan',
+			backIdCardText: 'Bahagian belakang kad pengenalan',
 		},
 		lucky: {
 			title: 'Cabutan Bertuah',
@@ -3747,7 +3771,11 @@ const lang_country = {
 			"realName": "Digite o nome real",
 			"frontIdCard": "Enviar frente do documento",
 			"backIdCard": "Enviar verso do documento",
-			"totatinfo": "Enviado com sucesso"
+			"totatinfo": "Enviado com sucesso",
+			name: 'nome',
+			idCardText: 'Número do cartão de identificação',
+			frontIdCardText: 'Identificação frontal',
+			backIdCardText: 'reverso do cartão de identidade',
 		},
 		"lucky": {
 			"title": "Sorteio",
@@ -4307,7 +4335,11 @@ const lang_country = {
 			"realName": "Lütfen gerçek adınızı girin",
 			"frontIdCard": "Lütfen kimliğin ön yüzünü yükleyin",
 			"backIdCard": "Lütfen kimliğin arka yüzünü yükleyin",
-			"totatinfo": "Başarıyla gönderildi"
+			"totatinfo": "Başarıyla gönderildi",
+			name: "Adı",
+			idCardText: 'Kimlik numarası',
+			frontIdCardText: 'Kimlik kartının ön tarafı',
+			backIdCardText: 'Kimlik kartının tersi tarafı',
 		},
 		"lucky": {
 			"title": "Çekiliş",
@@ -4867,7 +4899,11 @@ const lang_country = {
 			"realName": "Ingrese nombre real",
 			"frontIdCard": "Suba frente de identificación",
 			"backIdCard": "Suba reverso de identificación",
-			"totatinfo": "Enviado exitosamente"
+			"totatinfo": "Enviado exitosamente",
+			name: 'nombre',
+			idcardtext: 'número de identificación',
+			frontcardext: 'id frontal',
+			backidcardtext: 'id reverse',
 		},
 		"lucky": {
 			"title": "Sorteo",
@@ -4881,9 +4917,9 @@ const lang_country = {
 			"copyerror": "Error al copiar",
 			"windmodal": ["Felicidades, ganaste", "Depositado en billetera"],
 			"ruleText": "Reglas del sorteo",
+			"ruleValue": "Nuevos usuarios invitados tendrán una oportunidad en la ruleta, 100% de ganar, después de verificación se enviará a billetera de comisiones.",
+		  "noNum": "¡No tienes oportunidades, invita amigos ahora!",
 		},
-		"ruleValue": "Nuevos usuarios invitados tendrán una oportunidad en la ruleta, 100% de ganar, después de verificación se enviará a billetera de comisiones.",
-		"noNum": "¡No tienes oportunidades, invita amigos ahora!",
 		"notice": {
 			"title": "Anuncio de plataforma"
 		},
@@ -5427,7 +5463,14 @@ const lang_country = {
 			"realName": "कृपया वास्तविक नाम दर्ज करें",
 			"frontIdCard": "कृपया पहचान पत्र का सामने का भाग अपलोड करें",
 			"backIdCard": "कृपया पहचान पत्र का पिछला भाग अपलोड करें",
-			"totatinfo": "जमा सफल"
+			"totatinfo": "जमा सफल",
+			name: 'नाम',
+
+			idCardText: 'पहचान पत्र संख्या',
+
+			frontIdCardText: 'पहचान पत्र का सामने का भाग',
+
+			backIdCardText: 'पहचान पत्र का पिछला भाग',
 		},
 		"lucky": {
 			"title": "लकी ड्रा",
@@ -5987,7 +6030,11 @@ const lang_country = {
 			realName: 'Sila masukkan nama sebenar',
 			frontIdCard: 'Sila muat naik hadapan kad pengenalan',
 			backIdCard: 'Sila muat naik belakang kad pengenalan',
-			totatinfo: 'Hantar Berjaya'
+			totatinfo: 'Hantar Berjaya',
+			nama: "Nama",
+			idCardText: 'Nombor kad pengenalan',
+			frontIdCardText: 'Bahagian hadapan kad pengenalan',
+			backIdCardText: 'Bahagian belakang kad pengenalan',
 		},
 		lucky: {
 			title: 'Cabutan Bertuah',
@@ -6547,7 +6594,11 @@ const lang_country = {
 			"realName": "Nhập tên thật",
 			"frontIdCard": "Tải lên mặt trước CMND",
 			"backIdCard": "Tải lên mặt sau CMND",
-			"totatinfo": "Gửi thành công"
+			"totatinfo": "Gửi thành công",
+			name: 'Tên',
+			idCardText: 'Số ID',
+			frontIdCardText: 'Mặt trước của thẻ căn cước',
+			backIdCardText: 'Mặt trái của thẻ căn cước',
 		},
 		"lucky": {
 			"title": "Quay thưởng",
@@ -7107,7 +7158,11 @@ const lang_country = {
 			"realName": "กรอกชื่อจริง",
 			"frontIdCard": "อัปโหลดหน้าบัตรประชาชน",
 			"backIdCard": "อัปโหลดหลังบัตรประชาชน",
-			"totatinfo": "ส่งสำเร็จ"
+			"totatinfo": "ส่งสำเร็จ",
+			name: 'ชื่อ',
+			idCardText: 'หมายเลขบัตรประชาชน',
+			frontIdCardText: 'หน้าบัตรประชาชน',
+			backIdCardText: 'ด้านหลังบัตรประชาชน',
 		},
 		"lucky": {
 			"title": "ลุ้นรางวัล",
@@ -7667,7 +7722,11 @@ const lang_country = {
 			"realName": "الرجاء إدخال الاسم الحقيقي",
 			"frontIdCard": "الرجاء تحميل وجه بطاقة الهوية",
 			"backIdCard": "الرجاء تحميل ظهر بطاقة الهوية",
-			"totatinfo": "تم الإرسال بنجاح"
+			"totatinfo": "تم الإرسال بنجاح",
+			"name": "الاسم ",
+			"idcardtext": " رقم الهوية ",
+			"frontidcardtext": " واجهة بطاقة الهوية ",
+			"backidcardtext": " عكس الهوية ",
 		},
 		"lucky": {
 			"title": "السحب",

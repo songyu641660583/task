@@ -77,7 +77,7 @@ export default {
 		options.header = {
 			'Content-Type': 'application/x-www-form-urlencoded',
 			'Authorization': uni.getStorageSync('userToken') || '',
-			'Locale': uni.getStorageSync('locale_key') || 0
+			'locale': uni.getStorageSync('languageCode') || 'en-US'
 		}
 		return new Promise((resolve, reject) => {
 			let _config = null;

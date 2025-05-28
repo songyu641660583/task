@@ -322,7 +322,14 @@ export default {
 		},
 		onCopyResult() {
 			uni.setClipboardData({
-				data: this.linkValue
+				data: this.linkValue,
+				showToast: false,
+				success:() =>{
+					uni.showToast({
+						title: this.i18n.copysucc,
+						icon: 'success'
+					})
+				}
 			})
 		},
 	},
