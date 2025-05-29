@@ -172,9 +172,6 @@
         </swiper>
       </view>
     </view>
-    <view @click="handleCes">三十多分是的</view>
-
-
     <view style="text-align: center; margin-bottom: 150rpx" v-if="listdetail.length < 1">
       <image src="/static/images/index/pic_zanwu.png" style="width: 450rpx; height: 230rpx; margin-top: 100rpx"></image>
       <view style="color: #615f60; font-size: 28rpx; margin-top: 50rpx">{{
@@ -574,11 +571,7 @@ export default {
         url: '/pages/index/searchList?keywords=' + e.text
       })
     },
-    handleCeshi() {
-      uni.navigateTo({
-        url: '/pages/profile/real-auth?id=' + this.invitationid
-      })
-    },
+   
     loadjson() {
       let that = this
       this.$http
@@ -665,6 +658,9 @@ export default {
 
               that.loadjson()
               that.munelang = data
+              if(that.munelang.length > 14) {
+                that.munelang.length = 14
+              }
               that.langflagimg = data[e].image
               that.langflagtxt = data[e].lang
               that.langshow = false
@@ -733,11 +729,7 @@ export default {
         }
       })
     },
-    handleCes(){
-        uni.navigateTo({
-                url: '/pages/profile/real-auth'
-              })
-    },
+    
     async loadmsg() {
       if (uni.getStorageSync('userToken') === '') {
         clearInterval(this.timeintr)

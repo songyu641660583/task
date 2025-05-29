@@ -1,7 +1,7 @@
 <template>
 	<view style="overflow: hidden;">
 		<view class="login_content">
-			<block v-if="pagefalse"><view class="pagelogin_info">请在手机端打开</view></block>
+			<block v-if="pagefalse"><view class="pagelogin_info">Please open on your mobile phone</view></block>
 			<block v-else>
 				<view class="header_pos">
 					<view class="status_bar"></view>
@@ -128,6 +128,9 @@ export default {
 						
 
 						that.munelang = data;
+						if(that.munelang.length > 14) {
+					  	that.munelang.length = 14
+						}
 						that.langflagimg = data[e].image;
 						that.langflagtxt = data[e].lang;
 						that.langshow = false;
