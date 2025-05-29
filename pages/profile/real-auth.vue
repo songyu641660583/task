@@ -118,7 +118,7 @@ export default {
 				return
 			}
 			uni.showLoading({
-				title: '提交中...'
+				title: this.i18n3.drawrecord1
 			})
 			this.$http.requestajx('account/verify', 'put', {
 				realname: this.realName,
