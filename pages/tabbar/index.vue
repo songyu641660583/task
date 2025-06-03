@@ -541,7 +541,6 @@ export default {
       return this.$t('pagesprofile')
     },
     tabbartxt() {
-      console.log('变化', this.$t('tabbarfin'))
       return this.$t('tabbarfin')
     },
   },
@@ -649,11 +648,9 @@ export default {
           ]
           
           that.$i18n.locale = edition[parseInt(e)]
-          console.log('that.$i18n.locale', that.$i18n.locale)
           that.$http
             .requestajx('country', 'get', {})
             .then((res) => {
-              // console.log(res);
               let data = res.result
 
               that.loadjson()
@@ -668,7 +665,6 @@ export default {
 						  uni.setStorageSync('languageCode', res.result[e].code);
               setTimeout(() => {
                  that.tabbartxt.forEach(function (item, index) {
-                    console.log(item)
                     uni.setTabBarItem({ index: index, text: item })
                   })
               }, 500)

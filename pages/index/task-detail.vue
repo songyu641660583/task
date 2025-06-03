@@ -188,7 +188,7 @@ export default {
       },
       isLoading: true,
       type: '',
-      user_task_id: 0
+      user_task_id: 0,
     }
   },
   methods: {
@@ -228,6 +228,9 @@ export default {
         id: this.task_detail.id,
         category_id: this.task_detail.category_id
       })
+      if(!this.user_task_id) {
+        this.user_task_id = res.result.id
+      }
       this.type = '0'
       this.totat(this.i18n.modesucc)
     }

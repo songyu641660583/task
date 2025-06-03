@@ -45,7 +45,6 @@
 				uni.getStorage({
 					key:'locale_key',
 					success:function(res){
-						console.log(res.data);
 						var edition=['zh-CN','en-US','한국어','日本語'];
 						that.$i18n.locale = edition[parseInt(res.data)];
 					}

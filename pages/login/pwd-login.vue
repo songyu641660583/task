@@ -113,7 +113,6 @@ export default {
 			    key: 'locale_key',
 			    data: e,
 			    success: function () {
-						console.log('success222');
 					var edition = ['zh','en','ru','ph','kr','my','pt','tr','es','in','idsa','vn','th','sa'];
 					that.$i18n.locale = edition[parseInt(e)];
 					uni.setStorageSync('ajaxmess', that.$t('ajaxmess'));
@@ -122,7 +121,6 @@ export default {
 					// 	uni.setTabBarItem({ index: index, text: item});
 					// });
 					that.$http.requestajx('country','get',{}).then((res) => {
-						// console.log(res);
 						let data = res.result;
 						uni.setStorageSync('languageCode', res.result[e].code);
 						
@@ -207,7 +205,7 @@ export default {
 		 // #endif
 		let localkey = uni.getStorageSync('locale_key');
 		if(localkey === ""){
-			this.munebtn(0);
+			this.munebtn(8);
 		}else{
 			this.munebtn(localkey);
 		}

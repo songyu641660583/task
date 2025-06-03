@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>网络网页</title>
+    <script src="https://shopee.vn/Son-Kem-Perfect-Diary-M%C3%A0u-L%C3%AC-T%C3%B4ng-M%C3%A0u-C%E1%BB%95-%C4%90i%E1%BB%83n-L%C3%A2u-Tr%C3%B4i-2.5g-i.277411443.7254565873"></script>
+    <style type="text/css">
+    </style>
+  </head>
+  <body>
+  	<iframe id="iframeId"></iframe>
+    <p class="desc">web-view 组件加载网络 html 示例。点击下列按钮，跳转至其它页面。</p>
+    <div id="container"></div>
+    <div class="btn-list">
+      <button class="btn" type="button" data-action="navigateTo">navigateTo</button>
+      <button class="btn" type="button" data-action="redirectTo">redirectTo</button>
+      <button class="btn" type="button" data-action="navigateBack">navigateBack</button>
+      <button class="btn" type="button" data-action="reLaunch">reLaunch</button>
+      <button class="btn" type="button" data-action="switchTab">switchTab</button>
+    </div>
+    <div class="post-message-section">
+      <p class="desc">网页向应用发送消息，注意：小程序端应用会在此页面后退时接收到消息。</p>
+      <div class="btn-list">
+        <button class="btn btn-red" type="button" id="postMessage">postMessage</button>
+      </div>
+    </div>
+    <script type="text/javascript">
+    	var weburl = 'https://www.amazon.com/dp/B01E3QM34W/?_encoding=UTF8&pf_rd_p=20593af2-19f3-4f5c-9727-afb5a48b5667&pd_rd_wg=9hBe3&pf_rd_r=YMAE8NB3K16WDJ75D9QD&pd_rd_w=Ri9yq&pd_rd_r=6ecd6251-4257-4a17-9998-8faed700ccbb';
+			window.location.href=weburl;
+     
+//   window.location.reload(weburl)
+    </script>
+    <!-- uni 的 SDK -->
+    <script type="text/javascript" src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
+    <script type="text/javascript">
+      // 待触发 `UniAppJSBridgeReady` 事件后，即可调用 uni 的 API。
+      var weburl = 'https://shopee.vn/Son-Kem-Perfect-Diary-M%C3%A0u-L%C3%AC-T%C3%B4ng-M%C3%A0u-C%E1%BB%95-%C4%90i%E1%BB%83n-L%C3%A2u-Tr%C3%B4i-2.5g-i.277411443.7254565873'
+//   
+//   	document.domain='https://127.0.0.8081';
+//   	location.assign(weburl)
+//   
+      
+      document.addEventListener('UniAppJSBridgeReady', function() {
+				
+        uni.postMessage({
+            data: {
+                action: 'message'
+            }
+        });
+        uni.getEnv(function(res) {
+            console.log('当前环境：' + JSON.stringify(res));
+        });
+          window.addEventListener('message', function(e) {
+			        console.log('接收到的消息:', e.data);
+			    });
+
+      });
+    </script>
+  </body>
+</html>

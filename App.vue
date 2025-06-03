@@ -23,14 +23,11 @@ export default {
 			uni.getStorage({
 			    key: 'locale_key',
 			    success: function (res) {
-			        // console.log('success'+JSON.stringify(res));
 					var edition = ['zh','en','ru','ph','kr','my','pt','tr','es','in','idsa','vn','th','sa'];
 					that.$i18n.locale = edition[parseInt(res.data)];
 					that.$t('tabbarfin').map(function(item,index){
 						uni.setTabBarItem({ index: index, text: item});
 					});
-
-					
 					 uni.setStorageSync('ajaxmess', that.$t('ajaxmess'));
 			    }
 			});
