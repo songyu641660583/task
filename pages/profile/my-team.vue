@@ -2,7 +2,7 @@
 	<view>
 		<!-- <fh-tab-control :tabItem="tabItem" :tabIndex="tabIndex" style="border-bottom: 10rpx solid #f5f7fd;" @itemClick="itemClick"></fh-tab-control> -->
 		<loading-plus v-if="isLoading"></loading-plus>
-		<public-head :title="i18n.title" :btntxt="i18n.titlebtn" v-on:initbtn="datetimebtn" backcolor="#27326e" color_icon="#fff"></public-head>
+		<public-head :title="i18n.title"  backcolor="#27326e" color_icon="#fff"></public-head>
 		<view class="team_info">
 			<view class="team_date" v-show="datetimeshow">
 				<view class="team_date_item">

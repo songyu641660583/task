@@ -140,7 +140,10 @@
         "router" : {
             "mode" : "hash"
         },
-        "title" : "doumi103",
+        "title" : "Trusted Singapore-UK",
+        "meta": {
+            "description": "JCRN partnering with Tiktok.Facebook.Instagram and YouTube .Users earn money easily by liking posts"
+        },
         "async" : {
             //页面js异步加载配置
             "error" : "network-error", //页面js加载失败时使用的组件（需注册为全局组件）
