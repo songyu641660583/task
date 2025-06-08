@@ -80,7 +80,7 @@ export default {
 				title: this.i18n3.drawrecord1
 			})
 			const filesize = file.size / 1024 / 1024;
-			if(filesize > 10){
+			if(filesize > 20){
 				this.totat(this.i18n2.modelinfo);
 				return false;
 			}

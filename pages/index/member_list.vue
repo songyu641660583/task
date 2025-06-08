@@ -12,7 +12,7 @@
 			</scroll-view>
 		</view>
 		<view class="loading_more" v-if="isShow">
-			<uni-load-more status="loading"></uni-load-more>
+			<uni-load-more  :content-text="{contentrefresh: i18n2.contentrefresh, contentnomore: i18n2.contentnomore}" status="loading"></uni-load-more>
 		</view>
 		<view class="member_content" v-else>
 			<view class="c-item" v-for="(item, index) in pageData.data" :key="index" >
@@ -35,7 +35,7 @@
 					<button @click="submittask(item)">Auto Process</button>
 				</view>
 			</view>
-			<uni-load-more :status="status" v-if="pageData.data.length > 10"></uni-load-more>
+			<uni-load-more  :content-text="{contentrefresh: i18n2.contentrefresh, contentnomore: i18n2.contentnomore}" :status="status" v-if="pageData.data.length > 10"></uni-load-more>
 			<view style="text-align: center;" v-if="pageData.data.length === 0">
 				<image src="/static/images/index/pic_zanwu.png" style="width: 450rpx;height: 230rpx;margin-top: 400rpx;"></image>
 				<view style="color: #615f60;font-size: 28rpx;margin-top: 50rpx;">{{i18n.listinfo}}</view>
@@ -175,6 +175,9 @@ export default {
 		},
 		i18n(){
 			return this.$t('memberhall');
+		},
+			i18n2() {
+			return this.$t('load_more');
 		}
 	},
 	onShow() {

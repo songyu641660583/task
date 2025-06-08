@@ -3,7 +3,7 @@
 		<fh-tab-control :tabItem="i18n.munelist" :tabIndex="tabIndex" :sliderWidth="42" :bottom="0" :isBorder="true" @itemClick="itemClick"></fh-tab-control>
 		<public-head :title="i18n.title"></public-head>
 		<view class="bgd" style="flex: 1;background-color: #f5f7fd;display: flex;align-items: center;justify-content: center;" v-if="isShow">
-			<uni-load-more status="loading"></uni-load-more>
+			<uni-load-more :content-text="{contentrefresh: i18n2.contentrefresh, contentnomore: i18n2.contentnomore}" status="loading"></uni-load-more>
 		</view>
 		<view class="bill-list" v-else>
 			<view class="record-item" v-for="(item, index) in pageData.data" :key="index">
@@ -32,7 +32,7 @@
 				<view class="item-right-active" v-else-if="item.balance < 0">{{ item.balance | formatPrice }}</view>
 				<view class="item-right-text" v-else>{{item.remark}}</view>
 			</view>
-			<uni-load-more :status="status" v-if="pageData.data.length>=10"></uni-load-more>
+			<uni-load-more :content-text="{contentrefresh: i18n2.contentrefresh, contentnomore: i18n2.contentnomore}" :status="status" v-if="pageData.data.length>=10"></uni-load-more>
 			<view style="text-align: center;" v-if="pageData.data.length === 0">
 				<image src="/static/images/index/pic_zanwu.png" style="width: 450rpx;height: 230rpx;margin-top: 400rpx;"></image>
 				<view style="color: #615f60;font-size: 28rpx;margin-top: 50rpx;">{{i18n.info}}</view>
@@ -56,6 +56,9 @@ export default {
 	computed:{
 		i18n(){
 			return this.$t('payrecord');
+		},
+			i18n2() {
+			return this.$t('load_more');
 		}
 	},
 	methods: {

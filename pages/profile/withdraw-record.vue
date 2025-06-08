@@ -11,7 +11,7 @@
 			<view class="item-right" v-if="item.status === 1">{{ item.amount | formatPrice }}</view>
 			<view class="item-right-other" v-if="item.status === 2">{{ item.remark }}</view>
 		</view>
-		<uni-load-more :status="status" v-if="pageData.data.length > 10"></uni-load-more>
+		<uni-load-more  :content-text="{contentrefresh: i18n2.contentrefresh, contentnomore: i18n2.contentnomore}"  :status="status" v-if="pageData.data.length > 10"></uni-load-more>
 		<view class="empty" v-if="pageData.data.length == 0">{{i18n.drawinfo}}</view>
 	</view>
 </template>
@@ -26,6 +26,9 @@ export default {
 	computed:{
 		i18n(){
 			 return this.$t('widthdrawal_record');
+		},
+		i18n2() {
+			return this.$t('load_more');
 		}
 	},
 	methods: {

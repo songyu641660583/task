@@ -81,7 +81,7 @@ export default {
 		// #endif
 		let localkey = uni.getStorageSync('locale_key');
 		if(localkey === ""){
-			this.munebtn(0);
+			this.munebtn(8);
 		}else{
 			this.munebtn(localkey);
 		}

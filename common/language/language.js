@@ -139,7 +139,7 @@ const lang_country = {
 			statetask: '完成状态',
 			stateinfo: '未完成',
 			subbtn: '提交任务',
-			modelinfo: '图片上传大小不能大于10M,请重新上传',
+			modelinfo: '图片上传大小不能大于20M,请重新上传',
 			modelsucc: '提交成功！'
 		},
 		helpdetail: {
@@ -703,7 +703,7 @@ const lang_country = {
 			statetask: 'Completion Status',
 			stateinfo: 'Not Completed',
 			subbtn: 'Submit Task',
-			modelinfo: 'Image upload size cannot exceed 10M, please re-upload',
+			modelinfo: 'Image upload size cannot exceed 20M, please re-upload',
 			modelsucc: 'Submitted successfully!'
 		},
 		helpdetail: {
@@ -1267,7 +1267,7 @@ const lang_country = {
 			statetask: 'Статус выполнения',
 			stateinfo: 'Не завершено',
 			subbtn: 'Отправить задание',
-			modelinfo: 'Размер изображения не должен превышать 10МБ, загрузите заново',
+			modelinfo: 'Размер изображения не должен превышать 20МБ, загрузите заново',
 			modelsucc: 'Успешно отправлено!'
 		},
 		helpdetail: {
@@ -1831,7 +1831,7 @@ const lang_country = {
 			statetask: 'Completion Status',
 			stateinfo: 'Not Completed',
 			subbtn: 'Submit Task',
-			modelinfo: 'Image upload size cannot exceed 10M, please re-upload',
+			modelinfo: 'Image upload size cannot exceed 20M, please re-upload',
 			modelsucc: 'Submitted successfully!'
 		},
 		helpdetail: {
@@ -2395,7 +2395,7 @@ const lang_country = {
 			statetask: '완료 상태',
 			stateinfo: '미완성',
 			subbtn: '임무 커밋',
-			modelinfo: '그림 업로드 크기는 10M보다 클 수 없습니다. 다시 업로드하세요',
+			modelinfo: '그림 업로드 크기는 20M보다 클 수 없습니다. 다시 업로드하세요',
 			modelsucc: '제출 성공!'
 		},
 		helpdetail: {
@@ -2959,7 +2959,7 @@ const lang_country = {
 			statetask: 'Status Penyelesaian',
 			stateinfo: 'Belum Selesai',
 			subbtn: 'Hantar Tugasan',
-			modelinfo: 'Saiz gambar tidak boleh melebihi 10M, sila muat naik semula',
+			modelinfo: 'Saiz gambar tidak boleh melebihi 20M, sila muat naik semula',
 			modelsucc: 'Hantar Berjaya!'
 		},
 		helpdetail: {
@@ -3523,7 +3523,7 @@ const lang_country = {
 			"statetask": "Status de conclusão",
 			"stateinfo": "Incompleto",
 			"subbtn": "Enviar tarefa",
-			"modelinfo": "O tamanho da imagem não pode exceder 10M, por favor envie novamente",
+			"modelinfo": "O tamanho da imagem não pode exceder 20M, por favor envie novamente",
 			"modelsucc": "Enviado com sucesso!"
 		},
 		"helpdetail": {
@@ -4087,7 +4087,7 @@ const lang_country = {
 			"statetask": "Tamamlama Durumu",
 			"stateinfo": "Tamamlanmadı",
 			"subbtn": "Gönderi Yap",
-			"modelinfo": "Resim boyutu 10MB'tan büyük olamaz, lütfen tekrar yükleyin",
+			"modelinfo": "Resim boyutu 20MB'tan büyük olamaz, lütfen tekrar yükleyin",
 			"modelsucc": "Başarıyla gönderildi!"
 		},
 		"helpdetail": {
@@ -4651,7 +4651,7 @@ const lang_country = {
 			"statetask": "Estado de finalización",
 			"stateinfo": "Incompleto",
 			"subbtn": "Enviar tarea",
-			"modelinfo": "El tamaño de la imagen no puede exceder 10MB, por favor suba nuevamente",
+			"modelinfo": "El tamaño de la imagen no puede exceder 20MB, por favor suba nuevamente",
 			"modelsucc": "¡Enviado con éxito!"
 		},
 		"helpdetail": {
@@ -5215,7 +5215,7 @@ const lang_country = {
 			"statetask": "पूर्ण स्थिति",
 			"stateinfo": "अपूर्ण",
 			"subbtn": "कार्य जमा करें",
-			"modelinfo": "छवि अपलोड आकार 10M से अधिक नहीं होना चाहिए, कृपया पुनः अपलोड करें",
+			"modelinfo": "छवि अपलोड आकार 20M से अधिक नहीं होना चाहिए, कृपया पुनः अपलोड करें",
 			"modelsucc": "जमा सफल!"
 		},
 		"helpdetail": {
@@ -5782,7 +5782,7 @@ const lang_country = {
 			statetask: 'Status Penyelesaian',
 			stateinfo: 'Belum Selesai',
 			subbtn: 'Hantar Tugasan',
-			modelinfo: 'Saiz gambar tidak boleh melebihi 10M, sila muat naik semula',
+			modelinfo: 'Saiz gambar tidak boleh melebihi 20M, sila muat naik semula',
 			modelsucc: 'Hantar Berjaya!'
 		},
 		helpdetail: {
@@ -6346,7 +6346,7 @@ const lang_country = {
 			"statetask": "Tình trạng hoàn thành",
 			"stateinfo": "Chưa hoàn thành",
 			"subbtn": "Nộp nhiệm vụ",
-			"modelinfo": "Kích thước ảnh tải lên không quá 10M, vui lòng tải lên lại",
+			"modelinfo": "Kích thước ảnh tải lên không quá 20M, vui lòng tải lên lại",
 			"modelsucc": "Nộp thành công!"
 		},
 		"helpdetail": {
@@ -6910,7 +6910,7 @@ const lang_country = {
 			"statetask": "สถานะการเสร็จสิ้น",
 			"stateinfo": "ยังไม่เสร็จสิ้น",
 			"subbtn": "ส่งงาน",
-			"modelinfo": "ขนาดภาพที่อัปโหลดต้องไม่เกิน 10M กรุณาอัปโหลดใหม่",
+			"modelinfo": "ขนาดภาพที่อัปโหลดต้องไม่เกิน 20M กรุณาอัปโหลดใหม่",
 			"modelsucc": "ส่งสำเร็จ!"
 		},
 		"helpdetail": {
@@ -7474,7 +7474,7 @@ const lang_country = {
 			"statetask": "حالة الإكمال",
 			"stateinfo": "غير مكتمل",
 			"subbtn": "إرسال المهمة",
-			"modelinfo": "لا يمكن أن يتجاوز حجم الصورة 10M، يرجى إعادة التحميل",
+			"modelinfo": "لا يمكن أن يتجاوز حجم الصورة 20M، يرجى إعادة التحميل",
 			"modelsucc": "تم الإرسال بنجاح!"
 		},
 		"helpdetail": {

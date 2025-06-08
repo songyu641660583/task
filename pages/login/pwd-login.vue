@@ -109,6 +109,7 @@ export default {
 		munebtn(e){
 			this.mune_index = e;
 			var that = this;
+			console.log('eeee',e)
 			uni.setStorage({
 			    key: 'locale_key',
 			    data: e,

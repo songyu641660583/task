@@ -141,7 +141,7 @@
 				    success: (res) => {
 				        const tempFilePaths = res.tempFilePaths,
 								filesize = res.tempFiles[0].size / 1024 / 1024;
-								if(filesize > 10){
+								if(filesize > 20){
 									that.totat(that.i18nimg.modelinfo);
 									return false;
 								}

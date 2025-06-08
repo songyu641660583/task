@@ -31,7 +31,7 @@
 				</record-item>
 			</block>
 		</view>
-		<uni-load-more :status="status" v-if="pageData.data.length > 10"></uni-load-more>
+		<uni-load-more  :content-text="{contentrefresh: i18n2.contentrefresh, contentnomore: i18n2.contentnomore}" :status="status" v-if="pageData.data.length > 10"></uni-load-more>
 		<view class="empty" v-if="pageData.data.length == 0">{{i18n.info}}</view>
 	</view>
 </template>
@@ -48,6 +48,9 @@ export default {
 	computed:{
 		i18n(){
 			return this.$t('protask');
+		},
+			i18n2() {
+			return this.$t('load_more');
 		}
 	},
 	methods: {

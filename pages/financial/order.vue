@@ -12,7 +12,7 @@
 		
 		
 		<view class="bgd" style="flex: 1;background-color: #f5f7fd;display: flex;align-items: center;justify-content: center;" v-if="isShow">
-			<uni-load-more status="loading"></uni-load-more>
+			<uni-load-more :content-text="{contentrefresh: i18n2.contentrefresh, contentnomore: i18n2.contentnomore}" status="loading"></uni-load-more>
 		</view>
 		<swiper :current="swiperIndex"  :duration="150" style="flex: 1;" @change="onChangeTab" v-if="!isShow">
 			<swiper-item style="display: flex;" v-for="(ite,index) in 2" :key="index">
@@ -53,7 +53,7 @@
 							</view>
 						</block>
 						
-						<uni-load-more :status="status" v-if="pageData.data.length > 10"></uni-load-more>
+						<uni-load-more   :content-text="{contentrefresh: i18n2.contentrefresh, contentnomore: i18n2.contentnomore}" :status="status" v-if="pageData.data.length > 10"></uni-load-more>
 						
 					</view>
 					<view style="text-align: center;" v-else>
@@ -87,6 +87,9 @@ export default {
 	computed:{
 		i18n(){
 			return this.$t('orderlist');
+		},
+		i18n2() {
+			return this.$t('load_more');
 		}
 	},
 	methods: {
