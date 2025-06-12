@@ -265,6 +265,9 @@ export default {
 	computed: {
 		i18n() {
 			return this.$t('lucky')
+		},
+		i18n2() {
+			return this.$t('grabindex')
 		}
 	},
 	created() {
@@ -288,6 +291,7 @@ export default {
 				uni.showModal({
 				content: this.i18n.noNum,
 				confirmText:this.i18n.formbtn,
+			    cancelText:this.i18n2.cancelText,
 				success(res) {
 					if(res.confirm) {
 						uni.hideToast()
@@ -313,6 +317,7 @@ export default {
 			uni.showModal({
 				content: this.i18n.windmodal[0] + priceDetail.jp,
 				confirmText: this.i18n.windmodal[1],
+				cancelText:this.i18n2.cancelText,
 				success(res) {
 					if (res.confirm) {
 						uni.hideToast()

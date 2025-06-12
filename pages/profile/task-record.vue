@@ -49,8 +49,11 @@ export default {
 		i18n(){
 			return this.$t('protask');
 		},
-			i18n2() {
+		i18n2() {
 			return this.$t('load_more');
+		},
+		i18n3() {
+			return this.$t('grabindex')
 		}
 	},
 	methods: {
@@ -92,6 +95,7 @@ export default {
 			uni.showModal({
 				title: this.i18n.modalinfo,
 				content: '',
+				cancelText:this.i18n3.cancelText,
 				success: async res => {
 					if (res.confirm) {
 						await this.$http.taskCancel({ id });
