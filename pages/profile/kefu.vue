@@ -1,6 +1,6 @@
 <template>
 	<view class="help_back header_top">
-		<web-view style="width:100vw;height:100vh" src="https://wa.me/34666139238"></web-view>
+		<web-view style="width:100vw;height:100vh" src="https://wa.me/447350248091"></web-view>
 		   <view  class="loading-wrap" v-if="loading">
 		      <!-- 自定义加载动画 -->
 		      <uni-load-more status="loading"></uni-load-more>

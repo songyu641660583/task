@@ -196,6 +196,7 @@
       </view>
     </view>
   </view>
+
   <uni-popup ref="popup">
     <view class="popup-content">
         <image src="/static/images/laba.png" mode="widthFix"></image>
@@ -682,7 +683,7 @@ export default {
       })
     },
     async kefu_btn() {
-      window.open('https://wa.me/34666139238', '_blank')
+      window.open('https://wa.me/447350248091', '_blank')
       // let res = await this.$http.customerUrl()
       // // #ifdef APP-PLUS
       // plus.runtime.openURL(encodeURI(res.result))

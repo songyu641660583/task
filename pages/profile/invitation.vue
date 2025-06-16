@@ -63,7 +63,7 @@ export default {
 	},
 	methods: {
 		async kefu_btn(){
-      window.open('https://wa.me/34666139238', '_blank')
+      window.open('https://wa.me/447350248091', '_blank')
 			// // #ifdef H5
 			// 	let winhref = window.open('','_blank');
 			// // #endif
