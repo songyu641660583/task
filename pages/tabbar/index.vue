@@ -6,7 +6,6 @@
       <view class="status_bar"></view>
       <view class="head_content">
         <!-- <view class="head_item">
-					<navigator url="/pages/profile/help-center">{{i8nhead.titlebtn}}</navigator>
 				</view> -->
         <view class="head_item lang">
           <!-- <navigator url="/pages/msg/selectlang" class="head_btn"><text class="alicon icon-zy"></text>{{headbtn}} </navigator> -->
@@ -93,6 +92,7 @@
      <view style="margin-bottom: 20rpx;">
         <label class="ttkx">{{ i18n.broadtitle }}<text>{{ i18n.broadtitle1 }}</text></label>
       </view>
+	  <!-- <navigator url="/pages/profile/real-auth">{{i8nhead.titlebtn}}</navigator> -->
     <view class="index_broad">
      
       <swiper class="swiper swiper_broad" circular :autoplay="true" :vertical="true" :interval="3000" :duration="500"
@@ -212,6 +212,21 @@
   <popu-modal v-model="redvalue" :mData="defaultData_custom" type="custom" navMask>
     <red-modal @cancel="cancel" :defaultData="defaultData_custom"></red-modal>
   </popu-modal>
+  
+  	<uni-popup ref="kefuPopup" background-color="#fff">
+		<view class="popup-content kefu-content" style="background: inherit;">
+			<scroll-view scroll-y="true" class="kefu-list">
+			  <view class="kefu-item" v-for="(item, index) in kefuList" :key="index" @click="callKefu(item.phone)">
+			   
+				<view class="item-right">
+				  <view class="kefu-name">{{item.name}}</view>
+				  <view class="kefu-value">{{item.phone}}</view>
+				</view>
+				<uni-icons type="arrowright" size="16" color="#ccc"></uni-icons>
+			  </view>
+			</scroll-view>
+		</view>
+	</uni-popup>
   </view>
 </template>
 
@@ -482,6 +497,12 @@ export default {
   components: { redModal },
   data() {
     return {
+	  kefuList: [
+		  {
+			  name: 'JCRN-Mattew',
+			  phone: '447350248091'
+		  }
+	  ],
       timeintr: null,
       value: false,
       redvalue: false,
@@ -546,7 +567,28 @@ export default {
     },
   },
   methods: {
-    handleClosePop() {
+	async getKefuList(){
+		let res = await this.$http.getOtherSettings({
+			group: 'other'
+		})
+		let kefuString = res.result.filter(item => (item.name === 'customer_service'))[0]
+		kefuString = kefuString.value ? kefuString.value : ''
+		if(kefuString) {
+			let kefuList = kefuString.split('\n')
+			if(kefuList.length) {
+				this.kefuList = kefuList.map(item => {
+					let kefuItem = item.split('@')
+					return {
+						name: kefuItem[0],
+						phone: kefuItem[1]
+					}
+				})
+			}
+		}
+		
+	},
+   
+	handleClosePop() {
       this.$refs.popup.close()
     },
     toggle() {
@@ -682,8 +724,11 @@ export default {
         url: '/pages/profile/help-center'
       })
     },
+	callKefu(phone){
+		window.open('https://wa.me/' + phone, '_blank')
+	},
     async kefu_btn() {
-      window.open('https://wa.me/447350248091', '_blank')
+		this.$refs.kefuPopup.open('bottom')
       // let res = await this.$http.customerUrl()
       // // #ifdef APP-PLUS
       // plus.runtime.openURL(encodeURI(res.result))
@@ -767,6 +812,7 @@ export default {
     // }, 5000)
   },
   onLoad() {
+	this.getKefuList()
     this.loadjson()
     this.homepopu()
   }
@@ -782,6 +828,83 @@ export default {
 @font-face {
   font-family: headicon;
   src: url('~@/static/font/iconfont1.ttf');
+}
+.kefu-content {
+	background: inherit;
+	width: 100% !important;
+	padding: 30rpx !important;
+	margin: 0rpx !important;
+	height: 40vh !important;
+	/* 头部 */
+	.kefu-header {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	  padding: 24rpx 30rpx;
+	  background-color: #f8f8f8;
+	  border-bottom: 1rpx solid #eee;
+	}
+	
+	.kefu-header .title {
+	  font-size: 32rpx;
+	  font-weight: bold;
+	  color: #333;
+	}
+	
+	/* 客服列表 */
+	.kefu-list {
+	  max-height: 32vh;
+	  padding: 0 20rpx;
+	}
+	
+	.kefu-item {
+	  display: flex;
+	  align-items: center;
+	  padding: 24rpx 10rpx;
+	  border-bottom: 1rpx solid #f5f5f5;
+	}
+	
+	.kefu-item:last-child {
+	  border-bottom: none;
+	}
+	
+	.kefu-avatar {
+	  width: 80rpx;
+	  height: 80rpx;
+	  border-radius: 50%;
+	  background-color: #f0f0f0;
+	}
+	
+	.item-right {
+	  flex: 1;
+	}
+	
+	.kefu-name {
+	  font-size: 30rpx;
+	  color: #222;
+	  margin-bottom: 10rpx;
+	  font-weight: 600;
+	}
+	
+	.kefu-value {
+	  font-size: 26rpx;
+	  color: #666;
+	}
+	
+	/* 点击效果 */
+	.kefu-item:active {
+	  background-color: #f9f9f9;
+	}
+	// .kefu-item {
+	// 	display: flex;
+	// 	align-items: center;
+	// 	font-size: 30rpx;
+	// 	margin-bottom: 20rpx;
+	// 	.kefu-name {
+			
+	// 	}
+		
+	// }
 }
 
 .alicon {

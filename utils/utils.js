@@ -5,3 +5,4 @@ export default function(title,icon="none",duration=1500) {
 		duration
 	})
 }
+

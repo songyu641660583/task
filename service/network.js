@@ -26,7 +26,7 @@ export default {
 					'Content-type': 'multipart/form-data', 
 					// #endif
 					'Authorization': uni.getStorageSync('userToken') || '',
-					'Locale': uni.getStorageSync('locale_key') || 0
+					'locale': uni.getStorageSync('languageCode') || 'en-US'
 				},
 				formData: data,
 				success: (response) => {

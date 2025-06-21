@@ -25,6 +25,7 @@
 									width: '100%',
 									height: 164
 								}"></uni-file-picker>
+								
 						</view>
 					</uni-section>
 					<uni-section :title="i18n.backIdCardText" type="line" style="padding-bottom: 15rpx;">
@@ -46,6 +47,7 @@
 
 <script>
 import loading from "@/utils/mixin/loading.js"
+import compressImg from '@/utils/compress.js'
 export default {
 	mixins: [loading],
 	data() {
@@ -71,7 +73,6 @@ export default {
 	methods: {
 
 		onSelect(e, type) {
-
 			const tempFilePaths = e.tempFiles
 			this.uploadFile(tempFilePaths[0], type)
 		},
@@ -79,13 +80,16 @@ export default {
 			uni.showLoading({
 				title: this.i18n3.drawrecord1
 			})
+			console.log('file.file', file.file)
+			let later  = await compressImg(file.file, 0.25)
 			const filesize = file.size / 1024 / 1024;
 			if(filesize > 20){
 				this.totat(this.i18n2.modelinfo);
 				return false;
 			}
+			console.log('later', later)
 			
-			this.$http.uploadajax('upload',file.path,{},'image').then((res) => {
+			this.$http.uploadajax('upload',later.afterSrc,{},'image').then((res) => {
 				this[type] = res.result.uri
 				uni.hideLoading()
 

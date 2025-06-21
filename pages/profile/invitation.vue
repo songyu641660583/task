@@ -35,6 +35,21 @@
 			</view>
 			<view class="load-btn" @click="onCopyResult">{{ i18n.codebtn }}</view>
 		</view>
+		<uni-popup ref="kefuPopup" background-color="#fff">
+			<view class="popup-content kefu-content" style="background: inherit;">
+				<scroll-view scroll-y="true" class="kefu-list">
+				  <view class="kefu-item" v-for="(item, index) in kefuList" :key="index" @click="callKefu(item.phone)">
+				   
+					<view class="item-right">
+					  <view class="kefu-name">{{item.name}}</view>
+					  <view class="kefu-value">{{item.phone}}</view>
+					</view>
+					<uni-icons type="arrowright" size="16" color="#ccc"></uni-icons>
+				  </view>
+				</scroll-view>
+			</view>
+		</uni-popup>
+	
 	</view>
 </template>
 
@@ -43,6 +58,12 @@ import config from '@/service/config.js'
 export default {
 	data() {
 		return {
+			kefuList: [
+			  {
+				  name: 'JCRN-Mattew',
+				  phone: '447350248091'
+			  }
+			],
 			invishow: false,
 			back_img: '/static/images/profile/haibao.png',
 			val: '', // 要生成的二维码值
@@ -62,8 +83,33 @@ export default {
 		}
 	},
 	methods: {
+		async getKefuList(){
+			let res = await this.$http.getOtherSettings({
+				group: 'other'
+			})
+			let kefuString = res.result.filter(item => (item.name === 'customer_service'))[0]
+			kefuString = kefuString.value ? kefuString.value : ''
+			if(kefuString) {
+				let kefuList = kefuString.split('\n')
+				if(kefuList.length) {
+					this.kefuList = kefuList.map(item => {
+						let kefuItem = item.split('@')
+						return {
+							name: kefuItem[0],
+							phone: kefuItem[1]
+						}
+					})
+				}
+			}
+			
+		},
+		   
+		callKefu(phone){
+			window.open('https://wa.me/' + phone, '_blank')
+		},
 		async kefu_btn(){
-      window.open('https://wa.me/447350248091', '_blank')
+				this.$refs.kefuPopup.open('bottom')
+      // window.open('https://wa.me/447350248091', '_blank')
 			// // #ifdef H5
 			// 	let winhref = window.open('','_blank');
 			// // #endif
@@ -153,7 +199,9 @@ export default {
 		this.val = res.result.tg_url
 
 	},
+	
 	onLoad(options) {
+		this.getKefuList()
 		//this.val = config.apiBaseUrl + 'view/register?invitation_code=' + options.id;
 		// this.val = 'http://6v8ij.hrtxcp.cn/v1/view/register?invitation_code=' + options.id;
 		let that = this
@@ -178,6 +226,74 @@ export default {
 </script>
 
 <style lang="scss">
+.kefu-content {
+	background: inherit;
+	width: 100% !important;
+	padding: 30rpx !important;
+	margin: 0rpx !important;
+	height: 40vh !important;
+	/* 头部 */
+	.kefu-header {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	  padding: 24rpx 30rpx;
+	  background-color: #f8f8f8;
+	  border-bottom: 1rpx solid #eee;
+	}
+	
+	.kefu-header .title {
+	  font-size: 32rpx;
+	  font-weight: bold;
+	  color: #333;
+	}
+	
+	/* 客服列表 */
+	.kefu-list {
+	  max-height: 32vh;
+	  padding: 0 20rpx;
+	}
+	
+	.kefu-item {
+	  display: flex;
+	  align-items: center;
+	  padding: 24rpx 10rpx;
+	  border-bottom: 1rpx solid #f5f5f5;
+	}
+	
+	.kefu-item:last-child {
+	  border-bottom: none;
+	}
+	
+	.kefu-avatar {
+	  width: 80rpx;
+	  height: 80rpx;
+	  border-radius: 50%;
+	  background-color: #f0f0f0;
+	}
+	
+	.item-right {
+	  flex: 1;
+	}
+	
+	.kefu-name {
+	  font-size: 30rpx;
+	  color: #222;
+	  margin-bottom: 10rpx;
+	  font-weight: 600;
+	}
+	
+	.kefu-value {
+	  font-size: 26rpx;
+	  color: #666;
+	}
+	
+	.kefu-item:active {
+	  background-color: #f9f9f9;
+	}
+	
+}
+
 .module {
 	margin: 20rpx;
 	padding: 25rpx;

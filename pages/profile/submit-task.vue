@@ -47,6 +47,7 @@
 
 <script>
 	import config from '@/service/config.js'
+	import compressImg from '@/utils/compress.js'
 	export default {
 		data() {
 			return {
@@ -85,16 +86,17 @@
 					count: 1,
 					sizeType: ['compressed'], 
 					sourceType: ['album'],
-				    success: (res) => {
-				        const tempFilePaths = res.tempFilePaths,
-								filesize = res.tempFiles[0].size / 1024 / 1024;
-								if(filesize > 20){
-									that.totat(that.i18n.modelinfo);
-									return false;
-								}
-						 uni.showLoading({mask:true});
-						that.$http.uploadajax('upload',tempFilePaths[0],{},'image').then((res) => {
-							// console.log(res);
+				    success: async (res) => {
+						uni.showLoading({mask:true});
+						console.log('res.tempFiles[0]', res.tempFiles[0])
+						let later  = await compressImg(res.tempFiles[0], 0.25)
+				        const tempFilePaths = res.tempFilePaths
+						const filesize = res.tempFiles[0].size / 1024 / 1024;
+						if(filesize > 20){
+							that.totat(that.i18n.modelinfo);
+							return false;
+						}
+					    that.$http.uploadajax('upload',later.afterSrc,{},'image').then((res) => {
 							that.img1 = res.result.uri;
 							that.img2 = res.result.full_uri;
 							that.imageshow = true;
@@ -103,8 +105,6 @@
 						});
 				    }
 				});
-				   
-				   
 			},
 			delImg() {
 				this.img2 = ""
