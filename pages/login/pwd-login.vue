@@ -50,6 +50,16 @@
 								<image src="/static/images/login_Img/icon_eye.png" style="width: 30rpx;height: 20rpx;" v-else></image>
 							</view>
 						</view>
+						<view class="input">
+							<image src="/static/images/login_Img/code.png" style="width: 30rpx;height: 32rpx;margin-left: 20rpx;"></image>
+							<view class="line"></view>
+							<input type="text" :placeholder="i18n.telcode" maxlength="4" v-model="code" placeholder-style="font-size:30rpx;color:#a3a3a3" />
+							<view class="code-view">
+								<view class="code-img" @click="handleCodeNext">
+									<image :src="codeArr[codeIndex].url" mode="widthFix"></image>
+								</view>
+							</view>
+						</view>
 						<view class="login_reg">
 							<text @click="navTo('/pages/login/register')">{{i18n.register}}</text>
 						</view>
@@ -63,7 +73,25 @@
 </template>
 
 <script>
+	import code1 from '../../static/images/code2.png'
+	import code2 from '../../static/images/code3.png'
+	import code3 from '../../static/images/code4.png'
+	import code4 from '../../static/images/code5.png'
+	const codeArr = [{
+		url: code1,
+		value: '82rg'
+	}, {
+		url: code2,
+		value: '7knx'
+	}, {
+		url: code3,
+		value: '28w5'
+	}, {
+		url: code4,
+		value: '4pyk'
+	}]
 export default {
+
 	data() {
 		return {
 			pagefalse:false,
@@ -75,7 +103,11 @@ export default {
 			pwdType: 'password',
 			isShoweye: true,
 			account: '',
-			inputValue: ''
+			inputValue: '',
+			code: '',
+			codeFocus: false,
+			codeArr,
+			codeIndex: Math.floor(Math.random() * 4),
 		};
 	},
 	computed:{
@@ -90,6 +122,13 @@ export default {
 		}
 	},
 	methods: {
+		handleCodeNext() {
+			if (this.codeIndex >= this.codeArr.length - 1) {
+				this.codeIndex = 0
+			} else {
+				this.codeIndex = this.codeIndex + 1
+			}
+		},
 		navTo(url) {
 			if (url === 'pages/tabbar/index') {
 				return uni.switchTab({
@@ -154,6 +193,10 @@ export default {
 			// #endif
 		},
 		async loginsubmit() {
+			if (codeArr[this.codeIndex].value !== this.code) {
+				this.totat(this.i18n.telcodeError);
+				return
+			}
 			const that = this;
 			let res = await this.$http.login({
 				account: this.account,
@@ -218,8 +261,25 @@ export default {
 <style lang="less">
 .login_content{ padding-top: 5vh;}
 .pagelogin_info{ position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center;font-size: 40rpx;}
-.form_content{ padding: 0 50px;margin-top: 90px;}
+.form_content{ padding: 0 22px;margin-top: 90px;}
+.code-view {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		.code-img {
+			image {
+				margin: 0 !important;
+				margin-right: 10rpx !important;
+				height: 40rpx;
+	
+				width: 120rpx;
+			}
+		}
+	}
+	
+
 .input {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -228,6 +288,7 @@ export default {
 	width: 100%;
 	height: 80rpx;
 	margin-bottom: 17px;
+	
 	image {
 		width: 24rpx;
 		height: 34rpx;

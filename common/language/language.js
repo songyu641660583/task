@@ -25,7 +25,8 @@ const lang_country = {
 			newsinfo: ['抖音点赞使用协议', '隐私政策'],
 			andtext: '和',
 			telyan: '获取验证码',
-			telcode: '输入验证码'
+			telcode: '输入验证码',
+			telcodeError: '验证码输入错误'
 		},
 		orderyuebao: {
 			title: '理财宝',
@@ -590,7 +591,8 @@ const lang_country = {
 			newsinfo: ['Douyin Like Usage Agreement', 'Privacy Policy'],
 			andtext: 'and',
 			telyan: 'Get Verification Code',
-			telcode: 'Enter Verification Code'
+			telcode: 'Enter Verification Code',
+			telcodeError: 'Verification code input error'
 		},
 		orderyuebao: {
 			title: 'Financial Treasure',
@@ -1154,7 +1156,8 @@ const lang_country = {
 			newsinfo: ['Соглашением об использовании лайков Douyin', 'Политикой конфиденциальности'],
 			andtext: 'и',
 			telyan: 'Получить код подтверждения',
-			telcode: 'Введите код подтверждения'
+			telcode: 'Введите код подтверждения',
+			telcodeError: 'Ошибка ввода кода проверки'
 		},
 		orderyuebao: {
 			title: 'Финансовый сейф',
@@ -1718,7 +1721,8 @@ const lang_country = {
 			newsinfo: ['Douyin Like Usage Agreement', 'Privacy Policy'],
 			andtext: 'and',
 			telyan: 'Get Verification Code',
-			telcode: 'Enter Verification Code'
+			telcode: 'Enter Verification Code',
+			telcodeError: 'May error sa input ng Verification code'
 		},
 		orderyuebao: {
 			title: 'Financial Treasure',
@@ -2282,7 +2286,8 @@ const lang_country = {
 			newsinfo: ['틱톡 좋아요 사용 프로토콜', '프라이버시 정책'],
 			andtext: '및',
 			telyan: '인증 코드 가져오기',
-			telcode: '인증 코드 입력'
+			telcode: '인증 코드 입력',
+			telcodeError: '인증 코드 입력 오류'
 		},
 		orderyuebao: {
 			title: '재테크 보물',
@@ -2846,7 +2851,8 @@ const lang_country = {
 			newsinfo: ['Perjanjian Penggunaan Like Douyin', 'Dasar Privasi'],
 			andtext: 'dan',
 			telyan: 'Dapatkan Kod Pengesahan',
-			telcode: 'Masukkan Kod Pengesahan'
+			telcode: 'Masukkan Kod Pengesahan',
+			telcodeError: 'Ralat memasukkan kod pengesahan'
 		},
 		orderyuebao: {
 			title: 'Harta Kewangan',
@@ -3410,7 +3416,8 @@ const lang_country = {
 			"newsinfo": ["Termos de uso do TikTok", "Política de privacidade"],
 			"andtext": "e",
 			"telyan": "Obter código de verificação",
-			"telcode": "Digite o código de verificação"
+			"telcode": "Digite o código de verificação",
+			telcodeError: 'Erro na inserção do código de verificação'
 		},
 		"orderyuebao": {
 			"title": "Tesouro financeiro",
@@ -3974,7 +3981,8 @@ const lang_country = {
 			"newsinfo": ["Douyin Beğeni Kullanım Sözleşmesi", "Gizlilik Politikası"],
 			"andtext": "ve",
 			"telyan": "Doğrulama kodu al",
-			"telcode": "Doğrulama kodunu girin"
+			"telcode": "Doğrulama kodunu girin",
+			telcodeError: 'Kod giriş hatası'
 		},
 		"orderyuebao": {
 			"title": "Finans Hazinesi",
@@ -4538,7 +4546,8 @@ const lang_country = {
 			"newsinfo": ["Acuerdo de uso de likes en Douyin", "Política de privacidad"],
 			"andtext": "y",
 			"telyan": "Obtener código de verificación",
-			"telcode": "Ingrese código de verificación"
+			"telcode": "Ingrese código de verificación",
+			telcodeError: 'Error en la entrada del Código de verificación'
 		},
 		"orderyuebao": {
 			"title": "Tesoro financiero",
@@ -5102,7 +5111,8 @@ const lang_country = {
 			"newsinfo": ["डौयिन लाइक उपयोग समझौता", "गोपनीयता नीति"],
 			"andtext": "और",
 			"telyan": "वेरिफिकेशन कोड प्राप्त करें",
-			"telcode": "वेरिफिकेशन कोड दर्ज करें"
+			"telcode": "वेरिफिकेशन कोड दर्ज करें",
+			telcodeError: 'सत्यापन कोड दर्ज त्रुटि'
 		},
 		"orderyuebao": {
 			"title": "वित्तीय खजाना",
@@ -5669,7 +5679,8 @@ const lang_country = {
 			newsinfo: ['Perjanjian Penggunaan Like Douyin', 'Dasar Privasi'],
 			andtext: 'dan',
 			telyan: 'Dapatkan Kod Pengesahan',
-			telcode: 'Masukkan Kod Pengesahan'
+			telcode: 'Masukkan Kod Pengesahan',
+			telcodeError: 'Ralat memasukkan kod pengesahan'
 		},
 		orderyuebao: {
 			title: 'Harta Kewangan',
@@ -6233,7 +6244,8 @@ const lang_country = {
 			"newsinfo": ["Thỏa thuận sử dụng like TikTok", "Chính sách bảo mật"],
 			"andtext": "và",
 			"telyan": "Lấy mã xác minh",
-			"telcode": "Nhập mã xác minh"
+			"telcode": "Nhập mã xác minh",
+			telcodeError: 'Lỗi nhập CAPTCHA'
 		},
 		"orderyuebao": {
 			"title": "Kho bạc tài chính",
@@ -6797,7 +6809,8 @@ const lang_country = {
 			"newsinfo": ["ข้อตกลงการใช้ไลก์ TikTok", "นโยบายความเป็นส่วนตัว"],
 			"andtext": "และ",
 			"telyan": "รับรหัสยืนยัน",
-			"telcode": "กรอกรหัสยืนยัน"
+			"telcode": "กรอกรหัสยืนยัน",
+			telcodeError: 'ป้อนรหัสยืนยันผิดพลาด'
 		},
 		"orderyuebao": {
 			"title": "สินทรัพย์ทางการเงิน",
@@ -7361,7 +7374,8 @@ const lang_country = {
 			"newsinfo": ["اتفاقية استخدام إعجابات TikTok", "سياسة الخصوصية"],
 			"andtext": "و",
 			"telyan": "احصل على رمز التحقق",
-			"telcode": "أدخل رمز التحقق"
+			"telcode": "أدخل رمز التحقق",
+			telcodeError: 'رمز التحقق من الخطأ'
 		},
 		"orderyuebao": {
 			"title": "كنز المالية",
