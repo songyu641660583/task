@@ -155,7 +155,7 @@
           <swiper-item class="swiper_list" v-for="(item, index) in listdetail" :key="index">
             <block v-if="item.user">
               <view class="swiper-item inlist_info">
-                <image :src="item.user.avatar"></image>
+                <image :src="item.user.avatar" mode="aspectFill"></image>
                 <view class="inlist_item">
                   <view class="item_title">
                     <label>{{ item.user.nickname }} {{ item.user.level }}</label>
@@ -336,119 +336,174 @@ let publish_member_data = [
     }
   }
 ]
-let complete_member_data = [
+let complete_member_data = 
+[
   {
     user_id: 89261,
-    amount: 380,
-    count: 38,
-    user: {
-      level: 'vip0',
-      id: 89261,
-      avatar: '/static/images/index/win1.jpg',
-      nickname: '****1496'
-    }
-  },
-  {
-    user_id: 47382,
-    amount: 180,
-    count: 18,
-    user: {
-      level: 'vip0',
-      id: 47382,
-      avatar: '/static/images/index/win2.jpg',
-      nickname: '****7283'
-    }
-  },
-  {
-    user_id: 61549,
-    amount: 460,
-    count: 46,
-    user: {
-      level: 'vip0',
-      id: 61549,
-      avatar: '/static/images/index/win3.jpg',
-      nickname: '****5490'
-    }
-  },
-  {
-    user_id: 32875,
-    amount: 4920,
-    count: 82,
-    user: {
-      level: 'vip2',
-      id: 32875,
-      avatar: '/static/images/index/win4.jpg',
-      nickname: '****8752'
-    }
-  },
-  {
-    user_id: 94026,
-    amount: 80,
-    count: 8,
-    user: {
-      level: 'vip0',
-      id: 94026,
-      avatar: '/static/images/index/win5.jpg',
-      nickname: '****0264'
-    }
-  },
-  {
-    user_id: 15739,
-    amount: 4950,
-    count: 15,
-    user: {
-      level: 'vip5',
-      id: 15739,
-      avatar: '/static/images/index/win6.jpg',
-      nickname: '****7391'
-    }
-  },
-  {
-    user_id: 28604,
-    amount: 552,
-    count: 23,
+    amount: 288,
+    count: 31,
     user: {
       level: 'vip1',
-      id: 28604,
-      avatar: '/static/images/index/win7.jpg',
-      nickname: '****6042'
+      id: 89261,
+      avatar: '/static/images/index/win11.jpg',
+      nickname: '****2176'
     }
   },
   {
-    user_id: 50981,
-    amount: 3332,
+    user_id: 7754,
+    amount: 480,
+    count: 20,
+    user: {
+      level: 'vip1',
+      id: 7754,
+      avatar: '/static/images/index/win12.jpg',
+      nickname: '****7754'
+    }
+  },
+  {
+    user_id: 5647,
+    amount: 1128,
+    count: 47,
+    user: {
+      level: 'vip1',
+      id: 5647,
+      avatar: '/static/images/index/win13.jpg',
+      nickname: '****5647'
+    }
+  },
+  {
+    user_id: 5887,
+    amount: 1800,
+    count: 30,
+    user: {
+      level: 'vip2',
+      id: 5887,
+      avatar: '/static/images/index/win14.jpg',
+      nickname: '****5887'
+    }
+  },
+  {
+    user_id: 4877,
+    amount: 840,
+    count: 35,
+    user: {
+      level: 'vip1',
+      id: 4877,
+      avatar: '/static/images/index/win15.jpg',
+      nickname: '****4877'
+    }
+  },
+  {
+    user_id: 7841,
+    amount: 1200,
+    count: 50,
+    user: {
+      level: 'vip1',
+      id: 7841,
+      avatar: '/static/images/index/win16.jpg',
+      nickname: '****7841'
+    }
+  },
+  {
+    user_id: 6379,
+    amount: 9240,
     count: 28,
     user: {
-      level: 'vip3',
-      id: 50981,
-      avatar: '/static/images/index/win8.jpg',
-      nickname: '****9815'
+      level: 'vip5',
+      id: 6379,
+      avatar: '/static/images/index/win17.jpg',
+      nickname: '****6379'
     }
   },
   {
-    user_id: 74213,
-    amount: 1500,
-    count: 25,
-    user: {
-      level: 'vip2',
-      id: 74213,
-      avatar: '/static/images/index/win9.jpg',
-      nickname: '****2137'
-    }
-  },
-  {
-    user_id: 36528,
-    amount: 288,
-    count: 12,
+    user_id: 1335,
+    amount: 912,
+    count: 38,
     user: {
       level: 'vip1',
-      id: 36528,
-      avatar: '/static/images/index/win10.jpg',
-      nickname: '****5283'
+      id: 1335,
+      avatar: '/static/images/index/win18.jpg',
+      nickname: '****1335'
+    }
+  },
+  {
+    user_id: 2578,
+    amount: 1500,
+    count: 20,
+    user: {
+      level: 'vip2',
+      id: 2578,
+      avatar: '/static/images/index/win19.jpg',
+      nickname: '****2578'
+    }
+  },
+  {
+    user_id: 3557,
+    amount: 528,
+    count: 22,
+    user: {
+      level: 'vip1',
+      id: 3557,
+      avatar: '/static/images/index/win20.jpg',
+      nickname: '****3557'
+    }
+  },
+  {
+    user_id: 3556,
+    amount: 3927,
+    count: 33,
+    user: {
+      level: 'vip3',
+      id: 3556,
+      avatar: '/static/images/index/win21.jpg',
+      nickname: '****3556'
+    }
+  },
+  {
+    user_id: 6889,
+    amount: 3660,
+    count: 61,
+    user: {
+      level: 'vip2',
+      id: 6889,
+      avatar: '/static/images/index/win22.jpg',
+      nickname: '****6889'
+    }
+  },
+  {
+    user_id: 6711,
+    amount: 984,
+    count: 41,
+    user: {
+      level: 'vip1',
+      id: 6711,
+      avatar: '/static/images/index/win23.jpg',
+      nickname: '****6711'
+    }
+  },
+  {
+    user_id: 7754,
+    amount: 4968,
+    count: 24,
+    user: {
+      level: 'vip4',
+      id: 7754,
+      avatar: '/static/images/index/win24.jpg',
+      nickname: '****7754'
+    }
+  },
+  {
+    user_id: 4447,
+    amount: 1320,
+    count: 55,
+    user: {
+      level: 'vip1',
+      id: 4447,
+      avatar: '/static/images/index/win25.jpg',
+      nickname: '****4447'
     }
   }
 ]
-
 let evaluate_list = [
   {
     name: '*****7647',
